@@ -1,0 +1,4 @@
+allowBuilds:
+  '@parcel/watcher': set this to true or false
+minimumReleaseAgeExclude:
+  - next-sanity@13.5.0

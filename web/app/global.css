@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+[data-theme="theme-xyz"] {
+  /* --header-h: 43.5px; */
+  --color-bg: #fff;
+  --color-fg: #000;
+  --color-primary: #000;
+  --color-secondary: rgba(177, 177, 177, 1);
+  --color-hover: #333;
+  --color-accent: #ff0000;
+  --color-red: #ff0000;
+  --color-yellow: rgba(242, 244, 207, 1);
+  --font-primary:
+    "NeueHaasGroteskDisplayPro95Black", "Helvetica Neue", "HelveticaNeueRoman",
+    "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
+    "Helvetica", "Arial", sans-serif;
+  /* --font-secondary: "Helvetica Neue", "HelveticaNeueRoman",
+    "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
+    "Helvetica", "Arial", sans-serif; */
+
+  --spacing-xs: 0.4375em; /* 7px */
+  --spacing-sm: 0.813rem; /* 13px */
+  --spacing-md: 1.25rem; /* 20px */
+  --spacing-lg: 1rem;
+  --spacing-xl: 1rem;
+  --spacing-2xl: 1rem;
+
+  --text-md-mobile: 1rem;
+
+  --text-sm: 0.625rem; /* 10px */
+  --text-md: 0.813rem; /* 13px */
+  --text-lg: 2.25rem;
+
+  --cubic: cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* --text-xl: clamp(26px, 5.21vw, 75px);*/
+
+  --border-width: 1px;
+  --border: var(--border-width) solid;
+  --border-width-lg: 2px;
+  --border-lg: var(--border-width-lg) solid;
+
+  --gutter: 0.813rem;
+
+  --screen-sm: 768px;
+  --screen-md: 1080px;
+  --screen-lg: 1441px;
+
+  /* --media-h: calc(calc(100dvh - 2 * var(--spacing-md)) / 2.3); */
+  --media-h: 66dvh;
+  --txt-h: calc(100dvh - var(--media-h) - calc(3 * var(--spacing-sm)));
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-hover: var(--color-hover);
+  --color-accent: var(--color-accent);
+  --color-red: var(--color-red);
+
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+
+  --spacing-xs: var(--spacing-xs);
+  --spacing-sm: var(--spacing-sm);
+  --spacing-md: var(--spacing-md);
+  --spacing-lg: var(--spacing-lg);
+  --spacing-xl: var(--spacing-xl);
+  --spacing-2xl: var(--spacing-2xl);
+
+  --text-md-mobile: var(--text-md-mobile);
+
+  --text-sm: var(--text-sm);
+  --text-md: var(--text-md);
+  --text-lg: var(--text-lg);
+
+  --cubic: var(--cubic);
+
+  --border-width: var(--border-width);
+  --border: var(--border);
+  --border-width-lg: var(--border-width-lg);
+  --border-lg: var(--border-lg);
+
+  --gutter: var(--gutter);
+
+  --screen-sm: var(--screen-sm);
+  --screen-md: var(--screen-md);
+  --screen-lg: var(--screen-lg);
+}
