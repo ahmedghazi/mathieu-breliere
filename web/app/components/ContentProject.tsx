@@ -18,48 +18,48 @@ const ContentProject = ({ input }: Props) => {
         {media?._type === "image" && (
           <Figure asset={media.asset} alt={input.title} />
         )}
-        {/* {media?._type === "mux.video" && (
-          <video src={media.asset.assetID} controls></video>
-        )} */}
       </div>
       <div className='txt'>
-        <div className='content__header'>
-          <div className='b-l'>
-            <h1>{input.title}</h1>
+        <div className='spacer'></div>
+        <div className='body'>
+          <div className='content__header'>
+            <div className='b-l'>
+              <h1>{input.title}</h1>
+            </div>
+            <details>
+              <summary>credits</summary>
+              <PortableText
+                value={input.credits}
+                components={portableTextComponents}
+              />
+            </details>
           </div>
-          <details>
-            <summary>credits</summary>
-            <PortableText
-              value={input.credits}
-              components={portableTextComponents}
-            />
-          </details>
-        </div>
-        <div className='content__nav'>
-          <div className='pagination'>pagination</div>
-          <div className='media-controls hide-sb'>
-            <ul>
-              {input.media?.map((media, i) => (
-                <li
-                  key={i}
-                  className={index === i ? "is-active" : ""}
-                  onClick={() => setIndex(i)}
-                  onMouseEnter={() => setIndex(i)}
-                  aria-label={`View media ${i + 1}`}>
-                  <Figure asset={media.asset} alt={input.title} width={132} />
-                </li>
-              ))}
-              {input.media?.map((media, i) => (
-                <li
-                  key={i}
-                  className={index === i ? "is-active" : ""}
-                  onClick={() => setIndex(i)}
-                  onMouseEnter={() => setIndex(i)}
-                  aria-label={`View media ${i + 1}`}>
-                  <Figure asset={media.asset} alt={input.title} width={132} />
-                </li>
-              ))}
-            </ul>
+          <div className='content__nav'>
+            <div className='pagination'>pagination</div>
+            <div className='media-controls hide-sb'>
+              <ul>
+                {input.media?.map((media, i) => (
+                  <li
+                    key={i}
+                    className={index === i ? "is-active" : ""}
+                    onClick={() => setIndex(i)}
+                    onMouseEnter={() => setIndex(i)}
+                    aria-label={`View media ${i + 1}`}>
+                    <Figure asset={media.asset} alt={input.title} width={132} />
+                  </li>
+                ))}
+                {input.media?.map((media, i) => (
+                  <li
+                    key={i}
+                    className={index === i ? "is-active" : ""}
+                    onClick={() => setIndex(i)}
+                    onMouseEnter={() => setIndex(i)}
+                    aria-label={`View media ${i + 1}`}>
+                    <Figure asset={media.asset} alt={input.title} width={132} />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

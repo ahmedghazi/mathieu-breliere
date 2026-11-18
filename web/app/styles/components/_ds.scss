@@ -1,3 +1,17 @@
+.media {
+  height: var(--media-h);
+  background-color: var(--color-fg);
+  figure,
+  img,
+  mux-player {
+    height: 100% !important;
+    object-fit: contain;
+  }
+}
+.txt {
+  height: var(--txt-h);
+}
+
 .card--project {
   a {
     display: flex;

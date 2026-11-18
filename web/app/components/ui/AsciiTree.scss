@@ -1,0 +1,44 @@
+.ascii-tree {
+  position: relative;
+  &.with-bottom {
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--spacing-xs) * -1);
+    top: -0.1em;
+    width: 1px;
+    height: calc(100% + 0.2em);
+    background-color: var(--color-secondary);
+    // background: red;
+  }
+  &.with-bottom::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--spacing-xs) * -1);
+    bottom: -0.1em;
+    width: calc(100% + var(--spacing-xs));
+    height: 1px;
+    background-color: var(--color-secondary);
+    // background: red;
+  }
+
+  &:not(.is-hovered)::after {
+    transition: transform 0.2s var(--cubic);
+  }
+
+  .box-drawings-light-horizontal {
+    --size: 0.563em;
+    display: block;
+    width: var(--size);
+    height: 1px;
+    background-color: var(--color-secondary);
+    position: absolute;
+    top: 0;
+    left: calc(var(--spacing-xs) * -1 - var(--size) / 2);
+    transform: translateY(var(--y));
+  }
+  &:not(.is-hovered) .box-drawings-light-horizontal {
+    transition: transform 0.2s var(--cubic);
+  }
+}

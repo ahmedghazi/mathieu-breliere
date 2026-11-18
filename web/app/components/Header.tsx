@@ -14,11 +14,12 @@ type Props = {
 const Header = ({ settings }: Props) => {
   return (
     <header>
-      <div className='grid grid-cols-4 gap-sm'>
-        <div className='site-name col-span-2'>
+      <div className='h-media-h spacer'></div>
+      <div className='flex flex-col justify-between md:grid md:grid-cols-8 gap-sm'>
+        <div className='site-name'>
           <Link href='/'>{settings.siteName}</Link>
         </div>
-        <div className='col-span-2'>
+        <div className='nav-container'>
           <Nav navPrimary={settings.navPrimary} navTags={settings.navTags} />
         </div>
       </div>

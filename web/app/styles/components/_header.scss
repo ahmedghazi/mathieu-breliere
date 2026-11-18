@@ -1,18 +1,20 @@
 @use "../variables";
 
 header {
-  padding-top: calc(var(--media-h) + var(--spacing-sm));
+  // padding-top: calc(var(--media-h) + var(--spacing-sm));
   padding-left: var(--spacing-sm);
   padding-right: var(--spacing-sm);
   z-index: 50;
-  transition:
-    transform 0.2s var(--cubic),
-    opacity 0.2s var(--cubic);
-  &.is-down {
-    transform: translateY(-100%);
-    opacity: 0;
+  position: sticky;
+  top: var(--spacing-sm);
+  // background-color: var(--color-yellow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  .spacer {
+    height: var(--media-h);
+    flex-shrink: 0;
   }
-
   nav {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -33,21 +35,7 @@ header {
     }
     .nav-tags {
       position: relative;
-      &:not(.is-hovered)::after {
-        transition: transform 0.2s var(--cubic);
-      }
-      &::after {
-        --size: 0.563em;
-        content: "";
-        display: block;
-        width: var(--size);
-        height: 1px;
-        background-color: var(--color-secondary);
-        position: absolute;
-        top: 0;
-        left: calc(var(--spacing-xs) * -1 - var(--size) / 2);
-        transform: translateY(var(--y));
-      }
+
       button {
         color: var(--color-secondary);
         &:hover,
@@ -58,6 +46,31 @@ header {
     }
   }
   @media all and (max-width: variables.$md) {
-    padding: var(--spacing-sm);
+    // height: var(--txt-h);
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: var(--spacing-sm);
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--spacing-sm);
+    a,
+    button {
+      pointer-events: auto;
+    }
+    .spacer,
+    .flex {
+      grid-column: span 5 / span 5;
+    }
+    .spacer {
+      height: calc(var(--media-h) - var(--spacing-sm));
+    }
+    .flex {
+      height: var(--txt-h);
+    }
+    .site-name {
+      order: 2;
+    }
   }
 }

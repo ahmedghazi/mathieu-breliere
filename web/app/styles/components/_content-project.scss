@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  .txt {
+  .body {
     display: flex;
     justify-content: space-between;
     gap: var(--spacing-sm);
@@ -52,6 +52,21 @@
       &:hover:after,
       &.is-active::after {
         opacity: 1;
+      }
+    }
+  }
+
+  @media all and (max-width: variables.$md) {
+    .body {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      .content__header {
+        grid-column: span 2 / span 2;
+      }
+      .content__nav {
+        .pagination {
+          display: none;
+        }
       }
     }
   }

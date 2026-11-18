@@ -8,7 +8,7 @@ import {
 import Link from "next/link";
 import { _linkResolver } from "../sanity-api/utils";
 import Figure from "./ui/Figure";
-// import { Home } from "../types/schema";
+import AsciiTree from "./ui/AsciiTree";
 
 type Props = {
   input: HOME_QUERY_RESULT;
@@ -41,106 +41,22 @@ const ContentHome = ({ input }: Props) => {
         )}
       </div>
       <div className='txt'>
-        <div className='list hide-sb' ref={ref}>
-          <ul className=''>
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            v
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-            {input?.projects?.map((project, index) => (
-              <li
-                key={index}
-                data-index={index}
-                onMouseEnter={() => setIndex(index)}>
-                <Link href={_linkResolver(project)}>{project.title}</Link>
-              </li>
-            ))}
-          </ul>
+        <div className='spacer'></div>
+        <div className='body'>
+          <AsciiTree withBottom>
+            <div className='list hide-sb' ref={ref}>
+              <ul className=''>
+                {input?.projects?.map((project, index) => (
+                  <li
+                    key={index}
+                    data-index={index}
+                    onMouseEnter={() => setIndex(index)}>
+                    <Link href={_linkResolver(project)}>{project.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </AsciiTree>
         </div>
       </div>
     </div>

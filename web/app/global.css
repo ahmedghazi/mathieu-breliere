@@ -49,6 +49,13 @@
   /* --media-h: calc(calc(100dvh - 2 * var(--spacing-md)) / 2.3); */
   --media-h: 66dvh;
   --txt-h: calc(100dvh - var(--media-h) - calc(3 * var(--spacing-sm)));
+
+  @media all and (max-width: 768px) {
+    --media-h: 54dvh;
+    --txt-h: calc(100dvh - var(--media-h) - calc(2 * var(--spacing-sm)));
+
+    /* --txt-h: 46dvh; */
+  }
 }
 
 @theme inline {
@@ -87,4 +94,5 @@
   --screen-sm: var(--screen-sm);
   --screen-md: var(--screen-md);
   --screen-lg: var(--screen-lg);
+  --media-h: var(--media-h);
 }

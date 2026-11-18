@@ -1,1 +1,5 @@
+- splash
 - player mux
+- animations
+- mobile
+- pagination

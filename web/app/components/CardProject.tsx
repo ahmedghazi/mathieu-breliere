@@ -22,21 +22,14 @@ const CardProject = ({ input }: Props) => {
         "card card--project",
         isFiltering && !isFiltered && "hidden",
       )}>
-      <Link href={_linkResolver(input)}>
-        {input.imageCover && (
-          <Figure asset={input.imageCover?.asset} alt={input?.title} />
-        )}
-        <h2>{input?.title}</h2>
-        {input.tags && (
-          <div className='flex flex-wrap gap-xs'>
-            {input.tags.map((tag, index) => (
-              <span key={index} className='tag'>
-                {tag?.title}
-              </span>
-            ))}
-          </div>
-        )}
-      </Link>
+      <div className='inner'>
+        <Link href={_linkResolver(input)}>
+          {input.imageCover && (
+            <Figure asset={input.imageCover?.asset} alt={input?.title} />
+          )}
+          <h2>{input?.title}</h2>
+        </Link>
+      </div>
     </article>
   );
 };

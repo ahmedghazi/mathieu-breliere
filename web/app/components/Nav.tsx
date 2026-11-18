@@ -45,8 +45,7 @@ const Nav = ({ navPrimary, navTags }: Props) => {
           ))}
         </ul>
       </div>
-      {isProjects && <NavTags input={navTags} />}
-      {/* <pre>{JSON.stringify(navTags, null, 2)}</pre> */}
+      {!isInfos && isProjects && <NavTags input={navTags} />}
     </nav>
   );
 };

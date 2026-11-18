@@ -1,0 +1,11 @@
+@use "../variables";
+
+.content--projects {
+  .card .inner {
+    position: sticky;
+    top: var(--spacing-sm);
+  }
+  @media all and (max-width: variables.$md) {
+    padding: var(--spacing-sm);
+  }
+}

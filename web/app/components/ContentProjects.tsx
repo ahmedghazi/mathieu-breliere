@@ -10,7 +10,10 @@ const ContentProjects = ({ input }: Props) => {
   return (
     <div className='content--projects'>
       <div className='grid md:grid-cols-2 gap-sm'>
-        {input.map((project, index) => (
+        {input.map((project) => (
+          <CardProject key={project._id} input={project} />
+        ))}
+        {input.map((project) => (
           <CardProject key={project._id} input={project} />
         ))}
       </div>

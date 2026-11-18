@@ -5,10 +5,12 @@
   flex-direction: column;
   gap: var(--spacing-sm);
 
-  .media {
-  }
   .list {
     overflow-y: auto;
-    height: var(--txt-h);
+    max-height: var(--txt-h);
+    color: var(--color-secondary);
+    a:hover {
+      color: var(--color-primary);
+    }
   }
 }
