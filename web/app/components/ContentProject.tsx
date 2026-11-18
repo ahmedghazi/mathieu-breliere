@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Project } from "../sanity-api/types/sanity.types";
 import Figure from "./ui/Figure";
+import { PortableText } from "@portabletext/react";
+import portableTextComponents from "../sanity-api/portableTextComponents";
 
 type Props = {
   input: Project;
@@ -22,20 +24,38 @@ const ContentProject = ({ input }: Props) => {
       </div>
       <div className='txt'>
         <div className='content__header'>
-          <h1>{input.title}</h1>
-          <div className='content__credits'>credits</div>
+          <div className='b-l'>
+            <h1>{input.title}</h1>
+          </div>
+          <details>
+            <summary>credits</summary>
+            <PortableText
+              value={input.credits}
+              components={portableTextComponents}
+            />
+          </details>
         </div>
         <div className='content__nav'>
           <div className='pagination'>pagination</div>
-          <div className='media-controls'>
-            {index}
+          <div className='media-controls hide-sb'>
             <ul>
-              {input.media?.map((media, index) => (
+              {input.media?.map((media, i) => (
                 <li
-                  key={index}
-                  className={index === 0 ? "is-active" : ""}
-                  onClick={() => setIndex(index)}
-                  aria-label={`View media ${index + 1}`}>
+                  key={i}
+                  className={index === i ? "is-active" : ""}
+                  onClick={() => setIndex(i)}
+                  onMouseEnter={() => setIndex(i)}
+                  aria-label={`View media ${i + 1}`}>
+                  <Figure asset={media.asset} alt={input.title} width={132} />
+                </li>
+              ))}
+              {input.media?.map((media, i) => (
+                <li
+                  key={i}
+                  className={index === i ? "is-active" : ""}
+                  onClick={() => setIndex(i)}
+                  onMouseEnter={() => setIndex(i)}
+                  aria-label={`View media ${i + 1}`}>
                   <Figure asset={media.asset} alt={input.title} width={132} />
                 </li>
               ))}

@@ -11,6 +11,7 @@ import { VisualEditing } from "next-sanity/visual-editing";
 import { SanityLive } from "./sanity-api/sanity.live";
 import DesignSystem from "./components/ui/DS";
 import ContentInfos from "./components/ContentInfos";
+import { ViewTransition } from "react";
 
 export const metadata = {
   metadataBase: new URL(website.url),
@@ -35,9 +36,11 @@ export default async function RootLayout({
         <div id='page' className=''>
           <LocaleContextProvider>
             <PageContextProvider>
-              <Header settings={settings} />
+              {settings && <Header settings={settings} />}
               <ContentInfos input={infos} />
-              <main>{children}</main>
+              <ViewTransition>
+                <main>{children}</main>
+              </ViewTransition>
               {/* <Footer settings={settings} /> */}
               {/* <DesignSystem /> */}
               <SanityLive />

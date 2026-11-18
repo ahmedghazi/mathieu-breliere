@@ -1,14 +1,13 @@
-import { Home } from "../types/schema";
-
 type LinkableNode = {
   _type?: string;
   slug?: { current?: string | null } | null;
 } | null;
 
-export const _linkResolver = (node: Home | LinkableNode) => {
+export const _linkResolver = (node: LinkableNode) => {
   if (!node || !node._type) return "/";
   if (node._type === "home") return "/";
   if (node._type === "project") return `/project/${node.slug?.current}`;
+  if (node._type === "tag") return `/tag/${node.slug?.current}`;
   return `/${node.slug?.current}`;
 };
 

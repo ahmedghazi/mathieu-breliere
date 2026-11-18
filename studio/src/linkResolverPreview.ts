@@ -4,7 +4,7 @@ import {defineLocations, PresentationPluginOptions} from 'sanity/presentation'
 export const linkResolverPreview: PresentationPluginOptions['resolve'] = {
   locations: {
     // Add locations for documents of type 'post'
-    pageModulaire: defineLocations({
+    home: defineLocations({
       // Select one or more fields
       select: {
         title: 'title',
@@ -16,7 +16,39 @@ export const linkResolverPreview: PresentationPluginOptions['resolve'] = {
         locations: [
           {
             title: doc?.title || 'Untitled',
-            href: doc?.homePage ? '/' : `/${doc?.slug}`,
+            href: '/',
+          },
+        ],
+      }),
+    }),
+    projects: defineLocations({
+      // Select one or more fields
+      select: {
+        title: 'title',
+        slug: 'slug.current',
+      },
+      // Those fields are available in the resolve callback function
+      resolve: (doc) => ({
+        locations: [
+          {
+            title: doc?.title || 'Untitled',
+            href: `/${doc?.slug}`,
+          },
+        ],
+      }),
+    }),
+    project: defineLocations({
+      // Select one or more fields
+      select: {
+        title: 'title',
+        slug: 'slug.current',
+      },
+      // Those fields are available in the resolve callback function
+      resolve: (doc) => ({
+        locations: [
+          {
+            title: doc?.title || 'Untitled',
+            href: `/project/${doc?.slug}`,
           },
         ],
       }),

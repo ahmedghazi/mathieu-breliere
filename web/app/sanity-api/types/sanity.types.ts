@@ -98,10 +98,17 @@ export type HomeReference = {
   [internalGroqTypeReferenceTo]?: "home";
 };
 
+export type TagReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "tag";
+};
+
 export type LinkInternal = {
   _type: "linkInternal";
   label?: string;
-  link?: ProjectReference | ProjectsReference | HomeReference;
+  link?: ProjectReference | ProjectsReference | HomeReference | TagReference;
 };
 
 export type LinkExternal = {
@@ -122,7 +129,11 @@ export type BlockContent = Array<
       listItem?: "bullet";
       markDefs?: Array<
         | {
-            reference?: ProjectReference | ProjectsReference | HomeReference;
+            reference?:
+              | ProjectReference
+              | ProjectsReference
+              | HomeReference
+              | TagReference;
             _type: "linkInternal";
             _key: string;
           }
@@ -157,22 +168,6 @@ export type Seo = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-};
-
-export type Tag = {
-  _id: string;
-  _type: "tag";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  slug?: Slug;
-};
-
-export type Slug = {
-  _type: "slug";
-  current?: string;
-  source?: string;
 };
 
 export type Infos = {
@@ -215,15 +210,13 @@ export type Settings = {
         _key: string;
       } & LinkOverlay)
   >;
+  navTags?: Array<
+    {
+      _key: string;
+    } & TagReference
+  >;
   message404?: BlockContent;
   customCss?: string;
-};
-
-export type TagReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "tag";
 };
 
 export type Project = {
@@ -247,7 +240,7 @@ export type Project = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  videoover?: MuxVideo;
+  videoCover?: MuxVideo;
   media?: Array<
     | ({
         _key: string;
@@ -262,6 +255,22 @@ export type Project = {
       }
   >;
   credits?: BlockContent;
+};
+
+export type Tag = {
+  _id: string;
+  _type: "tag";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+};
+
+export type Slug = {
+  _type: "slug";
+  current?: string;
+  source?: string;
 };
 
 export type Home = {
@@ -595,16 +604,16 @@ export type AllSanitySchemaTypes =
   | ProjectReference
   | ProjectsReference
   | HomeReference
+  | TagReference
   | LinkInternal
   | LinkExternal
   | BlockContent
   | Seo
-  | Tag
-  | Slug
   | Infos
   | Settings
-  | TagReference
   | Project
+  | Tag
+  | Slug
   | Home
   | Projects
   | MuxVideoAssetReference
@@ -634,7 +643,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
 // Variable: SETTINGS_QUERY
-// Query: *[_type == "settings"][0]{  ...,  navPrimary[]{    	...,	_type == 'linkInternal' => {			...,	link->{			_id,	_type,	slug	}	}  },  message404[]{    	...,	markDefs[]{		...,		_type == 'linkInternal' => {				...,	link->{			_id,	_type,	slug	}		}	},	_type == 'embed' => {		...	},	_type == 'image' => {			...,	asset->{		...,		url,		extension,		mimeType	}	}  }}
+// Query: *[_type == "settings"][0]{  ...,  navPrimary[]{    	...,	_type == 'linkInternal' => {			...,	link->{			_id,	_type,	slug,	title	},	// submenu[]{	// 	...,	// 	link->{	// 			_id,	_type,	slug,	title	// 	},	// }	}  },  navTags[]->{    	_id,	_type,	slug,	title  },  message404[]{    	...,	markDefs[]{		...,		_type == 'linkInternal' => {				...,	link->{			_id,	_type,	slug,	title	},	// submenu[]{	// 	...,	// 	link->{	// 			_id,	_type,	slug,	title	// 	},	// }		}	},	_type == 'embed' => {		...	},	_type == 'image' => {			...,	asset->{		...,		url,		extension,		mimeType	}	}  }}
 export type SETTINGS_QUERY_RESULT = {
   _id: string;
   _type: "settings";
@@ -646,12 +655,6 @@ export type SETTINGS_QUERY_RESULT = {
   navPrimary: Array<
     | {
         _key: string;
-        _type: "linkExternal";
-        label?: string;
-        link?: string;
-      }
-    | {
-        _key: string;
         _type: "linkInternal";
         label?: string;
         link:
@@ -659,18 +662,36 @@ export type SETTINGS_QUERY_RESULT = {
               _id: string;
               _type: "home";
               slug: Slug | null;
+              title: string | null;
             }
           | {
               _id: string;
               _type: "project";
               slug: Slug | null;
+              title: string | null;
             }
           | {
               _id: string;
               _type: "projects";
               slug: Slug | null;
+              title: string | null;
+            }
+          | {
+              _id: string;
+              _type: "tag";
+              slug: Slug | null;
+              title: string | null;
             }
           | null;
+        _id: null;
+        slug: null;
+        title: null;
+      }
+    | {
+        _key: string;
+        _type: "linkExternal";
+        label?: string;
+        link?: string;
       }
     | {
         _key: string;
@@ -679,6 +700,12 @@ export type SETTINGS_QUERY_RESULT = {
         target?: "infos";
       }
   > | null;
+  navTags: Array<{
+    _id: string;
+    _type: "tag";
+    slug: Slug | null;
+    title: string | null;
+  }> | null;
   message404: Array<
     | {
         children?: Array<{
@@ -691,15 +718,22 @@ export type SETTINGS_QUERY_RESULT = {
         listItem?: "bullet";
         markDefs: Array<
           | {
-              href?: string;
-              _type: "linkExternal";
-              _key: string;
-            }
-          | {
-              reference?: HomeReference | ProjectReference | ProjectsReference;
+              reference?:
+                | HomeReference
+                | ProjectReference
+                | ProjectsReference
+                | TagReference;
               _type: "linkInternal";
               _key: string;
               link: null;
+              _id: null;
+              slug: null;
+              title: null;
+            }
+          | {
+              href?: string;
+              _type: "linkExternal";
+              _key: string;
             }
         > | null;
         level?: number;
@@ -738,6 +772,30 @@ export type SETTINGS_QUERY_RESULT = {
       }
   > | null;
   customCss?: string;
+} | null;
+
+// Source: ../web/app/sanity-api/sanity-queries.tsx
+// Variable: CONTENT_INFOS_QUERY
+// Query: *[_type == "infos"][0]{  ...,}
+export type CONTENT_INFOS_QUERY_RESULT = {
+  _id: string;
+  _type: "infos";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  description?: string;
+  representation?: BlockContent;
+  clients?: Array<
+    {
+      _key: string;
+    } & LinkExternal
+  >;
+  follow?: Array<
+    {
+      _key: string;
+    } & LinkExternal
+  >;
 } | null;
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
@@ -817,7 +875,37 @@ export type HOME_QUERY_RESULT = {
       crop?: SanityImageCrop;
       _type: "image";
     } | null;
-    videoCover: null;
+    videoCover: {
+      asset: {
+        _id: string;
+        _type: "mux.videoAsset";
+        _createdAt: string;
+        _updatedAt: string;
+        _rev: string;
+        status?: string;
+        assetId?: string;
+        playbackId?: string;
+        filename?: string;
+        thumbTime?: number;
+        data?: MuxAssetData;
+        robotsJobs?: Array<
+          {
+            _key: string;
+          } & MuxRobotsJob
+        >;
+        robotsOutputs?: MuxRobotsOutputs;
+        robotsDirectiveRuns?: Array<
+          {
+            _key: string;
+          } & MuxRobotsDirectiveRun
+        >;
+        robotsPendingCreates?: Array<
+          {
+            _key: string;
+          } & MuxRobotsPendingCreate
+        >;
+      } | null;
+    } | null;
   }> | null;
 } | null;
 
@@ -877,7 +965,7 @@ export type PROJECT_QUERY_RESULT = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  videoover?: MuxVideo;
+  videoCover?: MuxVideo;
   media: Array<
     | {
         asset: {
@@ -944,15 +1032,138 @@ export type PROJECT_QUERY_RESULT = {
 } | null;
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
+// Variable: PROJECTS_QUERY
+// Query: *[_type == "projects" ][0]{  ...,  seo{    	...,	metaImage{			...,	asset->{		...,		url,		extension,		mimeType	}	}  },  "projects": *[_type == "project" && defined(slug.current)] | order(_createdAt desc){    		_id,	_type,	slug,	title,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},	videoCover{		asset->{			...		}	},	tags[]->{		...	}  }}
+export type PROJECTS_QUERY_RESULT = {
+  _id: string;
+  _type: "projects";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  seo: {
+    _type: "seo";
+    metaTitle?: string;
+    metaDescription?: string;
+    metaImage: {
+      asset: {
+        _id: string;
+        _type: "sanity.imageAsset";
+        _createdAt: string;
+        _updatedAt: string;
+        _rev: string;
+        originalFilename?: string;
+        label?: string;
+        title?: string;
+        description?: string;
+        altText?: string;
+        sha1hash?: string;
+        extension: string | null;
+        mimeType: string | null;
+        size?: number;
+        assetId?: string;
+        uploadId?: string;
+        path?: string;
+        url: string | null;
+        metadata?: SanityImageMetadata;
+        source?: SanityAssetSourceData;
+      } | null;
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
+  title?: string;
+  slug?: Slug;
+  items?: Array<
+    {
+      _key: string;
+    } & ProjectReference
+  >;
+  projects: Array<{
+    _id: string;
+    _type: "project";
+    slug: Slug | null;
+    title: string | null;
+    imageCover: {
+      asset: {
+        _id: string;
+        _type: "sanity.imageAsset";
+        _createdAt: string;
+        _updatedAt: string;
+        _rev: string;
+        originalFilename?: string;
+        label?: string;
+        title?: string;
+        description?: string;
+        altText?: string;
+        sha1hash?: string;
+        extension: string | null;
+        mimeType: string | null;
+        size?: number;
+        assetId?: string;
+        uploadId?: string;
+        path?: string;
+        url: string | null;
+        metadata?: SanityImageMetadata;
+        source?: SanityAssetSourceData;
+      } | null;
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+    videoCover: {
+      asset: {
+        _id: string;
+        _type: "mux.videoAsset";
+        _createdAt: string;
+        _updatedAt: string;
+        _rev: string;
+        status?: string;
+        assetId?: string;
+        playbackId?: string;
+        filename?: string;
+        thumbTime?: number;
+        data?: MuxAssetData;
+        robotsJobs?: Array<
+          {
+            _key: string;
+          } & MuxRobotsJob
+        >;
+        robotsOutputs?: MuxRobotsOutputs;
+        robotsDirectiveRuns?: Array<
+          {
+            _key: string;
+          } & MuxRobotsDirectiveRun
+        >;
+        robotsPendingCreates?: Array<
+          {
+            _key: string;
+          } & MuxRobotsPendingCreate
+        >;
+      } | null;
+    } | null;
+    tags: Array<{
+      _id: string;
+      _type: "tag";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      title?: string;
+      slug?: Slug;
+    }> | null;
+  }>;
+} | null;
+
+// Source: ../web/app/sanity-api/sanity-queries.tsx
 // Variable: ALL_PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(year desc){  		_id,	_type,	slug,	title,	subTitle,	year,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},  _updatedAt}
+// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc){  		_id,	_type,	slug,	title,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},	videoCover{		asset->{			...		}	},	tags[]->{		...	},  _updatedAt}
 export type ALL_PROJECTS_QUERY_RESULT = Array<{
   _id: string;
   _type: "project";
   slug: Slug | null;
   title: string | null;
-  subTitle: null;
-  year: null;
   imageCover: {
     asset: {
       _id: string;
@@ -981,16 +1192,58 @@ export type ALL_PROJECTS_QUERY_RESULT = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   } | null;
+  videoCover: {
+    asset: {
+      _id: string;
+      _type: "mux.videoAsset";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      status?: string;
+      assetId?: string;
+      playbackId?: string;
+      filename?: string;
+      thumbTime?: number;
+      data?: MuxAssetData;
+      robotsJobs?: Array<
+        {
+          _key: string;
+        } & MuxRobotsJob
+      >;
+      robotsOutputs?: MuxRobotsOutputs;
+      robotsDirectiveRuns?: Array<
+        {
+          _key: string;
+        } & MuxRobotsDirectiveRun
+      >;
+      robotsPendingCreates?: Array<
+        {
+          _key: string;
+        } & MuxRobotsPendingCreate
+      >;
+    } | null;
+  } | null;
+  tags: Array<{
+    _id: string;
+    _type: "tag";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    title?: string;
+    slug?: Slug;
+  }> | null;
   _updatedAt: string;
 }>;
 
 // Query TypeMap
 declare global {
   interface SanityQueries {
-    "*[_type == \"settings\"][0]{\n  ...,\n  navPrimary[]{\n    \n\t...,\n\t_type == 'linkInternal' => {\n\t\t\n\t...,\n\tlink->{\n\t\t\n\t_id,\n\t_type,\n\tslug\n\n\t}\n\n\t}\n\n  },\n  message404[]{\n    \n\t...,\n\tmarkDefs[]{\n\t\t...,\n\t\t_type == 'linkInternal' => {\n\t\t\t\n\t...,\n\tlink->{\n\t\t\n\t_id,\n\t_type,\n\tslug\n\n\t}\n\n\t\t}\n\t},\n\t_type == 'embed' => {\n\t\t...\n\t},\n\t_type == 'image' => {\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  }\n}": SETTINGS_QUERY_RESULT;
+    "*[_type == \"settings\"][0]{\n  ...,\n  navPrimary[]{\n    \n\t...,\n\t_type == 'linkInternal' => {\n\t\t\n\t...,\n\tlink->{\n\t\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n\t},\n\t// submenu[]{\n\t// \t...,\n\t// \tlink->{\n\t// \t\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n\t// \t},\n\t// }\n\n\t}\n\n  },\n  navTags[]->{\n    \n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n  },\n  message404[]{\n    \n\t...,\n\tmarkDefs[]{\n\t\t...,\n\t\t_type == 'linkInternal' => {\n\t\t\t\n\t...,\n\tlink->{\n\t\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n\t},\n\t// submenu[]{\n\t// \t...,\n\t// \tlink->{\n\t// \t\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n\t// \t},\n\t// }\n\n\t\t}\n\t},\n\t_type == 'embed' => {\n\t\t...\n\t},\n\t_type == 'image' => {\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  }\n}": SETTINGS_QUERY_RESULT;
+    '*[_type == "infos"][0]{\n  ...,\n\n}': CONTENT_INFOS_QUERY_RESULT;
     '*[_type == "home"][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  projects[]->{\n    _id,\n    _type,\n    slug,\n    title,\n    imageCover{\n      \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n    },\n    videoCover{\n      asset->{\n        ...\n      }\n    }\n  }\n}': HOME_QUERY_RESULT;
     '*[_type == "project" && slug.current == $slug][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  media[]{\n    _type == "image" => {\n      \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n    },\n    _type == "mux.video" => {\n      asset->{\n        ...\n      }\n    }\n  }\n}': PROJECT_QUERY_RESULT;
-    '*[_type == "project" && defined(slug.current)] | order(year desc){\n  \n\t\n\t_id,\n\t_type,\n\tslug\n,\n\ttitle,\n\tsubTitle,\n\tyear,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n,\n  _updatedAt\n}': ALL_PROJECTS_QUERY_RESULT;
+    '*[_type == "projects" ][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  "projects": *[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\tvideoCover{\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n\n  }\n}': PROJECTS_QUERY_RESULT;
+    '*[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n  \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\tvideoCover{\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n,\n  _updatedAt\n}': ALL_PROJECTS_QUERY_RESULT;
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

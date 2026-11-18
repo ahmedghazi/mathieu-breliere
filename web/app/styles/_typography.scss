@@ -88,27 +88,22 @@ h6 {
   }
 }
 /* Links */
-a,
-a[aria-current="page"] {
-  text-decoration: none;
-  // &:focus,
-  // &:active,
-  &:hover {
-    // color: var(--color-hover);
-    color: var(--color-hover);
-  }
-  &.is-active {
-    color: var(--color-hover);
-  }
-  &.is-current-page {
-    color: var(--color-hover);
-  }
-}
-a[aria-current="page"],
-a.is-current,
-button.is-current {
-  color: var(--color-blue);
-}
+// a,
+// a[aria-current="page"] {
+//   text-decoration: none;
+//   // &:focus,
+//   // &:active,
+//   &:hover {
+//     // color: var(--color-hover);
+//     color: var(--color-secondary);
+//   }
+//   &.is-active {
+//     color: var(--color-secondary);
+//   }
+//   &.is-current-page {
+//     color: var(--color-secondary);
+//   }
+// }
 
 /* Text elements */
 .text {
@@ -119,21 +114,7 @@ button.is-current {
     color: var(--color-secondary);
   }
 }
-// p,
-// .text p {
-//   font-family: var(--font-secondary);
 
-//   margin-bottom: 1em;
-//   &:last-child {
-//     margin-bottom: 0;
-//   }
-//   &:empty {
-//     display: none;
-//   }
-//   a {
-//     font-family: var(--font-primary);
-//   }
-// }
 .ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -145,24 +126,6 @@ button.is-current {
 }
 .sep-dash {
   padding: 0 0.3em;
-}
-
-.text {
-  h2,
-  h3 {
-    margin-bottom: 1em;
-  }
-  p {
-    // text-indent: 1em;
-    margin-bottom: 1em;
-    line-height: 1.2;
-    @media all and (min-width: variables.$md) {
-      line-height: 1.12;
-    }
-  }
-  // p:first-child {
-  //   text-indent: 0;
-  // }
 }
 
 .tabnum {
@@ -182,6 +145,7 @@ strong {
 
 button {
   background: transparent;
+  cursor: pointer;
 }
 
 input {

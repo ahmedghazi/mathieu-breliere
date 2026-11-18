@@ -1,0 +1,24 @@
+.card--project {
+  a {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  // figure {
+  // }
+  // h2 {
+  // }
+}
+.b-l {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--spacing-xs) * -1);
+    top: -0.1em;
+    width: 1px;
+    height: 100%;
+    background-color: var(--color-secondary);
+    // background: red;
+  }
+}

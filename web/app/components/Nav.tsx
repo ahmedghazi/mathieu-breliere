@@ -5,47 +5,48 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SETTINGS_QUERY_RESULT } from "../sanity-api/types/sanity.types";
 import { usePageContext } from "../context/PageContext";
+import NavTags from "./NavTags";
 
 type Props = {
-  input: SETTINGS_QUERY_RESULT["navPrimary"];
+  navPrimary: NonNullable<SETTINGS_QUERY_RESULT>["navPrimary"];
+  navTags: NonNullable<SETTINGS_QUERY_RESULT>["navTags"];
 };
 
-const Nav = ({ input }: Props) => {
+const Nav = ({ navPrimary, navTags }: Props) => {
   const { isInfos, setIsInfos } = usePageContext();
   const pathname = usePathname();
-  const handleClick = (target: string) => {
-    const element = document.getElementById(target);
-    if (element) {
-      element.classList.toggle("is-active");
-    }
-  };
+  const isProjects = pathname.includes("/index");
+
   return (
     <nav>
-      {/* <LocalesSwitcher /> */}
-      <div className='bottom'>
+      <div className='b-l'>
         <ul className='menu'>
-          {input?.map((item) => (
-            <li key={item._key}>
+          {navPrimary?.map((item) => (
+            <li key={item._key} className={""}>
               {item._type === "linkInternal" && (
-                <Link
-                  className={
-                    pathname === _linkResolver(item.link) ? "is-active" : ""
-                  }
-                  href={_linkResolver(item.link)}>
-                  {item.label}
-                </Link>
+                <>
+                  <Link
+                    className={
+                      pathname === _linkResolver(item.link) ? "is-active" : ""
+                    }
+                    href={_linkResolver(item.link)}>
+                    <span>{item.label}</span>
+                  </Link>
+                </>
               )}
               {item._type === "linkOverlay" && (
                 <button
                   className={isInfos ? "is-active" : ""}
                   onClick={() => setIsInfos(!isInfos)}>
-                  {item.label}
+                  <span>{item.label}</span>
                 </button>
               )}
             </li>
           ))}
         </ul>
       </div>
+      {isProjects && <NavTags input={navTags} />}
+      {/* <pre>{JSON.stringify(navTags, null, 2)}</pre> */}
     </nav>
   );
 };

@@ -1,18 +1,17 @@
 import { defineQuery } from "next-sanity";
 import { sanityFetch } from "./sanity.live";
 import {
-  Home,
+  ALL_PROJECTS_QUERY_RESULT,
   HOME_QUERY_RESULT,
-  Project,
+  Infos,
   PROJECT_QUERY_RESULT,
-  Settings,
+  PROJECTS_QUERY_RESULT,
+  SETTINGS_QUERY_RESULT,
 } from "./types/sanity.types";
 import {
   blockContent,
   image,
   link,
-  localeBlockContent,
-  modules,
   projectCard,
   reference,
   seo,
@@ -35,14 +34,18 @@ export const SETTINGS_QUERY = defineQuery(`*[_type == "settings"][0]{
   navPrimary[]{
     ${link}
   },
+  navTags[]->{
+    ${reference}
+  },
   message404[]{
     ${blockContent}
   }
 }`);
 
-export async function getSettings(): Promise<Settings> {
+export async function getSettings(): Promise<SETTINGS_QUERY_RESULT> {
   const { data } = await sanityFetch({ query: SETTINGS_QUERY });
-  return data as Settings;
+  // StegaString<"infos"> (linkOverlay.target) n'est pas assignable au littéral
+  return data as SETTINGS_QUERY_RESULT;
 }
 
 /**
@@ -53,7 +56,7 @@ export const CONTENT_INFOS_QUERY = defineQuery(`*[_type == "infos"][0]{
 
 }`);
 
-export async function getContentInfos(): Promise<any> {
+export async function getContentInfos(): Promise<Infos> {
   const { data } = await sanityFetch({ query: CONTENT_INFOS_QUERY });
   return data;
 }
@@ -84,7 +87,7 @@ export const HOME_QUERY = defineQuery(`*[_type == "home"][0]{
 
 export async function getHome(stega?: boolean): Promise<HOME_QUERY_RESULT> {
   const { data } = await sanityFetch({ query: HOME_QUERY, stega });
-  return data as Home;
+  return data;
 }
 
 /**
@@ -117,16 +120,44 @@ export async function getProject(
     params: { slug: slug },
     stega,
   });
-  return data as Project;
+  return data;
+}
+
+/**
+ * PROJECTS
+ */
+
+export const PROJECTS_QUERY = defineQuery(`*[_type == "projects" ][0]{
+  ...,
+  seo{
+    ${seo}
+  },
+  "projects": *[_type == "project" && defined(slug.current)] | order(_createdAt desc){
+    ${projectCard}
+  }
+}`);
+
+export async function getProjects(
+  slug: string,
+  stega?: boolean,
+): Promise<PROJECTS_QUERY_RESULT> {
+  const { data } = await sanityFetch({
+    query: PROJECTS_QUERY,
+    params: { slug: slug },
+    stega,
+  });
+  return data;
 }
 
 export const ALL_PROJECTS_QUERY =
-  defineQuery(`*[_type == "project" && defined(slug.current)] | order(year desc){
+  defineQuery(`*[_type == "project" && defined(slug.current)] | order(_createdAt desc){
   ${projectCard},
   _updatedAt
 }`);
 
-export async function getAllProjects(stega?: boolean): Promise<Project[]> {
+export async function getAllProjects(
+  stega?: boolean,
+): Promise<ALL_PROJECTS_QUERY_RESULT> {
   const { data } = await sanityFetch({ query: ALL_PROJECTS_QUERY, stega });
-  return data as Project[];
+  return data;
 }

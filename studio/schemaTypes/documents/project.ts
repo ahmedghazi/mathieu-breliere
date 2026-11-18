@@ -63,8 +63,8 @@ export default defineType({
       group: 'editorial',
     }),
     defineField({
-      name: 'videoover',
-      title: 'Image de couverture',
+      name: 'videoCover',
+      title: 'Video de couverture',
       type: 'mux.video',
       group: 'editorial',
     }),

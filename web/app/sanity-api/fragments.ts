@@ -10,7 +10,8 @@
 export const reference = `
 	_id,
 	_type,
-	slug
+	slug,
+	title
 `;
 
 export const image = `
@@ -37,7 +38,13 @@ export const linkInternal = `
 	...,
 	link->{
 		${reference}
-	}
+	},
+	// submenu[]{
+	// 	...,
+	// 	link->{
+	// 		${reference}
+	// 	},
+	// }
 `;
 
 // linkInternal | linkExternal
@@ -67,16 +74,6 @@ export const blockContent = `
 	}
 `;
 
-export const localeBlockContent = `
-	...,
-	fr[]{
-		${blockContent}
-	},
-	en[]{
-		${blockContent}
-	}
-`;
-
 /**
  * MEDIA
  */
@@ -92,56 +89,15 @@ export const figure = `
  */
 export const projectCard = `
 	${reference},
-	title,
-	subTitle,
-	year,
 	imageCover{
 		${image}
-	}
-`;
-
-/**
- * MODULES (modules[]{ ${modules} })
- */
-export const moduleImagesUI = `
-	_type == 'imagesUI' => {
-		items[]{
-			${image}
+	},
+	videoCover{
+		asset->{
+			...
 		}
+	},
+	tags[]->{
+		...
 	}
-`;
-
-export const moduleTextsUI = `
-	_type == 'textsUI' => {
-		items[]{
-			${localeBlockContent}
-		}
-	}
-`;
-
-export const moduleListProjectsUI = `
-	_type == 'listProjectsUI' => {
-		items[]->{
-			${projectCard}
-		}
-	}
-`;
-
-export const moduleListKeyValUI = `
-	_type == 'listKeyValUI' => {
-		items[]{
-			...,
-			val{
-				${localeBlockContent}
-			}
-		}
-	}
-`;
-
-export const modules = `
-	...,
-	${moduleImagesUI},
-	${moduleTextsUI},
-	${moduleListProjectsUI},
-	${moduleListKeyValUI}
 `;

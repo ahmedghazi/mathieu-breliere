@@ -14,7 +14,11 @@ header {
   }
 
   nav {
-    li {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: var(--spacing-sm);
+    ul.menu li {
       button {
         cursor: pointer;
       }
@@ -24,6 +28,31 @@ header {
           &::before {
             content: ".";
           }
+        }
+      }
+    }
+    .nav-tags {
+      position: relative;
+      &:not(.is-hovered)::after {
+        transition: transform 0.2s var(--cubic);
+      }
+      &::after {
+        --size: 0.563em;
+        content: "";
+        display: block;
+        width: var(--size);
+        height: 1px;
+        background-color: var(--color-secondary);
+        position: absolute;
+        top: 0;
+        left: calc(var(--spacing-xs) * -1 - var(--size) / 2);
+        transform: translateY(var(--y));
+      }
+      button {
+        color: var(--color-secondary);
+        &:hover,
+        &.is-active {
+          color: var(--color-primary);
         }
       }
     }

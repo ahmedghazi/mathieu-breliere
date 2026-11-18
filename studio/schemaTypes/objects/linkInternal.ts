@@ -9,11 +9,14 @@ export default defineField({
   preview: {
     select: {
       label: `label`,
+      withSubmenu: 'withSubmenu',
+      link: 'link.slug.current',
     },
     prepare(selection) {
-      const {label} = selection
+      const {label, withSubmenu, link} = selection
       return {
         title: label,
+        subtitle: withSubmenu ? 'With submenu' : '',
         // subtitle: "test",
       }
     },
@@ -29,5 +32,39 @@ export default defineField({
       weak: true,
       to: linkInternalTypes,
     }),
+    // defineField({
+    //   name: 'withSubmenu',
+    //   type: 'boolean',
+    // }),
+    // defineField({
+    //   name: 'submenu',
+    //   type: 'array',
+    //   // Objet inline (sans withSubmenu/submenu) pour limiter à 1 niveau
+    //   of: [
+    //     {
+    //       type: 'object',
+    //       name: 'linkInternalSub',
+    //       title: 'Link Internal',
+    //       preview: {
+    //         select: {
+    //           title: 'label',
+    //         },
+    //       },
+    //       fields: [
+    //         defineField({
+    //           name: 'label',
+    //           type: 'string',
+    //         }),
+    //         defineField({
+    //           name: 'link',
+    //           type: 'reference',
+    //           weak: true,
+    //           to: linkInternalTypes,
+    //         }),
+    //       ],
+    //     },
+    //   ],
+    //   hidden: ({parent}) => !parent?.withSubmenu,
+    // }),
   ],
 })

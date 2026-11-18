@@ -7,7 +7,9 @@ import React, {
   useState,
 } from "react";
 import { usePathname } from "next/navigation";
+import { NavTag } from "../sanity-api/types";
 // import { getSettings } from "../utils/sanity-queries";
+
 
 type PageContextType = {
   settings: {
@@ -15,6 +17,8 @@ type PageContextType = {
   };
   isInfos: boolean;
   setIsInfos: (isInfos: boolean) => void;
+  tag: NavTag | null;
+  setTag: (tag: NavTag | null) => void;
 };
 
 const PageContext = createContext<PageContextType>({
@@ -23,6 +27,8 @@ const PageContext = createContext<PageContextType>({
   },
   isInfos: false,
   setIsInfos: () => {},
+  tag: null,
+  setTag: () => {},
 });
 
 interface PageContextProps {
@@ -36,6 +42,7 @@ export const PageContextProvider = (props: PageContextProps) => {
   const pathname = usePathname();
   // console.log(pathname);
   const [isInfos, setIsInfos] = useState<boolean>(false);
+  const [tag, setTag] = useState<NavTag | null>(null);
   const settings = {
     pathname,
   };
@@ -69,7 +76,8 @@ export const PageContextProvider = (props: PageContextProps) => {
   };
 
   return (
-    <PageContext.Provider value={{ settings, isInfos, setIsInfos }}>
+    <PageContext.Provider
+      value={{ settings, isInfos, setIsInfos, tag, setTag }}>
       {children}
     </PageContext.Provider>
   );

@@ -9,10 +9,34 @@
     justify-content: space-between;
     gap: var(--spacing-sm);
   }
+  h1 {
+    margin-bottom: 1em;
+  }
+  details {
+    font-size: var(--text-sm);
+    &[open] {
+      summary::marker {
+        display: none;
+        content: ".";
+      }
+    }
+    summary {
+      cursor: pointer;
+      color: var(--color-secondary);
+      &::marker {
+        display: none;
+        content: "";
+      }
+    }
+  }
   .content__nav {
     display: flex;
     align-items: end;
     gap: var(--spacing-sm);
+    .media-controls {
+      height: var(--txt-h);
+      overflow-y: auto;
+    }
     li {
       cursor: pointer;
       position: relative;

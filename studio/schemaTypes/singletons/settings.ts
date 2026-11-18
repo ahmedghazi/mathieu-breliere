@@ -67,17 +67,18 @@ export default defineType({
       ],
       group: 'header',
     }),
-    // defineField({
-    //   name: 'navSocial',
-    //   title: 'Naviguation Social',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'linkIcon',
-    //     },
-    //   ],
-    //   group: 'header',
-    // }),
+    defineField({
+      name: 'navTags',
+      title: 'Naviguation Tags',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'tag'}],
+        },
+      ],
+      group: 'header',
+    }),
     // defineField({
     //   name: 'navSecondary',
     //   title: 'Naviguation Secondary',
