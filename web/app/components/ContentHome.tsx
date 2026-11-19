@@ -6,6 +6,7 @@ import { _linkResolver } from "../sanity-api/utils";
 import Figure from "./ui/Figure";
 import AsciiTree from "./ui/AsciiTree";
 import MediaProject from "./MediaProject";
+import ScrollerVirtual from "./ui/ScrollerVirtual";
 
 type Props = {
   input: HOME_QUERY_RESULT;
@@ -20,37 +21,35 @@ const ContentHome = ({ input }: Props) => {
   return (
     <div className='content--home'>
       <div className='media'>
-        {current && (
-          <>
-            {/* {current.imageCover && current.imageCover.asset && (
-              <Figure asset={current.imageCover.asset} alt={current.title} />
-            )} */}
-            {/* {current.videoCover && (
-              <video src={current.videoCover} alt={current.title} />
-            )} */}
+        <ScrollerVirtual
+          index={index}
+          globalWheel
+          onIndexChange={(index) => setIndex(index)}>
+          {/* {current && (
             <MediaProject input={current} playerWithControls={true} priority />
-          </>
-        )}
+          )} */}
+          {input?.projects?.map((project, index) => (
+            <MediaProject
+              key={index}
+              input={project}
+              playerWithControls={true}
+              priority
+            />
+          ))}
+        </ScrollerVirtual>
       </div>
+
       <div className='txt'>
         <div className='spacer'></div>
         <div className='body'>
           <AsciiTree withBottom>
             <div className='list hide-sb' ref={ref}>
               <ul className=''>
-                {input?.projects?.map((project, index) => (
-                  <li key={index} data-index={index}>
+                {input?.projects?.map((project, i) => (
+                  <li key={i} data-index={index}>
                     <Link
-                      onMouseEnter={() => setIndex(index)}
-                      href={_linkResolver(project)}>
-                      {project.title}
-                    </Link>
-                  </li>
-                ))}
-                {input?.projects?.map((project, index) => (
-                  <li key={index} data-index={index}>
-                    <Link
-                      onMouseEnter={() => setIndex(index)}
+                      onMouseEnter={() => setIndex(i)}
+                      className={index === i ? "is-active" : ""}
                       href={_linkResolver(project)}>
                       {project.title}
                     </Link>

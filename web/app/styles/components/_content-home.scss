@@ -7,13 +7,15 @@
 
   .media {
     .media-project {
-      height: 100%;
+      // hauteur du ScrollerVirtual (container), chaque projet = une section
+      height: 100cqh;
     }
   }
   .list {
     overflow-y: auto;
     max-height: var(--txt-h);
     color: var(--color-secondary);
+    a.is-active,
     a:hover {
       color: var(--color-primary);
     }
