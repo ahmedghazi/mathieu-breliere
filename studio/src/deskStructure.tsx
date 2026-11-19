@@ -12,6 +12,7 @@ const hiddenDocTypes = (listItem: ListItemBuilder) => {
   }
 
   return ![
+    'settings',
     'home',
     'project',
     'projects',
@@ -19,11 +20,13 @@ const hiddenDocTypes = (listItem: ListItemBuilder) => {
     'infos',
     'media.folder',
     'media.tag',
-    'settings',
+    'mux.videoAsset',
+    'mediaImage',
+    'mediaVideo',
   ].includes(id)
 }
 
-export const structure = (S) =>
+export const structure = (S: any) =>
   S.list()
     .title('Base')
     .items([
@@ -31,6 +34,12 @@ export const structure = (S) =>
         .title('Home (Selected)')
         .schemaType('home')
         .child(S.editor().title('Home').schemaType('home').documentId('home')),
+      S.divider(),
+
+      S.listItem()
+        .title('Infos')
+        .schemaType('infos')
+        .child(S.editor().title('Infos').schemaType('infos').documentId('infos')),
       S.divider(),
 
       S.listItem()
@@ -42,9 +51,14 @@ export const structure = (S) =>
       S.divider(),
 
       S.listItem()
-        .title('Infos')
-        .schemaType('infos')
-        .child(S.editor().title('Infos').schemaType('infos').documentId('infos')),
+        .title('mediaVideo')
+        .schemaType('mediaVideo')
+        .child(S.documentTypeList('mediaVideo')),
+      S.listItem()
+        .title('mediaImage')
+        .schemaType('mediaImage')
+        .child(S.documentTypeList('mediaImage')),
+
       S.divider(),
 
       S.listItem()

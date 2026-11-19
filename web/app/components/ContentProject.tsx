@@ -1,12 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import { Project } from "../sanity-api/types/sanity.types";
+import { ProjectData } from "../sanity-api/types";
 import Figure from "./ui/Figure";
 import { PortableText } from "@portabletext/react";
 import portableTextComponents from "../sanity-api/portableTextComponents";
+import MuxPlayer from "./ui/mux-player";
 
 type Props = {
-  input: Project;
+  input: ProjectData;
 };
 
 const ContentProject = ({ input }: Props) => {
@@ -17,6 +18,23 @@ const ContentProject = ({ input }: Props) => {
       <div className='media'>
         {media?._type === "image" && (
           <Figure asset={media.asset} alt={input.title} />
+        )}
+        {media?._type === "mediaImage" && (
+          <Figure
+            asset={media.image?.asset}
+            alt={media.caption || input.title}
+          />
+        )}
+        {media?._type === "mediaVideo" && media.video?.asset?.playbackId && (
+          <MuxPlayer
+            key={media._key}
+            playbackId={media.video.asset.playbackId}
+            title={media.caption || input.title}
+            aspectRatio={media.video.asset.data?.aspect_ratio}
+            priority
+            autoPlay
+            loop
+          />
         )}
       </div>
       <div className='txt'>
@@ -38,24 +56,31 @@ const ContentProject = ({ input }: Props) => {
             <div className='pagination'>pagination</div>
             <div className='media-controls hide-sb'>
               <ul>
+                {/* <li>{index}</li> */}
                 {input.media?.map((media, i) => (
                   <li
-                    key={i}
+                    key={media._key}
                     className={index === i ? "is-active" : ""}
                     onClick={() => setIndex(i)}
                     onMouseEnter={() => setIndex(i)}
                     aria-label={`View media ${i + 1}`}>
-                    <Figure asset={media.asset} alt={input.title} width={132} />
-                  </li>
-                ))}
-                {input.media?.map((media, i) => (
-                  <li
-                    key={i}
-                    className={index === i ? "is-active" : ""}
-                    onClick={() => setIndex(i)}
-                    onMouseEnter={() => setIndex(i)}
-                    aria-label={`View media ${i + 1}`}>
-                    <Figure asset={media.asset} alt={input.title} width={132} />
+                    {media._type === "mediaVideo" ? (
+                      <img
+                        src={`https://image.mux.com/${media.video?.asset?.playbackId}/thumbnail.webp?time=0&width=264`}
+                        alt={media.caption || input.title || ""}
+                        width={132}
+                      />
+                    ) : (
+                      <Figure
+                        asset={
+                          media._type === "mediaImage"
+                            ? media.image?.asset
+                            : media.asset
+                        }
+                        alt={input.title}
+                        width={132}
+                      />
+                    )}
                   </li>
                 ))}
               </ul>

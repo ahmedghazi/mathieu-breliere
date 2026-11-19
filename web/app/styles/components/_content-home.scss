@@ -5,6 +5,11 @@
   flex-direction: column;
   gap: var(--spacing-sm);
 
+  .media {
+    .media-project {
+      height: 100%;
+    }
+  }
   .list {
     overflow-y: auto;
     max-height: var(--txt-h);

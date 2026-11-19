@@ -10,8 +10,8 @@ import linkExternal from './objects/linkExternal'
 import linkInternal from './objects/linkInternal'
 import linkIcon from './objects/linkIcon'
 import linkOverlay from './objects/linkOverlay'
-
-/** modules */
+import mediaImage from './objects/mediaImage'
+import mediaVideo from './objects/mediaVideo'
 import {seoSchema} from './features/seo'
 
 /** opt-in localization (see schemaTypes/locale) — not used by any field below by default */
@@ -33,5 +33,8 @@ export const schemaTypes = [
   linkInternal,
   linkIcon,
   linkOverlay,
+
+  mediaImage,
+  mediaVideo,
 ]
 export default schemaTypes

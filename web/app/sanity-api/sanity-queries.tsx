@@ -70,18 +70,7 @@ export const HOME_QUERY = defineQuery(`*[_type == "home"][0]{
     ${seo}
   },
   projects[]->{
-    _id,
-    _type,
-    slug,
-    title,
-    imageCover{
-      ${image}
-    },
-    videoCover{
-      asset->{
-        ...
-      }
-    }
+    ${projectCard}
   }
 }`);
 
@@ -100,12 +89,28 @@ export const PROJECT_QUERY =
     ${seo}
   },
   media[]{
+    _key,
     _type == "image" => {
       ${image}
     },
-    _type == "mux.video" => {
-      asset->{
-        ...
+    // mediaImage / mediaVideo are referenced documents: dereference them
+    _type == "reference" => {
+      ...@->{
+        _type,
+        _id,
+        caption,
+        _type == "mediaImage" => {
+          image{
+            ${image}
+          }
+        },
+        _type == "mediaVideo" => {
+          video{
+            asset->{
+              ...
+            }
+          }
+        }
       }
     }
   }

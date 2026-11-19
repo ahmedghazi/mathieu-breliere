@@ -64,6 +64,13 @@
         grid-column: span 2 / span 2;
       }
       .content__nav {
+        .media-controls {
+          background-color: red;
+          width: 100%;
+        }
+        img {
+          width: 100%;
+        }
         .pagination {
           display: none;
         }

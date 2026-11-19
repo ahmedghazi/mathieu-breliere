@@ -92,7 +92,7 @@ export const projectCard = `
 	imageCover{
 		${image}
 	},
-	videoCover{
+	"videoCover": coalesce(videoCover, videocover){
 		asset->{
 			...
 		}

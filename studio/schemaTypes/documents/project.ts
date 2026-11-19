@@ -73,7 +73,8 @@ export default defineType({
       name: 'media',
       title: 'Media',
       type: 'array',
-      of: [{type: 'mux.video'}, {type: 'image'}],
+      of: [{type: 'image'}, {type: 'reference', to: [{type: 'mediaVideo'}, {type: 'mediaImage'}]}],
+      // of: [{type: 'reference', to: [{type: 'mediaVideo'}, {type: 'mediaImage'}]}],
       group: 'editorial',
     }),
 

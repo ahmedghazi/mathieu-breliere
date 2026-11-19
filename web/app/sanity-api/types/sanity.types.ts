@@ -35,10 +35,26 @@ export type MaxScores = {
   violence?: number;
 };
 
-export type LinkOverlay = {
-  _type: "linkOverlay";
-  label?: string;
-  target?: "infos";
+export type MediaVideo = {
+  _id: string;
+  _type: "mediaVideo";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  caption?: string;
+  video?: MuxVideo;
+};
+
+export type MuxVideoAssetReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "mux.videoAsset";
+};
+
+export type MuxVideo = {
+  _type: "mux.video";
+  asset?: MuxVideoAssetReference;
 };
 
 export type SanityImageAssetReference = {
@@ -48,11 +64,14 @@ export type SanityImageAssetReference = {
   [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
 };
 
-export type LinkIcon = {
-  _type: "linkIcon";
-  label?: string;
-  link?: string;
-  icon?: {
+export type MediaImage = {
+  _id: string;
+  _type: "mediaImage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  caption?: string;
+  image?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
@@ -75,6 +94,25 @@ export type SanityImageHotspot = {
   y?: number;
   height?: number;
   width?: number;
+};
+
+export type LinkOverlay = {
+  _type: "linkOverlay";
+  label?: string;
+  target?: "infos";
+};
+
+export type LinkIcon = {
+  _type: "linkIcon";
+  label?: string;
+  link?: string;
+  icon?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
 };
 
 export type ProjectReference = {
@@ -219,6 +257,20 @@ export type Settings = {
   customCss?: string;
 };
 
+export type MediaVideoReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "mediaVideo";
+};
+
+export type MediaImageReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "mediaImage";
+};
+
 export type Project = {
   _id: string;
   _type: "project";
@@ -242,9 +294,6 @@ export type Project = {
   };
   videoCover?: MuxVideo;
   media?: Array<
-    | ({
-        _key: string;
-      } & MuxVideo)
     | {
         asset?: SanityImageAssetReference;
         media?: unknown;
@@ -253,6 +302,8 @@ export type Project = {
         _type: "image";
         _key: string;
       }
+    | MediaVideoReference
+    | MediaImageReference
   >;
   credits?: BlockContent;
 };
@@ -303,18 +354,6 @@ export type Projects = {
       _key: string;
     } & ProjectReference
   >;
-};
-
-export type MuxVideoAssetReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "mux.videoAsset";
-};
-
-export type MuxVideo = {
-  _type: "mux.video";
-  asset?: MuxVideoAssetReference;
 };
 
 export type MuxVideoAsset = {
@@ -596,11 +635,15 @@ export type AllSanitySchemaTypes =
   | Summarize
   | Moderate
   | MaxScores
-  | LinkOverlay
+  | MediaVideo
+  | MuxVideoAssetReference
+  | MuxVideo
   | SanityImageAssetReference
-  | LinkIcon
+  | MediaImage
   | SanityImageCrop
   | SanityImageHotspot
+  | LinkOverlay
+  | LinkIcon
   | ProjectReference
   | ProjectsReference
   | HomeReference
@@ -611,13 +654,13 @@ export type AllSanitySchemaTypes =
   | Seo
   | Infos
   | Settings
+  | MediaVideoReference
+  | MediaImageReference
   | Project
   | Tag
   | Slug
   | Home
   | Projects
-  | MuxVideoAssetReference
-  | MuxVideo
   | MuxVideoAsset
   | MuxRobotsOutputs
   | MuxAssetData
@@ -800,7 +843,7 @@ export type CONTENT_INFOS_QUERY_RESULT = {
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
 // Variable: HOME_QUERY
-// Query: *[_type == "home"][0]{  ...,  seo{    	...,	metaImage{			...,	asset->{		...,		url,		extension,		mimeType	}	}  },  projects[]->{    _id,    _type,    slug,    title,    imageCover{      	...,	asset->{		...,		url,		extension,		mimeType	}    },    videoCover{      asset->{        ...      }    }  }}
+// Query: *[_type == "home"][0]{  ...,  seo{    	...,	metaImage{			...,	asset->{		...,		url,		extension,		mimeType	}	}  },  projects[]->{    		_id,	_type,	slug,	title,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},	"videoCover": coalesce(videoCover, videocover){		asset->{			...		}	},	tags[]->{		...	}  }}
 export type HOME_QUERY_RESULT = {
   _id: string;
   _type: "home";
@@ -906,12 +949,21 @@ export type HOME_QUERY_RESULT = {
         >;
       } | null;
     } | null;
+    tags: Array<{
+      _id: string;
+      _type: "tag";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      title?: string;
+      slug?: Slug;
+    }> | null;
   }> | null;
 } | null;
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project" && slug.current == $slug][0]{  ...,  seo{    	...,	metaImage{			...,	asset->{		...,		url,		extension,		mimeType	}	}  },  media[]{    _type == "image" => {      	...,	asset->{		...,		url,		extension,		mimeType	}    },    _type == "mux.video" => {      asset->{        ...      }    }  }}
+// Query: *[_type == "project" && slug.current == $slug][0]{  ...,  seo{    	...,	metaImage{			...,	asset->{		...,		url,		extension,		mimeType	}	}  },  media[]{    _key,    _type == "image" => {      	...,	asset->{		...,		url,		extension,		mimeType	}    },    // mediaImage / mediaVideo are referenced documents: dereference them    _type == "reference" => {      ...@->{        _type,        _id,        caption,        _type == "mediaImage" => {          image{            	...,	asset->{		...,		url,		extension,		mimeType	}          }        },        _type == "mediaVideo" => {          video{            asset->{              ...            }          }        }      }    }  }}
 export type PROJECT_QUERY_RESULT = {
   _id: string;
   _type: "project";
@@ -968,6 +1020,78 @@ export type PROJECT_QUERY_RESULT = {
   videoCover?: MuxVideo;
   media: Array<
     | {
+        _key: null;
+        _type: "mediaImage";
+        _id: string;
+        caption: string | null;
+        image: {
+          asset: {
+            _id: string;
+            _type: "sanity.imageAsset";
+            _createdAt: string;
+            _updatedAt: string;
+            _rev: string;
+            originalFilename?: string;
+            label?: string;
+            title?: string;
+            description?: string;
+            altText?: string;
+            sha1hash?: string;
+            extension: string | null;
+            mimeType: string | null;
+            size?: number;
+            assetId?: string;
+            uploadId?: string;
+            path?: string;
+            url: string | null;
+            metadata?: SanityImageMetadata;
+            source?: SanityAssetSourceData;
+          } | null;
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          _type: "image";
+        } | null;
+      }
+    | {
+        _key: null;
+        _type: "mediaVideo";
+        _id: string;
+        caption: string | null;
+        video: {
+          asset: {
+            _id: string;
+            _type: "mux.videoAsset";
+            _createdAt: string;
+            _updatedAt: string;
+            _rev: string;
+            status?: string;
+            assetId?: string;
+            playbackId?: string;
+            filename?: string;
+            thumbTime?: number;
+            data?: MuxAssetData;
+            robotsJobs?: Array<
+              {
+                _key: string;
+              } & MuxRobotsJob
+            >;
+            robotsOutputs?: MuxRobotsOutputs;
+            robotsDirectiveRuns?: Array<
+              {
+                _key: string;
+              } & MuxRobotsDirectiveRun
+            >;
+            robotsPendingCreates?: Array<
+              {
+                _key: string;
+              } & MuxRobotsPendingCreate
+            >;
+          } | null;
+        } | null;
+      }
+    | {
+        _key: string;
         asset: {
           _id: string;
           _type: "sanity.imageAsset";
@@ -994,38 +1118,6 @@ export type PROJECT_QUERY_RESULT = {
         hotspot?: SanityImageHotspot;
         crop?: SanityImageCrop;
         _type: "image";
-        _key: string;
-      }
-    | {
-        asset: {
-          _id: string;
-          _type: "mux.videoAsset";
-          _createdAt: string;
-          _updatedAt: string;
-          _rev: string;
-          status?: string;
-          assetId?: string;
-          playbackId?: string;
-          filename?: string;
-          thumbTime?: number;
-          data?: MuxAssetData;
-          robotsJobs?: Array<
-            {
-              _key: string;
-            } & MuxRobotsJob
-          >;
-          robotsOutputs?: MuxRobotsOutputs;
-          robotsDirectiveRuns?: Array<
-            {
-              _key: string;
-            } & MuxRobotsDirectiveRun
-          >;
-          robotsPendingCreates?: Array<
-            {
-              _key: string;
-            } & MuxRobotsPendingCreate
-          >;
-        } | null;
       }
   > | null;
   credits?: BlockContent;
@@ -1033,7 +1125,7 @@ export type PROJECT_QUERY_RESULT = {
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "projects" ][0]{  ...,  seo{    	...,	metaImage{			...,	asset->{		...,		url,		extension,		mimeType	}	}  },  "projects": *[_type == "project" && defined(slug.current)] | order(_createdAt desc){    		_id,	_type,	slug,	title,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},	videoCover{		asset->{			...		}	},	tags[]->{		...	}  }}
+// Query: *[_type == "projects" ][0]{  ...,  seo{    	...,	metaImage{			...,	asset->{		...,		url,		extension,		mimeType	}	}  },  "projects": *[_type == "project" && defined(slug.current)] | order(_createdAt desc){    		_id,	_type,	slug,	title,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},	"videoCover": coalesce(videoCover, videocover){		asset->{			...		}	},	tags[]->{		...	}  }}
 export type PROJECTS_QUERY_RESULT = {
   _id: string;
   _type: "projects";
@@ -1158,7 +1250,7 @@ export type PROJECTS_QUERY_RESULT = {
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
 // Variable: ALL_PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc){  		_id,	_type,	slug,	title,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},	videoCover{		asset->{			...		}	},	tags[]->{		...	},  _updatedAt}
+// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc){  		_id,	_type,	slug,	title,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},	"videoCover": coalesce(videoCover, videocover){		asset->{			...		}	},	tags[]->{		...	},  _updatedAt}
 export type ALL_PROJECTS_QUERY_RESULT = Array<{
   _id: string;
   _type: "project";
@@ -1240,10 +1332,10 @@ declare global {
   interface SanityQueries {
     "*[_type == \"settings\"][0]{\n  ...,\n  navPrimary[]{\n    \n\t...,\n\t_type == 'linkInternal' => {\n\t\t\n\t...,\n\tlink->{\n\t\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n\t},\n\t// submenu[]{\n\t// \t...,\n\t// \tlink->{\n\t// \t\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n\t// \t},\n\t// }\n\n\t}\n\n  },\n  navTags[]->{\n    \n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n  },\n  message404[]{\n    \n\t...,\n\tmarkDefs[]{\n\t\t...,\n\t\t_type == 'linkInternal' => {\n\t\t\t\n\t...,\n\tlink->{\n\t\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n\t},\n\t// submenu[]{\n\t// \t...,\n\t// \tlink->{\n\t// \t\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n\n\t// \t},\n\t// }\n\n\t\t}\n\t},\n\t_type == 'embed' => {\n\t\t...\n\t},\n\t_type == 'image' => {\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  }\n}": SETTINGS_QUERY_RESULT;
     '*[_type == "infos"][0]{\n  ...,\n\n}': CONTENT_INFOS_QUERY_RESULT;
-    '*[_type == "home"][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  projects[]->{\n    _id,\n    _type,\n    slug,\n    title,\n    imageCover{\n      \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n    },\n    videoCover{\n      asset->{\n        ...\n      }\n    }\n  }\n}': HOME_QUERY_RESULT;
-    '*[_type == "project" && slug.current == $slug][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  media[]{\n    _type == "image" => {\n      \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n    },\n    _type == "mux.video" => {\n      asset->{\n        ...\n      }\n    }\n  }\n}': PROJECT_QUERY_RESULT;
-    '*[_type == "projects" ][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  "projects": *[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\tvideoCover{\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n\n  }\n}': PROJECTS_QUERY_RESULT;
-    '*[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n  \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\tvideoCover{\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n,\n  _updatedAt\n}': ALL_PROJECTS_QUERY_RESULT;
+    '*[_type == "home"][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  projects[]->{\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\t"videoCover": coalesce(videoCover, videocover){\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n\n  }\n}': HOME_QUERY_RESULT;
+    '*[_type == "project" && slug.current == $slug][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  media[]{\n    _key,\n    _type == "image" => {\n      \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n    },\n    // mediaImage / mediaVideo are referenced documents: dereference them\n    _type == "reference" => {\n      ...@->{\n        _type,\n        _id,\n        caption,\n        _type == "mediaImage" => {\n          image{\n            \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n          }\n        },\n        _type == "mediaVideo" => {\n          video{\n            asset->{\n              ...\n            }\n          }\n        }\n      }\n    }\n  }\n}': PROJECT_QUERY_RESULT;
+    '*[_type == "projects" ][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  "projects": *[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\t"videoCover": coalesce(videoCover, videocover){\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n\n  }\n}': PROJECTS_QUERY_RESULT;
+    '*[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n  \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\t"videoCover": coalesce(videoCover, videocover){\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n,\n  _updatedAt\n}': ALL_PROJECTS_QUERY_RESULT;
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

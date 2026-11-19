@@ -55,9 +55,19 @@ header {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: var(--spacing-sm);
+    mix-blend-mode: difference;
     a,
     button {
       pointer-events: auto;
+      color: white;
+    }
+    nav .nav-tags button {
+      color: var(--color-secondary);
+
+      &:hover,
+      &.is-active {
+        color: white;
+      }
     }
     .spacer,
     .flex {

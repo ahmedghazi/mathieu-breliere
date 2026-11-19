@@ -1,5 +1,6 @@
 - splash
-- player mux
+- # player mux
 - animations
 - mobile
 - pagination
+- home scroll snap
