@@ -1,7 +1,6 @@
 .ascii-tree {
   position: relative;
-  &.with-bottom {
-  }
+
   &::before {
     content: "";
     position: absolute;
@@ -40,5 +39,10 @@
   }
   &:not(.is-hovered) .box-drawings-light-horizontal {
     transition: transform 0.2s var(--cubic);
+  }
+  @media screen and (max-width: 768px) {
+    &::after {
+      transition: transform 0.2s var(--cubic);
+    }
   }
 }

@@ -28,4 +28,17 @@
       column-gap: var(--spacing-sm);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    right: var(--spacing-sm);
+    height: auto;
+    top: unset;
+    bottom: 0;
+    .inner {
+      padding: var(--spacing-xs);
+    }
+    .site-name {
+      opacity: 1;
+    }
+  }
 }

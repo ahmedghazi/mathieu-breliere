@@ -24,6 +24,7 @@ const ContentHome = ({ input }: Props) => {
         <ScrollerVirtual
           index={index}
           globalWheel
+          globalTouch
           onIndexChange={(index) => setIndex(index)}>
           {/* {current && (
             <MediaProject input={current} playerWithControls={true} priority />

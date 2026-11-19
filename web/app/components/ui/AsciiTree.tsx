@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import "./AsciiTree.scss";
 
 type Props = {
@@ -31,6 +31,23 @@ const AsciiTree = ({ children, withBottom = false }: Props) => {
       setY(gap);
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("wheel", () => {
+      _onMouseLeave();
+    });
+    window.addEventListener("touchend", () => {
+      _onMouseLeave();
+    });
+    return () => {
+      window.removeEventListener("wheel", () => {
+        _onMouseLeave();
+      });
+      window.removeEventListener("touchend", () => {
+        _onMouseLeave();
+      });
+    };
+  }, []);
 
   return (
     <div

@@ -18,7 +18,7 @@
     "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
     "Helvetica", "Arial", sans-serif; */
 
-  --spacing-xs: 0.4375em; /* 7px */
+  --spacing-xs: 0.4375rem; /* 7px */
   --spacing-sm: 0.813rem; /* 13px */
   --spacing-md: 1.25rem; /* 20px */
   --spacing-lg: 1rem;

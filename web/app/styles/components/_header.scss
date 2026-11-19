@@ -56,6 +56,8 @@ header {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: var(--spacing-sm);
     mix-blend-mode: difference;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
     a,
     button {
       pointer-events: auto;

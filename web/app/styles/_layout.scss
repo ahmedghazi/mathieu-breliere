@@ -1,4 +1,5 @@
 @use "variables";
+@use "mixins";
 
 :root {
   overscroll-behavior: none;
@@ -12,11 +13,13 @@ html {
 }
 body {
   background-color: var(--color-bg);
-  // @include debugFiletX(50%);
+  // @include mixins.debugFiletX(var(--spacing-md));
 
   // @include debugOutline(var(--space-md));
 }
 #page {
+  // @include mixins.debugFiletX(var(--spacing-sm));
+
   display: grid;
   align-items: start;
   grid-template-columns: repeat(18, minmax(0, 1fr));
@@ -84,10 +87,11 @@ main {
       .txt {
         display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: var(--spacing-sm);
+        gap: var(--spacing-md);
 
         // padding-left: 40vw;
         padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-md);
         .spacer {
           grid-column: span 2 / span 2;
         }

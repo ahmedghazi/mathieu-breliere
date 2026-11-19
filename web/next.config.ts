@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   // partialPrefetching: true, // requires cacheComponents
   //192.168.1.96:3000
   //add allowedDevOrigins
-  allowedDevOrigins: ["192.168.1.96:3000"],
+  allowedDevOrigins: ["192.168.1.96"],
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [

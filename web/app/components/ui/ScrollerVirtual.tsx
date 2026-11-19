@@ -7,6 +7,7 @@ import {
   useImperativeHandle,
   useRef,
   type CSSProperties,
+  type ReactElement,
   type ReactNode,
 } from "react";
 
@@ -64,6 +65,8 @@ export type ScrollerVirtualProps = {
    * natif tant qu'ils peuvent scroller dans ce sens.
    */
   globalWheel?: boolean;
+  /** Idem pour le swipe (mobile) : écoute le touch sur toute la fenêtre */
+  globalTouch?: boolean;
   className?: string;
   style?: CSSProperties;
   /** Appelé à chaque frame où la position change */
@@ -90,6 +93,17 @@ export type ScrollerVirtualHandle = {
 const clamp = (v: number, min: number, max: number) =>
   Math.min(max, Math.max(min, v));
 
+/** addEventListener typé, retourne la fonction de nettoyage */
+const listen = <K extends keyof WindowEventMap>(
+  target: Window | HTMLElement,
+  type: K,
+  fn: (e: WindowEventMap[K]) => void,
+  options?: AddEventListenerOptions,
+) => {
+  target.addEventListener(type, fn as EventListener, options);
+  return () => target.removeEventListener(type, fn as EventListener, options);
+};
+
 /** Silence (ms) entre deux events wheel pour considérer un nouveau geste */
 const GESTURE_GAP = 160;
 /**
@@ -105,8 +119,21 @@ const SWIPE_MIN = 50;
 const FLICK_MIN = 0.2;
 /** Distance (px) min parcourue pour qu'un flick compte (évite les taps) */
 const FLICK_MIN_DIST = 12;
+/** Durée (ms) de l'inertie au lâcher : vitesse (px/ms) × INERTIA = distance */
+const INERTIA = 250;
 /** Dépassement (fraction d'écran) en dessous duquel une section n'est pas « haute » */
 const TALL_TOLERANCE = 0.15;
+/** Pas (px) des flèches clavier */
+const ARROW_STEP = 100;
+/** Direction des touches gérées (Espace est ramené à PageUp / PageDown) */
+const KEY_DIR: Record<string, 1 | -1> = {
+  ArrowDown: 1,
+  PageDown: 1,
+  End: 1,
+  ArrowUp: -1,
+  PageUp: -1,
+  Home: -1,
+};
 
 const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
   function ScrollerVirtual(
@@ -120,6 +147,7 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       snap = true,
       index,
       globalWheel = false,
+      globalTouch = false,
       className,
       style,
       onScroll,
@@ -132,17 +160,7 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
     const items = Children.toArray(children);
 
     // Props lues dans la boucle sans relancer les effets
-    const opts = useRef({
-      speed,
-      lerp,
-      skew,
-      parallax,
-      parallaxSkew,
-      snap,
-      onScroll,
-      onIndexChange,
-    });
-    opts.current = {
+    const latest = {
       speed,
       lerp,
       skew,
@@ -152,6 +170,8 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       onScroll,
       onIndexChange,
     };
+    const opts = useRef(latest);
+    opts.current = latest;
 
     // État persistant entre re-renders / changements d'enfants
     const s = useRef({
@@ -165,6 +185,8 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       /** doigt posé : la position suit le doigt sans lerp */
       dragging: false,
     });
+    /** Relance la boucle rAF (en veille quand rien ne bouge) */
+    const wake = useRef(() => {});
 
     // --- Helpers partagés (effet + ref) ----------------------------------
     const total = () => s.current.tops.length;
@@ -184,6 +206,15 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       return i;
     };
 
+    /** Section courante (avant le premier setIndex : celle à l'écran) */
+    const currentIndex = () => {
+      const st = s.current;
+      return st.index < 0 ? indexAt(st.target) : st.index;
+    };
+
+    /** Haut d'une section, borné à la plage scrollable */
+    const sectionTop = (i: number) => clamp(s.current.tops[i], 0, s.current.max);
+
     /**
      * Bas d'une section (pour les sections plus hautes que l'écran).
      * Un léger dépassement (ex. section en 100vh dans un conteneur en 100dvh
@@ -191,40 +222,37 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
      */
     const sectionEnd = (i: number) => {
       const { tops, heights, vh, max } = s.current;
-      const top = clamp(tops[i], 0, max);
-      if (heights[i] - vh < vh * TALL_TOLERANCE) return top;
+      if (heights[i] - vh < vh * TALL_TOLERANCE) return sectionTop(i);
       return clamp(tops[i] + heights[i] - vh, 0, max);
+    };
+
+    const scrollTo = (y: number, o?: { immediate?: boolean }) => {
+      const st = s.current;
+      st.target = clamp(y, 0, st.max);
+      if (o?.immediate) st.current = st.target;
+      wake.current();
     };
 
     const goTo = (
       i: number,
       o?: { immediate?: boolean; fromEnd?: boolean },
     ) => {
-      const st = s.current;
       if (!total()) return;
       i = clamp(i, 0, total() - 1);
-      st.target = o?.fromEnd ? sectionEnd(i) : clamp(st.tops[i], 0, st.max);
-      if (o?.immediate) st.current = st.target;
+      scrollTo(o?.fromEnd ? sectionEnd(i) : sectionTop(i), o);
       setIndex(i);
     };
 
     /** Pas suivant / précédent en mode snap */
-    const step = (dir: 1 | -1) => {
-      const st = s.current;
-      const i = st.index < 0 ? indexAt(st.target) : st.index;
+    const step = (dir: 1 | -1) =>
       // en remontant vers une section haute, on arrive par son bas
-      goTo(i + dir, { fromEnd: dir < 0 });
-    };
+      goTo(currentIndex() + dir, { fromEnd: dir < 0 });
 
     useImperativeHandle(ref, () => ({
       next: () => step(1),
       prev: () => step(-1),
       goTo: (i, o) => goTo(i, o),
-      scrollTo(y, o) {
-        const st = s.current;
-        st.target = clamp(y, 0, st.max);
-        if (o?.immediate) st.current = st.target;
-      },
+      scrollTo,
       getState() {
         const { current, max, index } = s.current;
         return {
@@ -244,12 +272,24 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       const sections = sectionRefs.current
         .slice(0, items.length)
         .filter(Boolean) as HTMLDivElement[];
-      const reduce = window.matchMedia(
+      // lu à chaque frame : suit un changement du réglage système
+      const reducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
-      ).matches;
+      );
+
+      // --- Boucle rAF + lerp ---------------------------------------------
+      // Active seulement pendant un mouvement : en veille quand la position
+      // est atteinte, relancée par wake() (geste, goTo, resize…).
+      let raf = 0;
+      let last = 0;
+      let dirty = true;
+      wake.current = () => {
+        if (raf) return;
+        last = performance.now();
+        raf = requestAnimationFrame(tick);
+      };
 
       // --- Mesure ---------------------------------------------------------
-      let dirty = true;
       let parallaxEls: HTMLElement[][] = [];
       const measure = () => {
         // viewport virtuel = la boîte du scroller, pas la fenêtre
@@ -269,23 +309,22 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
           acc += h;
         }
         st.max = Math.max(0, acc - st.vh);
-        // en snap, on reste calé sur la section courante après un resize
+        // En snap, on reste calé sur la section courante après un resize
         // (mobile : la barre d'URL change la hauteur en plein geste). On ne
-        // coupe pas une animation ou un drag en cours, on corrige la cible.
-        if (opts.current.snap && st.index >= 0) {
+        // coupe pas une animation en cours, on corrige la cible. Pendant un
+        // drag on ne recale pas : le doigt est entre deux sections, le
+        // ramener sur la section courante annulerait le swipe au lâcher.
+        if (opts.current.snap && st.index >= 0 && !st.dragging) {
           const i = Math.min(st.index, st.tops.length - 1);
-          const settled = !st.dragging && Math.abs(st.target - st.current) < 1;
+          const settled = Math.abs(st.target - st.current) < 1;
           // section haute : on garde la position à l'intérieur
-          st.target = clamp(
-            st.target,
-            clamp(st.tops[i], 0, st.max),
-            sectionEnd(i),
-          );
+          st.target = clamp(st.target, sectionTop(i), sectionEnd(i));
           if (settled) st.current = st.target;
         }
         st.target = clamp(st.target, 0, st.max);
         st.current = clamp(st.current, 0, st.max);
         dirty = true;
+        wake.current();
       };
 
       const ro = new ResizeObserver(measure);
@@ -301,7 +340,7 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       const snapDistance = () => {
         let d = Infinity;
         for (let i = 0; i < st.tops.length; i++) {
-          const a = clamp(st.tops[i], 0, st.max);
+          const a = sectionTop(i);
           const b = Math.max(a, sectionEnd(i));
           const di =
             st.current < a
@@ -314,38 +353,35 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         return st.vh ? d / st.vh : 0;
       };
 
-      const render = () => {
+      /** Sections visibles au dernier rendu */
+      const shown: boolean[] = [];
+      const render = (full: boolean) => {
         const { current, target, vh, tops, heights } = st;
-        const {
-          skew: k,
-          parallax: px,
-          parallaxSkew: pk,
-          snap: snapMode,
-        } = opts.current;
+        const { skew: k, parallax: px, parallaxSkew: pk } = opts.current;
         // skew des sections
         let sk = 0;
         if (k) {
-          sk = snapMode
+          sk = opts.current.snap
             ? // Buzzman : 0 calé → max à mi-chemin, toujours négatif
               -clamp(snapDistance() / 0.5, 0, 1) * k
             : // scroll libre : selon la vitesse (écart cible / courant)
               -clamp((target - current) / (vh * 0.25), -1, 1) * k;
         }
+        const skewY = sk ? ` skewY(${sk.toFixed(3)}deg)` : "";
         for (let i = 0; i < sections.length; i++) {
           const y = Math.round((tops[i] - current) * 100) / 100;
           const visible = y < vh && y + heights[i] > 0;
+          // Section hors écran : posée une fois à sa vraie position (hors du
+          // cadre) puis laissée. visibility n'affecte pas les
+          // IntersectionObserver, une section restée en 0 serait « dans
+          // l'écran » (=> toutes les vidéos chargées et lues en même temps).
+          if (!visible && !shown[i] && !full) continue;
           const el = sections[i];
-          el.style.visibility = visible ? "" : "hidden";
-          if (!visible) {
-            // garder la vraie position : visibility n'affecte pas les
-            // IntersectionObserver, une section restée en 0 serait « dans
-            // l'écran » (=> toutes les vidéos chargées et lues en même temps)
-            el.style.transform = `translate3d(0,${y}px,0)`;
-            continue;
-          }
-          el.style.transform = `translate3d(0,${y}px,0)${sk ? ` skewY(${sk.toFixed(3)}deg)` : ""}`;
+          if (visible !== shown[i]) el.style.visibility = visible ? "" : "hidden";
+          shown[i] = visible;
+          el.style.transform = `translate3d(0,${y}px,0)${visible ? skewY : ""}`;
           // parallaxe interne : p = 0 quand la section est calée, ±1 une section plus loin
-          if ((px || pk) && parallaxEls[i]?.length) {
+          if (visible && (px || pk) && parallaxEls[i].length) {
             const p = vh ? y / vh : 0;
             const t = `translate3d(0,${(-p * vh * px).toFixed(2)}px,0) skewY(${(-Math.abs(p) * pk).toFixed(3)}deg)`;
             for (const inner of parallaxEls[i]) inner.style.transform = t;
@@ -353,16 +389,14 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         }
       };
 
-      // --- Boucle rAF + lerp ---------------------------------------------
-      let raf = 0;
-      let prev = NaN;
-      let last = performance.now();
       const tick = (now: number) => {
+        raf = 0;
         const dt = Math.min(now - last, 64);
         last = now;
+        const prev = st.current;
         // lerp indépendant du framerate (60 / 120 Hz)
         const f =
-          reduce || st.dragging
+          reducedMotion.matches || st.dragging
             ? 1
             : 1 -
               Math.pow(
@@ -372,24 +406,18 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         st.current += (st.target - st.current) * f;
         if (Math.abs(st.target - st.current) < 0.05) st.current = st.target;
 
-        if (dirty || st.current !== prev) {
-          render();
-          if (st.current !== prev) {
-            opts.current.onScroll?.(
-              st.current,
-              st.max ? st.current / st.max : 0,
-            );
-            if (!opts.current.snap) setIndex(indexAt(st.current));
-          }
-          prev = st.current;
-          dirty = false;
+        const moved = st.current !== prev;
+        if (dirty || moved) render(dirty);
+        dirty = false;
+        if (moved) {
+          opts.current.onScroll?.(st.current, st.max ? st.current / st.max : 0);
+          if (!opts.current.snap) setIndex(indexAt(st.current));
         }
-        raf = requestAnimationFrame(tick);
+        if (st.current !== st.target) raf = requestAnimationFrame(tick);
       };
 
-      const add = (dy: number, min = 0, max = st.max) => {
-        st.target = clamp(st.target + dy, min, max);
-      };
+      const add = (dy: number, min = 0, max = st.max) =>
+        scrollTo(clamp(st.target + dy, min, max));
 
       /** L'animation vers la section cible est-elle encore en cours ? */
       const animating = () => Math.abs(st.target - st.current) > st.vh * 0.08;
@@ -399,8 +427,8 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
        * à l'intérieur. Retourne true si le delta a été consommé.
        */
       const scrollInside = (dy: number) => {
-        const i = st.index < 0 ? indexAt(st.target) : st.index;
-        const top = clamp(st.tops[i], 0, st.max);
+        const i = currentIndex();
+        const top = sectionTop(i);
         const end = sectionEnd(i);
         if (end - top < 1) return false;
         if (
@@ -425,7 +453,6 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         if (r.height >= wh - 1 || r.top < 0) return r.top;
         return r.bottom > wh ? r.bottom - wh : 0;
       };
-      const aligned = () => Math.abs(offset()) <= 1;
       /** Le scroller est-il (au moins en partie) dans le viewport ? */
       const onScreen = () => {
         const r = root.getBoundingClientRect();
@@ -440,13 +467,13 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
 
       /**
        * Rend la main au scroll natif de la page (ex. footer après le scroller) :
-       * - le scroller n'est pas calé en haut du viewport (la page a scrollé)
+       * - le scroller n'est pas calé dans le viewport (la page a scrollé)
        * - ou on est sur la dernière section en descendant / la première en
        *   remontant, animation terminée, et la page peut encore scroller
        */
       const release = (dy: number) => {
         if (!dy) return false;
-        if (!aligned()) return true;
+        if (Math.abs(offset()) > 1) return true;
         if (!pageCanScroll(dy)) return false;
         // pas besoin d'attendre la fin exacte du lerp (queue longue) :
         // l'animation vers la section doit juste être quasi finie
@@ -461,39 +488,42 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         return (!snapMode || st.index <= 0) && st.target <= 0.5;
       };
 
-      // --- Molette --------------------------------------------------------
-      let lastWheel = 0;
-      let lastAbs = 0;
-      let gestureStart = 0;
-      let wheelNative = false;
-      /** Un élément scrollable entre la cible et le scroller peut-il scroller ? */
+      /**
+       * Mode global : la cible (hors scroller) est-elle dans un élément
+       * scrollable (liste…) qui peut encore scroller dans ce sens ?
+       */
       const nativeScrollable = (target: EventTarget | null, dy: number) => {
         let el = target instanceof Element ? target : null;
         while (el && el !== root && el !== document.body) {
-          const { overflowY } = getComputedStyle(el);
           if (
-            /(auto|scroll)/.test(overflowY) &&
             el.scrollHeight > el.clientHeight + 1 &&
             (dy > 0
               ? el.scrollTop + el.clientHeight < el.scrollHeight - 1
-              : el.scrollTop > 0)
+              : el.scrollTop > 0) &&
+            /(auto|scroll)/.test(getComputedStyle(el).overflowY)
           )
             return true;
           el = el.parentElement;
         }
         return false;
       };
+      const outside = (target: EventTarget | null) =>
+        !root.contains(target as Node);
 
+      // --- Molette --------------------------------------------------------
+      let lastWheel = 0;
+      let lastAbs = 0;
+      let gestureStart = 0;
+      let wheelNative = false;
       const onWheel = (e: WheelEvent) => {
         if (
-          wheelTarget === window &&
-          !root.contains(e.target as Node) &&
+          globalWheel &&
+          outside(e.target) &&
           nativeScrollable(e.target, e.deltaY)
         )
           return;
         const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? st.vh : 1;
         const raw = e.deltaY * unit;
-        const dy = raw * opts.current.speed;
         const abs = Math.abs(raw);
         const now = performance.now();
         const newGesture =
@@ -505,6 +535,7 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         lastWheel = now;
         lastAbs = abs;
         if (!raw) return;
+        const dy = raw * opts.current.speed;
 
         // décidé une fois par geste : tout le geste va à la page ou au scroller
         if (newGesture) wheelNative = release(dy);
@@ -536,10 +567,12 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       let startTarget = 0;
       let startIndex = 0;
       let inside = false;
+      /** cible du touchstart, hors du scroller (mode globalTouch) */
+      let outsideTarget: EventTarget | null = null;
       /**
        * Décidé au premier mouvement significatif, pour tout le geste :
        * null = pas encore décidé · "self" = le scroller · "page" = scroll
-       * natif (footer…) · "ignore" = geste horizontal ou multi-doigts
+       * natif (footer, liste…) · "ignore" = geste horizontal ou multi-doigts
        */
       let touchMode: null | "self" | "page" | "ignore" = null;
 
@@ -556,26 +589,34 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         tt = performance.now();
         tv = 0;
         inside = false;
+        outsideTarget = outside(e.target) ? e.target : null;
       };
+
+      /** Premier mouvement significatif : à qui va le geste ? */
+      const decide = (t: Touch) => {
+        const ddx = Math.abs(t.clientX - startX);
+        const ddy = Math.abs(t.clientY - startY);
+        if (ddx < 4 && ddy < 4) return null; // seuil de décision pas atteint
+        if (ddx > ddy) return "ignore";
+        const dy = startY - t.clientY;
+        if (
+          (outsideTarget && nativeScrollable(outsideTarget, dy)) ||
+          release(dy)
+        )
+          return "page";
+        // le doigt « attrape » le scroller là où il est, même en pleine animation
+        st.dragging = true;
+        st.target = st.current;
+        startTarget = st.target;
+        startIndex = currentIndex();
+        // ty / tt restent ceux du touchstart : le déplacement déjà fait compte
+        return "self";
+      };
+
       const onTouchMove = (e: TouchEvent) => {
         const t = e.touches[0];
-        if (touchMode === null) {
-          const ddx = Math.abs(t.clientX - startX);
-          const ddy = Math.abs(t.clientY - startY);
-          if (ddx < 4 && ddy < 4) return; // seuil de décision pas atteint
-          if (ddx > ddy) touchMode = "ignore";
-          else if (release(startY - t.clientY)) touchMode = "page";
-          else {
-            touchMode = "self";
-            // le doigt « attrape » le scroller là où il est, même en pleine animation
-            st.dragging = true;
-            st.target = st.current;
-            startTarget = st.target;
-            startIndex = st.index < 0 ? indexAt(st.target) : st.index;
-            // ty / tt restent ceux du touchstart : le déplacement déjà fait compte
-          }
-        }
-        if (touchMode !== "self") return; // natif (pan-y) ou ignoré
+        if (touchMode === null) touchMode = decide(t);
+        if (touchMode !== "self") return; // natif (pan-y), ignoré ou indécis
         e.preventDefault();
 
         const now = performance.now();
@@ -593,14 +634,12 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
           return;
         }
         // drag borné aux sections voisines : on ne saute pas 2 sections au doigt
-        const n = total();
         const lo = startIndex > 0 ? sectionEnd(startIndex - 1) : 0;
         const hi =
-          startIndex < n - 1
-            ? clamp(st.tops[startIndex + 1], 0, st.max)
-            : st.max;
+          startIndex < total() - 1 ? sectionTop(startIndex + 1) : st.max;
         add(dy, Math.min(lo, st.target), Math.max(hi, st.target));
       };
+
       const onTouchEnd = (e: TouchEvent) => {
         if (e.touches.length) return; // il reste un doigt posé
         const mode = touchMode;
@@ -608,24 +647,16 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         st.dragging = false;
         if (mode !== "self") return;
         // vitesse au lâcher (0 si le doigt s'est arrêté avant de lâcher)
-        const fresh = performance.now() - tt < 100;
-        const v = fresh ? tv : 0;
-        if (!opts.current.snap) {
-          add(v * opts.current.speed * 250); // inertie
-          return;
-        }
+        const v = performance.now() - tt < 100 ? tv : 0;
+        const fling = v * opts.current.speed * INERTIA;
+        if (!opts.current.snap) return add(fling);
         if (
           inside &&
           st.target !== startTarget &&
           Math.abs(st.target - st.tops[startIndex]) < st.heights[startIndex]
         ) {
           // on a scrollé à l'intérieur d'une section haute : inertie bornée à la section
-          add(
-            v * opts.current.speed * 250,
-            clamp(st.tops[startIndex], 0, st.max),
-            sectionEnd(startIndex),
-          );
-          return;
+          return add(fling, sectionTop(startIndex), sectionEnd(startIndex));
         }
         // direction : celle du flick s'il y en a un (intention au lâcher),
         // sinon celle de la distance parcourue
@@ -648,38 +679,18 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
           return;
         // scroller dans un bloc de la page : clavier natif s'il est hors écran
         if (!onScreen()) return;
-        const page = st.vh * 0.9;
-        const snapMode = opts.current.snap;
-        const down = () =>
-          snapMode ? !scrollInside(100) && step(1) : add(100);
-        const up = () =>
-          snapMode ? !scrollInside(-100) && step(-1) : add(-100);
-        const dirs: Record<string, number> = {
-          ArrowDown: 1,
-          PageDown: 1,
-          End: 1,
-          ArrowUp: -1,
-          PageUp: -1,
-          Home: -1,
-          " ": e.shiftKey ? -1 : 1,
-        };
-        if (dirs[e.key] && release(dirs[e.key])) return; // clavier natif
-        const map: Record<string, () => void> = {
-          ArrowDown: down,
-          ArrowUp: up,
-          PageDown: () => (snapMode ? step(1) : add(page)),
-          PageUp: () => (snapMode ? step(-1) : add(-page)),
-          " ": () =>
-            snapMode
-              ? step(e.shiftKey ? -1 : 1)
-              : add(e.shiftKey ? -page : page),
-          Home: () => goTo(0),
-          End: () => goTo(total() - 1, { fromEnd: true }),
-        };
-        if (map[e.key]) {
-          e.preventDefault();
-          map[e.key]();
-        }
+        const key =
+          e.key === " " ? (e.shiftKey ? "PageUp" : "PageDown") : e.key;
+        const dir = KEY_DIR[key];
+        if (!dir || release(dir)) return; // touche non gérée ou clavier natif
+        e.preventDefault();
+        const arrow = key.startsWith("Arrow");
+        if (key === "Home") goTo(0);
+        else if (key === "End") goTo(total() - 1, { fromEnd: true });
+        else if (!opts.current.snap)
+          add(dir * (arrow ? ARROW_STEP : st.vh * 0.9));
+        // flèches : d'abord à l'intérieur d'une section haute
+        else if (!arrow || !scrollInside(dir * ARROW_STEP)) step(dir);
       };
 
       // Le focus (Tab) peut faire scroller nativement le conteneur : on annule
@@ -687,39 +698,34 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         root.scrollTop = 0;
       };
 
-      const wheelTarget: HTMLElement | Window = globalWheel ? window : root;
-      wheelTarget.addEventListener("wheel", onWheel as EventListener, {
-        passive: false,
-      });
-      root.addEventListener("touchstart", onTouchStart, { passive: true });
-      root.addEventListener("touchmove", onTouchMove, { passive: false });
-      root.addEventListener("touchend", onTouchEnd);
-      root.addEventListener("touchcancel", onTouchEnd);
-      root.addEventListener("scroll", onNativeScroll);
-      window.addEventListener("keydown", onKey);
+      const wheelTarget = globalWheel ? window : root;
+      const touchTarget = globalTouch ? window : root;
+      const unlisten = [
+        listen(wheelTarget, "wheel", onWheel, { passive: false }),
+        listen(touchTarget, "touchstart", onTouchStart, { passive: true }),
+        listen(touchTarget, "touchmove", onTouchMove, { passive: false }),
+        listen(touchTarget, "touchend", onTouchEnd),
+        listen(touchTarget, "touchcancel", onTouchEnd),
+        listen(root, "scroll", onNativeScroll),
+        listen(window, "keydown", onKey),
+      ];
 
       measure();
       // mode contrôlé : on démarre directement sur la section demandée
       if (index !== undefined && st.index < 0)
         goTo(index, { immediate: true });
       // placer les sections tout de suite, avant les premiers IntersectionObserver
-      render();
+      render(true);
       setIndex(opts.current.snap ? Math.max(st.index, 0) : indexAt(st.current));
-      raf = requestAnimationFrame(tick);
 
       return () => {
         cancelAnimationFrame(raf);
+        wake.current = () => {};
         ro.disconnect();
-        wheelTarget.removeEventListener("wheel", onWheel as EventListener);
-        root.removeEventListener("touchstart", onTouchStart);
-        root.removeEventListener("touchmove", onTouchMove);
-        root.removeEventListener("touchend", onTouchEnd);
-        root.removeEventListener("touchcancel", onTouchEnd);
-        root.removeEventListener("scroll", onNativeScroll);
-        window.removeEventListener("keydown", onKey);
+        unlisten.forEach((off) => off());
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [items.length, globalWheel]);
+    }, [items.length, globalWheel, globalTouch]);
 
     // Mode contrôlé : suivre `index`. Pas de boucle avec onIndexChange :
     // setIndex ignore l'index déjà actif.
@@ -747,7 +753,7 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         }}>
         {items.map((child, i) => (
           <div
-            key={(child as { key?: string }).key ?? i}
+            key={(child as ReactElement).key ?? i}
             ref={(el) => {
               sectionRefs.current[i] = el;
             }}

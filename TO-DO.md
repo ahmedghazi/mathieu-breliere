@@ -3,4 +3,5 @@
 - animations
 - mobile
 - pagination
-- home scroll snap
+- # home scroll snap desktop
+- home scroll snap mobile
