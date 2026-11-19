@@ -101,3 +101,8 @@ export const projectCard = `
 		...
 	}
 `;
+
+export const projectCardMini = `
+	${reference},
+
+`;

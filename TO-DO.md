@@ -4,4 +4,5 @@
 - mobile
 - pagination
 - # home scroll snap desktop
-- home scroll snap mobile
+- # home scroll snap mobile
+- back to index

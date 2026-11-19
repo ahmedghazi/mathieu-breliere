@@ -5,7 +5,7 @@
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
-    "typegen": "NODE_OPTIONS=--max-old-space-size=8192 sanity schema extract --path=schema.json && sanity typegen generate",
+    "typegen": "NODE_OPTIONS=--max-old-space-size=8192 sanity schema extract --path=schema.json --force && sanity typegen generate",
     "preDev": "pnpm run typegen",
     "build": "sanity build",
     "deploy": "sanity deploy",

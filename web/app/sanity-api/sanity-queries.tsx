@@ -13,6 +13,7 @@ import {
   image,
   link,
   projectCard,
+  projectCardMini,
   reference,
   seo,
 } from "./fragments";
@@ -113,6 +114,12 @@ export const PROJECT_QUERY =
         }
       }
     }
+  },
+  "prev": *[_type == "project" && defined(slug.current) && slug.current < $slug] | order(_createdAt desc) [0] {
+    ${projectCardMini}
+  },
+  "next": *[_type == "project" && defined(slug.current) && slug.current > $slug] | order(_createdAt asc) [0] {
+    ${projectCardMini}
   }
 }`);
 

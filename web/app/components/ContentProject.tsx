@@ -5,6 +5,7 @@ import Figure from "./ui/Figure";
 import { PortableText } from "@portabletext/react";
 import portableTextComponents from "../sanity-api/portableTextComponents";
 import MuxPlayer from "./ui/mux-player";
+import ProjectPagination from "./ProjectPagination";
 
 type Props = {
   input: ProjectData;
@@ -53,7 +54,7 @@ const ContentProject = ({ input }: Props) => {
             </details>
           </div>
           <div className='content__nav'>
-            <div className='pagination'>pagination</div>
+            <ProjectPagination input={input} />
             <div className='media-controls hide-sb'>
               <ul>
                 {/* <li>{index}</li> */}

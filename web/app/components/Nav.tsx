@@ -16,6 +16,7 @@ const Nav = ({ navPrimary, navTags }: Props) => {
   const { isInfos, setIsInfos } = usePageContext();
   const pathname = usePathname();
   const isProjects = pathname.includes("/index");
+  const isProject = pathname.includes("/project");
 
   return (
     <nav>
@@ -44,7 +45,13 @@ const Nav = ({ navPrimary, navTags }: Props) => {
             </li>
           ))}
         </ul>
+        {/* {isProject && (
+          <Link href='/index'>
+            <span>Back to index</span>
+          </Link>
+        )} */}
       </div>
+
       {!isInfos && isProjects && <NavTags input={navTags} />}
     </nav>
   );
