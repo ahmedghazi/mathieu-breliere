@@ -2,7 +2,7 @@
 - # player mux
 - animations
 - mobile
-- pagination
+- # pagination
 - # home scroll snap desktop
 - # home scroll snap mobile
-- back to index
+- [x] back to index

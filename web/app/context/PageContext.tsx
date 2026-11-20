@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 import { NavTag } from "../sanity-api/types";
 // import { getSettings } from "../utils/sanity-queries";
 
-
 type PageContextType = {
   settings: {
     pathname: string;
@@ -55,6 +54,10 @@ export const PageContextProvider = (props: PageContextProps) => {
       window.removeEventListener("resize", _format);
     };
   }, []);
+
+  useEffect(() => {
+    setIsInfos(false);
+  }, [pathname]);
 
   const _format = () => {
     // const wh = window.innerHeight;

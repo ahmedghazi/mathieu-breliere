@@ -12,6 +12,7 @@ import { SanityLive } from "./sanity-api/sanity.live";
 import DesignSystem from "./components/ui/DS";
 import ContentInfos from "./components/ContentInfos";
 import { ViewTransition } from "react";
+import Splash from "./components/Splash";
 
 export const metadata = {
   metadataBase: new URL(website.url),
@@ -41,6 +42,11 @@ export default async function RootLayout({
               <ViewTransition>
                 <main>{children}</main>
               </ViewTransition>
+
+              <Splash
+                siteName={settings?.siteName || ""}
+                baseline={settings?.baseline || ""}
+              />
               {/* <Footer settings={settings} /> */}
               {/* <DesignSystem /> */}
               <SanityLive />
