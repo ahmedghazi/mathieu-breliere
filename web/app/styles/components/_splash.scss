@@ -17,7 +17,7 @@
     .site-name,
     .site-baseline {
       transition-property: transform, opacity;
-      transition-duration: 0.75s;
+      transition-duration: var(--transition-duration);
       transition-timing-function: cubic-bezier(0.86, 0, 0.14, 1);
       transform: translateY(0);
       opacity: 1;

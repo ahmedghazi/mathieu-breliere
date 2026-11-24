@@ -19,7 +19,12 @@ import {
  * Le scroller prend la hauteur de son parent (100%) : il fonctionne en plein
  * écran comme dans un bloc de la page. Le viewport virtuel est sa propre
  * boîte, pas la fenêtre. C'est un container CSS (`container-type: size`) :
- * dans les sections, `100cqh` = hauteur du scroller.
+ * dans les sections, `100cqh` = hauteur du scroller (`100cqw` en axe x).
+ *
+ * axis="x" : défilement horizontal (molette verticale ou horizontale, swipe
+ * gauche / droite, flèches gauche / droite). Changeable à chaud, ex. mobile :
+ * const isMobile = useMediaQuery("(max-width: 768px)");
+ * <ScrollerVirtual axis={isMobile ? "x" : "y"}>
  *
  * <ScrollerVirtual ref={ref} onIndexChange={setIndex}>
  *   <section>…</section>
@@ -32,14 +37,21 @@ import {
  * (la section suit `index`, les gestes remontent via onIndexChange)
  */
 
+export type ScrollerAxis = "x" | "y";
+
 export type ScrollerVirtualProps = {
   children: ReactNode;
+  /**
+   * Axe de défilement, "y" par défaut. En "x", les sections sont côte à côte,
+   * chacune large d'au moins le scroller (plus large si son contenu l'impose).
+   */
+  axis?: ScrollerAxis;
   /** Multiplicateur appliqué au delta molette / touch. 1 = natif */
   speed?: number;
   /** Facteur d'interpolation par frame à 60 fps (0–1). Plus bas = plus fluide/lent */
   lerp?: number;
   /**
-   * SkewY max (deg) des sections pendant la transition. 0 = désactivé.
+   * Skew max (deg) des sections (skewY, skewX en axe x) pendant la transition. 0 = désactivé.
    * En snap : nul quand une section est calée, max à mi-chemin entre deux
    * sections, toujours dans le même sens (effet Buzzman ≈ 4).
    * En scroll libre : proportionnel à la vitesse.
@@ -50,7 +62,7 @@ export type ScrollerVirtualProps = {
    * décalage = -progression × hauteur × parallax (Buzzman ≈ 0.5). 0 = désactivé
    */
   parallax?: number;
-  /** SkewY (deg) des éléments `data-scroller-parallax` par section d'écart (Buzzman ≈ 8) */
+  /** Skew (deg) des éléments `data-scroller-parallax` par section d'écart (Buzzman ≈ 8) */
   parallaxSkew?: number;
   /** Snap section par section, actif par défaut (un geste molette / swipe = une section). false = scroll libre */
   snap?: boolean;
@@ -69,8 +81,8 @@ export type ScrollerVirtualProps = {
   globalTouch?: boolean;
   className?: string;
   style?: CSSProperties;
-  /** Appelé à chaque frame où la position change */
-  onScroll?: (y: number, progress: number) => void;
+  /** Appelé à chaque frame où la position change (px sur l'axe) */
+  onScroll?: (pos: number, progress: number) => void;
   /** Appelé quand la section active change */
   onIndexChange?: (index: number, total: number) => void;
 };
@@ -134,11 +146,18 @@ const KEY_DIR: Record<string, 1 | -1> = {
   PageUp: -1,
   Home: -1,
 };
+/** Touches ajoutées en axe x */
+const KEY_DIR_X: Record<string, 1 | -1> = {
+  ...KEY_DIR,
+  ArrowRight: 1,
+  ArrowLeft: -1,
+};
 
 const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
   function ScrollerVirtual(
     {
       children,
+      axis = "y",
       speed = 1,
       lerp = 0.1,
       skew = 0,
@@ -184,6 +203,8 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       heights: [] as number[],
       /** doigt posé : la position suit le doigt sans lerp */
       dragging: false,
+      /** axe du dernier montage de l'effet (détecte un changement d'axe) */
+      axis: null as ScrollerAxis | null,
     });
     /** Relance la boucle rAF (en veille quand rien ne bouge) */
     const wake = useRef(() => {});
@@ -269,6 +290,11 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       const root = rootRef.current;
       if (!root) return;
       const st = s.current;
+      // Toute la logique travaille sur une seule position (« y » / « vh » =
+      // position / taille sur l'axe). Seuls mesure, rendu et entrées en dépendent.
+      const horizontal = axis === "x";
+      const axisChanged = st.axis !== null && st.axis !== axis;
+      st.axis = axis;
       const sections = sectionRefs.current
         .slice(0, items.length)
         .filter(Boolean) as HTMLDivElement[];
@@ -293,7 +319,7 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       let parallaxEls: HTMLElement[][] = [];
       const measure = () => {
         // viewport virtuel = la boîte du scroller, pas la fenêtre
-        st.vh = root.clientHeight;
+        st.vh = horizontal ? root.clientWidth : root.clientHeight;
         parallaxEls = sections.map((el) =>
           Array.from(
             el.querySelectorAll<HTMLElement>("[data-scroller-parallax]"),
@@ -304,7 +330,8 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         st.heights = [];
         for (const el of sections) {
           st.tops.push(acc);
-          const h = el.offsetHeight; // non affecté par les transforms
+          // non affecté par les transforms
+          const h = horizontal ? el.offsetWidth : el.offsetHeight;
           st.heights.push(h);
           acc += h;
         }
@@ -367,7 +394,10 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
             : // scroll libre : selon la vitesse (écart cible / courant)
               -clamp((target - current) / (vh * 0.25), -1, 1) * k;
         }
-        const skewY = sk ? ` skewY(${sk.toFixed(3)}deg)` : "";
+        const skewFn = horizontal ? "skewX" : "skewY";
+        const translate = (v: number | string) =>
+          horizontal ? `translate3d(${v}px,0,0)` : `translate3d(0,${v}px,0)`;
+        const skewT = sk ? ` ${skewFn}(${sk.toFixed(3)}deg)` : "";
         for (let i = 0; i < sections.length; i++) {
           const y = Math.round((tops[i] - current) * 100) / 100;
           const visible = y < vh && y + heights[i] > 0;
@@ -379,11 +409,11 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
           const el = sections[i];
           if (visible !== shown[i]) el.style.visibility = visible ? "" : "hidden";
           shown[i] = visible;
-          el.style.transform = `translate3d(0,${y}px,0)${visible ? skewY : ""}`;
+          el.style.transform = `${translate(y)}${visible ? skewT : ""}`;
           // parallaxe interne : p = 0 quand la section est calée, ±1 une section plus loin
           if (visible && (px || pk) && parallaxEls[i].length) {
             const p = vh ? y / vh : 0;
-            const t = `translate3d(0,${(-p * vh * px).toFixed(2)}px,0) skewY(${(-Math.abs(p) * pk).toFixed(3)}deg)`;
+            const t = `${translate((-p * vh * px).toFixed(2))} ${skewFn}(${(-Math.abs(p) * pk).toFixed(3)}deg)`;
             for (const inner of parallaxEls[i]) inner.style.transform = t;
           }
         }
@@ -523,7 +553,12 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         )
           return;
         const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? st.vh : 1;
-        const raw = e.deltaY * unit;
+        // axe x : molette verticale (souris) ou horizontale (trackpad), la plus forte
+        const delta =
+          horizontal && Math.abs(e.deltaX) > Math.abs(e.deltaY)
+            ? e.deltaX
+            : e.deltaY;
+        const raw = delta * unit;
         const abs = Math.abs(raw);
         const now = performance.now();
         const newGesture =
@@ -576,6 +611,10 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
        */
       let touchMode: null | "self" | "page" | "ignore" = null;
 
+      /** Coordonnée du doigt sur l'axe / sur l'axe croisé */
+      const along = (t: Touch) => (horizontal ? t.clientX : t.clientY);
+      const across = (t: Touch) => (horizontal ? t.clientY : t.clientX);
+
       const onTouchStart = (e: TouchEvent) => {
         if (e.touches.length > 1) {
           // pinch / 2 doigts : on lâche
@@ -584,8 +623,8 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
           return;
         }
         touchMode = null;
-        startX = e.touches[0].clientX;
-        ty = startY = e.touches[0].clientY;
+        startX = across(e.touches[0]);
+        ty = startY = along(e.touches[0]);
         tt = performance.now();
         tv = 0;
         inside = false;
@@ -594,14 +633,18 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
 
       /** Premier mouvement significatif : à qui va le geste ? */
       const decide = (t: Touch) => {
-        const ddx = Math.abs(t.clientX - startX);
-        const ddy = Math.abs(t.clientY - startY);
+        const ddx = Math.abs(across(t) - startX);
+        const ddy = Math.abs(along(t) - startY);
         if (ddx < 4 && ddy < 4) return null; // seuil de décision pas atteint
+        // geste sur l'axe croisé : natif (en axe x, le scroll vertical de la page)
         if (ddx > ddy) return "ignore";
-        const dy = startY - t.clientY;
+        const dy = startY - along(t);
+        // en axe x, un swipe horizontal ne peut pas être rendu au scroll
+        // (vertical) de la page : il reste au scroller
         if (
-          (outsideTarget && nativeScrollable(outsideTarget, dy)) ||
-          release(dy)
+          !horizontal &&
+          ((outsideTarget && nativeScrollable(outsideTarget, dy)) ||
+            release(dy))
         )
           return "page";
         // le doigt « attrape » le scroller là où il est, même en pleine animation
@@ -620,11 +663,11 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         e.preventDefault();
 
         const now = performance.now();
-        const raw = ty - t.clientY;
+        const raw = ty - along(t);
         if (!raw) return;
         const v = raw / Math.max(now - tt, 1);
         tv = tv * 0.2 + v * 0.8;
-        ty = t.clientY;
+        ty = along(t);
         tt = now;
         const dy = raw * opts.current.speed;
 
@@ -681,7 +724,7 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         if (!onScreen()) return;
         const key =
           e.key === " " ? (e.shiftKey ? "PageUp" : "PageDown") : e.key;
-        const dir = KEY_DIR[key];
+        const dir = (horizontal ? KEY_DIR_X : KEY_DIR)[key];
         if (!dir || release(dir)) return; // touche non gérée ou clavier natif
         e.preventDefault();
         const arrow = key.startsWith("Arrow");
@@ -696,6 +739,7 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       // Le focus (Tab) peut faire scroller nativement le conteneur : on annule
       const onNativeScroll = () => {
         root.scrollTop = 0;
+        root.scrollLeft = 0;
       };
 
       const wheelTarget = globalWheel ? window : root;
@@ -711,6 +755,9 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
       ];
 
       measure();
+      // changement d'axe : les positions (px) de l'ancien axe n'ont plus de
+      // sens, on se recale sur la section courante
+      if (axisChanged && st.index >= 0) goTo(st.index, { immediate: true });
       // mode contrôlé : on démarre directement sur la section demandée
       if (index !== undefined && st.index < 0)
         goTo(index, { immediate: true });
@@ -725,7 +772,7 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
         unlisten.forEach((off) => off());
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [items.length, globalWheel, globalTouch]);
+    }, [items.length, globalWheel, globalTouch, axis]);
 
     // Mode contrôlé : suivre `index`. Pas de boucle avec onIndexChange :
     // setIndex ignore l'index déjà actif.
@@ -744,10 +791,10 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
           // hauteur du parent : plein écran si le parent l'est, sinon borné au bloc
           height: "100%",
           overflow: "hidden",
-          // les sections peuvent se dimensionner en 100cqh (= hauteur du scroller)
+          // les sections peuvent se dimensionner en 100cqh / 100cqw (= scroller)
           containerType: "size",
-          // pan-y : le scroll natif reste possible quand on rend la main à la
-          // page (cf. release), sinon il est bloqué par preventDefault
+          // pan-y : le scroll natif (vertical) reste possible quand on rend la
+          // main à la page (cf. release) et, en axe x, pour un geste vertical
           touchAction: "pan-y",
           ...style,
         }}>
@@ -761,7 +808,10 @@ const ScrollerVirtual = forwardRef<ScrollerVirtualHandle, ScrollerVirtualProps>(
               position: "absolute",
               top: 0,
               left: 0,
-              width: "100%",
+              ...(axis === "x"
+                ? // au moins la largeur du scroller, plus si le contenu l'impose
+                  { height: "100%", width: "fit-content", minWidth: "100%" }
+                : { width: "100%" }),
               willChange: "transform",
               transformOrigin: "center center",
             }}>

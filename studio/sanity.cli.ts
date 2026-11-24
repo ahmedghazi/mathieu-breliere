@@ -7,9 +7,9 @@ export default defineCliConfig({
   },
   deployment: {
     autoUpdates: true,
-    appId: 'a1h4axu27rde60j0261z9e3r',
+    appId: 'snko1zysgr372rprvy0ve0ji',
   },
-  studioHost: 'backoffice-mathieu-breliere', // Visit https://www.sanity.io/docs/environment-variables to learn more about using environment variables for local & production.
+  studioHost: 'backoffice--mathieu-breliere', // Visit https://www.sanity.io/docs/environment-variables to learn more about using environment variables for local & production.
   schemaExtraction: {
     enabled: true,
   },

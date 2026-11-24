@@ -26,9 +26,6 @@ const ContentHome = ({ input }: Props) => {
           globalWheel
           globalTouch
           onIndexChange={(index) => setIndex(index)}>
-          {/* {current && (
-            <MediaProject input={current} playerWithControls={true} priority />
-          )} */}
           {input?.projects?.map((project, index) => (
             <MediaProject
               key={index}

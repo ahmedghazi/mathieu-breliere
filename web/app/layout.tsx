@@ -1,7 +1,7 @@
 import "./styles/index.scss";
 import "./global.css";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import website from "./config/website";
 import { PageContextProvider } from "./context/PageContext";
 import { getContentInfos, getSettings } from "./sanity-api/sanity-queries";
@@ -9,7 +9,6 @@ import { LocaleContextProvider } from "./context/LocaleContext";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 import { SanityLive } from "./sanity-api/sanity.live";
-import DesignSystem from "./components/ui/DS";
 import ContentInfos from "./components/ContentInfos";
 import { ViewTransition } from "react";
 import Splash from "./components/Splash";

@@ -1,4 +1,4 @@
-- splash
+- [x] splash
 - # player mux
 - animations
 - mobile
