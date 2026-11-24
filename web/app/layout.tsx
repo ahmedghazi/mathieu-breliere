@@ -33,26 +33,25 @@ export default async function RootLayout({
   return (
     <html lang='fr'>
       <body className={"is-loading"} data-theme='theme-xyz'>
-        <div id='page' className=''>
-          <LocaleContextProvider>
-            <PageContextProvider>
+        <LocaleContextProvider>
+          <PageContextProvider>
+            <div id='page' className=''>
               {settings && <Header settings={settings} />}
               {infos && <ContentInfos input={infos} />}
               <ViewTransition>
                 <main>{children}</main>
               </ViewTransition>
-
-              <Splash
-                siteName={settings?.siteName || ""}
-                baseline={settings?.baseline || ""}
-              />
-              {/* <Footer settings={settings} /> */}
-              {/* <DesignSystem /> */}
-              <SanityLive />
-              {isEnabled && <VisualEditing zIndex={1000} />}
-            </PageContextProvider>
-          </LocaleContextProvider>
-        </div>
+            </div>
+            <Splash
+              siteName={settings?.siteName || ""}
+              baseline={settings?.baseline || ""}
+            />
+            {/* <Footer settings={settings} /> */}
+            {/* <DesignSystem /> */}
+            <SanityLive />
+            {isEnabled && <VisualEditing zIndex={1000} />}
+          </PageContextProvider>
+        </LocaleContextProvider>
       </body>
     </html>
   );

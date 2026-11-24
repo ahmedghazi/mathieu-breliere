@@ -19,8 +19,9 @@ const Splash = ({ siteName, baseline }: Props) => {
     setTimeout(() => {
       setCompleted(true);
       setSplashed(true);
-    }, 2000);
+    }, delay * 2);
   }, []);
+
   console.log({ splashed });
   return splashed ? null : (
     <div
