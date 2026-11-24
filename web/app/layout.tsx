@@ -35,6 +35,10 @@ export default async function RootLayout({
       <body className={"is-loading"} data-theme='theme-xyz'>
         <LocaleContextProvider>
           <PageContextProvider>
+            <Splash
+              siteName={settings?.siteName || ""}
+              baseline={settings?.baseline || ""}
+            />
             <div id='page' className=''>
               {settings && <Header settings={settings} />}
               {infos && <ContentInfos input={infos} />}
@@ -42,10 +46,6 @@ export default async function RootLayout({
                 <main>{children}</main>
               </ViewTransition>
             </div>
-            <Splash
-              siteName={settings?.siteName || ""}
-              baseline={settings?.baseline || ""}
-            />
             {/* <Footer settings={settings} /> */}
             {/* <DesignSystem /> */}
             <SanityLive />

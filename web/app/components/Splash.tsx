@@ -18,7 +18,9 @@ const Splash = ({ siteName, baseline }: Props) => {
 
     setTimeout(() => {
       setCompleted(true);
-      setSplashed(true);
+      setTimeout(() => {
+        setSplashed(true);
+      }, delay);
     }, delay * 2);
   }, []);
 
