@@ -18,6 +18,8 @@ type PageContextType = {
   setIsInfos: (isInfos: boolean) => void;
   tag: NavTag | null;
   setTag: (tag: NavTag | null) => void;
+  splashed: boolean;
+  setSplashed: (val: boolean) => void;
 };
 
 const PageContext = createContext<PageContextType>({
@@ -28,6 +30,8 @@ const PageContext = createContext<PageContextType>({
   setIsInfos: () => {},
   tag: null,
   setTag: () => {},
+  splashed: false,
+  setSplashed: () => {},
 });
 
 interface PageContextProps {
@@ -41,6 +45,7 @@ export const PageContextProvider = (props: PageContextProps) => {
   const pathname = usePathname();
   // console.log(pathname);
   const [isInfos, setIsInfos] = useState<boolean>(false);
+  const [splashed, setSplashed] = useState<boolean>(false);
   const [tag, setTag] = useState<NavTag | null>(null);
   const settings = {
     pathname,
@@ -80,7 +85,15 @@ export const PageContextProvider = (props: PageContextProps) => {
 
   return (
     <PageContext.Provider
-      value={{ settings, isInfos, setIsInfos, tag, setTag }}>
+      value={{
+        settings,
+        isInfos,
+        setIsInfos,
+        tag,
+        setTag,
+        splashed,
+        setSplashed,
+      }}>
       {children}
     </PageContext.Provider>
   );

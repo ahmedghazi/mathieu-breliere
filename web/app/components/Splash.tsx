@@ -1,6 +1,7 @@
 "use client";
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
+import { usePageContext } from "../context/PageContext";
 
 type Props = {
   siteName: string;
@@ -8,6 +9,7 @@ type Props = {
 };
 
 const Splash = ({ siteName, baseline }: Props) => {
+  const { splashed, setSplashed } = usePageContext();
   const [ready, setReady] = useState(false);
   const [completed, setCompleted] = useState(false);
   const delay = 1000;
@@ -16,9 +18,11 @@ const Splash = ({ siteName, baseline }: Props) => {
 
     setTimeout(() => {
       setCompleted(true);
+      setSplashed(true);
     }, 2000);
   }, []);
-  return (
+  console.log({ splashed });
+  return splashed ? null : (
     <div
       className={clsx(
         "splash",

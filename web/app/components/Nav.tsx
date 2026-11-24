@@ -24,16 +24,15 @@ const Nav = ({ navPrimary, navTags }: Props) => {
         <ul className='menu'>
           {navPrimary?.map((item) => (
             <li key={item._key} className={""}>
+              {/* {item._type} */}
               {item._type === "linkInternal" && (
-                <>
-                  <Link
-                    className={
-                      pathname === _linkResolver(item.link) ? "is-active" : ""
-                    }
-                    href={_linkResolver(item.link)}>
-                    <span>{item.label}</span>
-                  </Link>
-                </>
+                <Link
+                  className={
+                    pathname === _linkResolver(item.link) ? "is-active" : ""
+                  }
+                  href={_linkResolver(item.link)}>
+                  <span>{item.label}</span>
+                </Link>
               )}
               {item._type === "linkOverlay" && (
                 <button
