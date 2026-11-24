@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import { Infos } from "../sanity-api/types/sanity.types";
+import { InfosData } from "../sanity-api/types";
 import { PortableText } from "next-sanity";
 import portableTextComponents from "../sanity-api/portableTextComponents";
 import website from "../config/website";
 import { usePageContext } from "../context/PageContext";
 import clsx from "clsx";
 type Props = {
-  input: Infos;
+  input: InfosData;
 };
 const ContentInfos = ({ input }: Props) => {
   const { isInfos } = usePageContext();

@@ -11,6 +11,7 @@
  *   X[number]            → type d'un élément de tableau
  */
 import type {
+  CONTENT_INFOS_QUERY_RESULT,
   HOME_QUERY_RESULT,
   PROJECT_QUERY_RESULT,
   PROJECTS_QUERY_RESULT,
@@ -23,6 +24,9 @@ type Item<T> = NonNullable<T> extends Array<infer U> ? U : never;
 export type SettingsData = NonNullable<SETTINGS_QUERY_RESULT>;
 export type NavPrimaryItem = Item<SettingsData["navPrimary"]>;
 export type NavTag = Item<SettingsData["navTags"]>;
+
+// Infos (overlay)
+export type InfosData = NonNullable<CONTENT_INFOS_QUERY_RESULT>;
 
 // Home
 export type HomeData = NonNullable<HOME_QUERY_RESULT>;

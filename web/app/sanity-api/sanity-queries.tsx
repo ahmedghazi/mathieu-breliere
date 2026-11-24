@@ -2,8 +2,8 @@ import { defineQuery } from "next-sanity";
 import { sanityFetch } from "./sanity.live";
 import {
   ALL_PROJECTS_QUERY_RESULT,
+  CONTENT_INFOS_QUERY_RESULT,
   HOME_QUERY_RESULT,
-  Infos,
   PROJECT_QUERY_RESULT,
   PROJECTS_QUERY_RESULT,
   SETTINGS_QUERY_RESULT,
@@ -57,7 +57,7 @@ export const CONTENT_INFOS_QUERY = defineQuery(`*[_type == "infos"][0]{
 
 }`);
 
-export async function getContentInfos(): Promise<Infos> {
+export async function getContentInfos(): Promise<CONTENT_INFOS_QUERY_RESULT> {
   const { data } = await sanityFetch({ query: CONTENT_INFOS_QUERY });
   return data;
 }
@@ -163,8 +163,11 @@ export async function getProjects(
 
 export const ALL_PROJECTS_QUERY =
   defineQuery(`*[_type == "project" && defined(slug.current)] | order(_createdAt desc){
-  ${projectCard},
-  _updatedAt
+    seo{
+      ${seo}
+    },
+    ${projectCard},
+    _updatedAt
 }`);
 
 export async function getAllProjects(

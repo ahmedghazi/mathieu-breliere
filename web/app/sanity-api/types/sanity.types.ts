@@ -1262,8 +1262,41 @@ export type PROJECTS_QUERY_RESULT = {
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
 // Variable: ALL_PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc){  		_id,	_type,	slug,	title,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},	"videoCover": coalesce(videoCover, videocover){		asset->{			...		}	},	tags[]->{		...	},  _updatedAt}
+// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc){    seo{      	...,	metaImage{			...,	asset->{		...,		url,		extension,		mimeType	}	}    },    		_id,	_type,	slug,	title,	imageCover{			...,	asset->{		...,		url,		extension,		mimeType	}	},	"videoCover": coalesce(videoCover, videocover){		asset->{			...		}	},	tags[]->{		...	},    _updatedAt}
 export type ALL_PROJECTS_QUERY_RESULT = Array<{
+  seo: {
+    _type: "seo";
+    metaTitle?: string;
+    metaDescription?: string;
+    metaImage: {
+      asset: {
+        _id: string;
+        _type: "sanity.imageAsset";
+        _createdAt: string;
+        _updatedAt: string;
+        _rev: string;
+        originalFilename?: string;
+        label?: string;
+        title?: string;
+        description?: string;
+        altText?: string;
+        sha1hash?: string;
+        extension: string | null;
+        mimeType: string | null;
+        size?: number;
+        assetId?: string;
+        uploadId?: string;
+        path?: string;
+        url: string | null;
+        metadata?: SanityImageMetadata;
+        source?: SanityAssetSourceData;
+      } | null;
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+  } | null;
   _id: string;
   _type: "project";
   slug: Slug | null;
@@ -1347,7 +1380,7 @@ declare global {
     '*[_type == "home"][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  projects[]->{\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\t"videoCover": coalesce(videoCover, videocover){\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n\n  }\n}': HOME_QUERY_RESULT;
     '*[_type == "project" && slug.current == $slug][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  media[]{\n    _key,\n    _type == "image" => {\n      \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n    },\n    // mediaImage / mediaVideo are referenced documents: dereference them\n    _type == "reference" => {\n      ...@->{\n        _type,\n        _id,\n        caption,\n        _type == "mediaImage" => {\n          image{\n            \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n          }\n        },\n        _type == "mediaVideo" => {\n          video{\n            asset->{\n              ...\n            }\n          }\n        }\n      }\n    }\n  },\n  "prev": *[_type == "project" && defined(slug.current) && slug.current < $slug] | order(_createdAt desc) [0] {\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\n\n  },\n  "next": *[_type == "project" && defined(slug.current) && slug.current > $slug] | order(_createdAt asc) [0] {\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\n\n  }\n}': PROJECT_QUERY_RESULT;
     '*[_type == "projects" ][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  "projects": *[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\t"videoCover": coalesce(videoCover, videocover){\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n\n  }\n}': PROJECTS_QUERY_RESULT;
-    '*[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n  \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\t"videoCover": coalesce(videoCover, videocover){\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n,\n  _updatedAt\n}': ALL_PROJECTS_QUERY_RESULT;
+    '*[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n    seo{\n      \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n    },\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\ttitle\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\t"videoCover": coalesce(videoCover, videocover){\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n,\n    _updatedAt\n}': ALL_PROJECTS_QUERY_RESULT;
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

@@ -37,7 +37,7 @@ export default async function RootLayout({
           <LocaleContextProvider>
             <PageContextProvider>
               {settings && <Header settings={settings} />}
-              <ContentInfos input={infos} />
+              {infos && <ContentInfos input={infos} />}
               <ViewTransition>
                 <main>{children}</main>
               </ViewTransition>

@@ -19,7 +19,7 @@ export async function generateMetadata({
     title: `${data?.seo?.metaTitle || data?.title || ""}`,
     description: data?.seo?.metaDescription,
     openGraph: {
-      images: data?.seo?.metaImage?.asset.url || website.image,
+      images: data?.seo?.metaImage?.asset?.url || website.image,
     },
   };
 }

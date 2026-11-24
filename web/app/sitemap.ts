@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 import website from "./config/website";
-import { getAllPagesModulaire } from "./sanity-api/sanity-queries";
+// import { getAllPagesModulaire } from "./sanity-api/sanity-queries";
 import { _linkResolver } from "./sanity-api/utils";
+import { getAllProjects } from "./sanity-api/sanity-queries";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const items = await getAllPagesModulaire();
+  const items = await getAllProjects();
   return [
     {
       url: website.url,
