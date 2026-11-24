@@ -13,9 +13,6 @@ const ContentProjects = ({ input }: Props) => {
         {input.map((project) => (
           <CardProject key={project._id} input={project} />
         ))}
-        {input.map((project) => (
-          <CardProject key={project._id} input={project} />
-        ))}
       </div>
     </div>
   );

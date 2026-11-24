@@ -163,7 +163,10 @@ const MuxPlayer = ({
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
         decoding='async'
-        style={{ objectFit: background ? "cover" : "contain" }}
+        style={{
+          objectFit: background ? "cover" : "contain",
+          opacity: video.playing ? 0 : 1,
+        }}
       />
       <MuxPlayerLazy
         ref={playerRef}

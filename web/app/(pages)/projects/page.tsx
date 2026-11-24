@@ -30,8 +30,6 @@ const ProjectsPage: NextPage<PageProps> = async ({ params }) => {
   return (
     <div className='template template--projects' data-template='projects'>
       <ContentProjects input={data?.projects || []} />
-
-      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
     </div>
   );
 };
