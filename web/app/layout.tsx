@@ -35,6 +35,7 @@ export default async function RootLayout({
       <body className={"is-loading"} data-theme='theme-xyz'>
         <LocaleContextProvider>
           <PageContextProvider>
+            <script dangerouslySetInnerHTML={{ __html: "0" }} />
             <Splash
               siteName={settings?.siteName || ""}
               baseline={settings?.baseline || ""}
