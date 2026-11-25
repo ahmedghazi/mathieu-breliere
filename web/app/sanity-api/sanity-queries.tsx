@@ -56,10 +56,12 @@ export async function getSettings(): Promise<SETTINGS_QUERY_RESULT> {
 export const CONTENT_INFOS_QUERY = defineQuery(`*[_type == "infos"][0]{
   ...,
   clients[]->{
-    ${reference}
+    ${reference},
+    link
   },
   "clientsAll": *[_type == "client"] | order(name asc){
-    ${reference}
+    ${reference},
+    link
   }
 }`);
 

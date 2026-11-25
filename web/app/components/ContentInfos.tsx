@@ -38,13 +38,14 @@ const ContentInfos = ({ input }: Props) => {
                 {clients?.map((item, index) => (
                   <li key={index}>
                     <a
-                      href={item.link}
+                      href={item.link || ""}
                       target='_blank'
                       rel='noopener noreferrer'>
-                      {item.name}
+                      {item.title}
                     </a>
                   </li>
                 ))}
+                {/* <pre>{JSON.stringify(clients, null, 2)}</pre> */}
               </ul>
             </div>
             <div className='col col-span-6 col-start-5 md:col-span-1'>
