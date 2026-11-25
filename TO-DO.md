@@ -7,7 +7,7 @@
 - # home scroll snap mobile
 - [x] back to index
 - anime splash Mathieu 1, Director 2, centré y, Mathieu descend, Director disparait, fade vers la home
-- infos fade in out + fond blanc
+- [x] infos fade in out + fond blanc
 - [x] nav avec . active pb quand infos ouvert
 - [x] projet ajouter champs client
 - infos convoquer les clients

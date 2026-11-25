@@ -208,6 +208,13 @@ export type Seo = {
   };
 };
 
+export type ClientReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "client";
+};
+
 export type Infos = {
   _id: string;
   _type: "infos";
@@ -220,7 +227,7 @@ export type Infos = {
   clients?: Array<
     {
       _key: string;
-    } & LinkExternal
+    } & ClientReference
   >;
   follow?: Array<
     {
@@ -255,13 +262,6 @@ export type Settings = {
   >;
   message404?: BlockContent;
   customCss?: string;
-};
-
-export type ClientReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "client";
 };
 
 export type MediaVideoReference = {
@@ -372,6 +372,7 @@ export type Client = {
   _rev: string;
   name?: string;
   slug?: Slug;
+  link?: string;
 };
 
 export type SanityReleaseMetadata = {
@@ -708,9 +709,9 @@ export type AllSanitySchemaTypes =
   | LinkExternal
   | BlockContent
   | Seo
+  | ClientReference
   | Infos
   | Settings
-  | ClientReference
   | MediaVideoReference
   | MediaImageReference
   | Project
@@ -879,7 +880,7 @@ export type SETTINGS_QUERY_RESULT = {
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
 // Variable: CONTENT_INFOS_QUERY
-// Query: *[_type == "infos"][0]{  ...,  "clients": *[_type == "client"]{    	_id,	_type,	slug,	"title": coalesce(title, name)  }}
+// Query: *[_type == "infos"][0]{  ...,  "clientsAll": *[_type == "client"] | order(name asc){    	_id,	_type,	slug,	"title": coalesce(title, name)  }}
 export type CONTENT_INFOS_QUERY_RESULT = {
   _id: string;
   _type: "infos";
@@ -889,17 +890,22 @@ export type CONTENT_INFOS_QUERY_RESULT = {
   title?: string;
   description?: string;
   representation?: BlockContent;
-  clients: Array<{
-    _id: string;
-    _type: "client";
-    slug: Slug | null;
-    title: string | null;
-  }>;
+  clients?: Array<
+    {
+      _key: string;
+    } & ClientReference
+  >;
   follow?: Array<
     {
       _key: string;
     } & LinkExternal
   >;
+  clientsAll: Array<{
+    _id: string;
+    _type: "client";
+    slug: Slug | null;
+    title: string | null;
+  }>;
 } | null;
 
 // Source: ../web/app/sanity-api/sanity-queries.tsx
@@ -1454,7 +1460,7 @@ export type ALL_PROJECTS_QUERY_RESULT = Array<{
 declare global {
   interface SanityQueries {
     '*[_type == "settings"][0]{\n  ...,\n  navPrimary[]{\n    \n\t...,\n\t_type == \'linkInternal\' => {\n\t\t\n\t...,\n\tlink->{\n\t\t\n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n\n\t},\n\t// submenu[]{\n\t// \t...,\n\t// \tlink->{\n\t// \t\t\n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n\n\t// \t},\n\t// }\n\n\t}\n\n  },\n  navTags[]->{\n    \n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n\n  },\n  message404[]{\n    \n\t...,\n\tmarkDefs[]{\n\t\t...,\n\t\t_type == \'linkInternal\' => {\n\t\t\t\n\t...,\n\tlink->{\n\t\t\n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n\n\t},\n\t// submenu[]{\n\t// \t...,\n\t// \tlink->{\n\t// \t\t\n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n\n\t// \t},\n\t// }\n\n\t\t}\n\t},\n\t_type == \'embed\' => {\n\t\t...\n\t},\n\t_type == \'image\' => {\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n\n}': SETTINGS_QUERY_RESULT;
-    '*[_type == "infos"][0]{\n  ...,\n  "clients": *[_type == "client"]{\n    \n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n\n  }\n}': CONTENT_INFOS_QUERY_RESULT;
+    '*[_type == "infos"][0]{\n  ...,\n  "clientsAll": *[_type == "client"] | order(name asc){\n    \n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n\n  }\n}': CONTENT_INFOS_QUERY_RESULT;
     '*[_type == "home"][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  projects[]->{\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\t"videoCover": coalesce(videoCover, videocover){\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n\n  }\n}': HOME_QUERY_RESULT;
     '*[_type == "project" && slug.current == $slug][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  media[]{\n    _key,\n    _type == "image" => {\n      \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n    },\n    // mediaImage / mediaVideo are referenced documents: dereference them\n    _type == "reference" => {\n      ...@->{\n        _type,\n        _id,\n        caption,\n        _type == "mediaImage" => {\n          image{\n            \n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n          }\n        },\n        _type == "mediaVideo" => {\n          video{\n            asset->{\n              ...\n            }\n          }\n        }\n      }\n    }\n  },\n  "prev": *[_type == "project" && defined(slug.current) && slug.current < $slug] | order(_createdAt desc) [0] {\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n,\n\n\n  },\n  "next": *[_type == "project" && defined(slug.current) && slug.current > $slug] | order(_createdAt asc) [0] {\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n,\n\n\n  }\n}': PROJECT_QUERY_RESULT;
     '*[_type == "projects" ][0]{\n  ...,\n  seo{\n    \n\t...,\n\tmetaImage{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t}\n\n  },\n  "projects": *[_type == "project" && defined(slug.current)] | order(_createdAt desc){\n    \n\t\n\t_id,\n\t_type,\n\tslug,\n\t"title": coalesce(title, name)\n,\n\timageCover{\n\t\t\n\t...,\n\tasset->{\n\t\t...,\n\t\turl,\n\t\textension,\n\t\tmimeType\n\t}\n\n\t},\n\t"videoCover": coalesce(videoCover, videocover){\n\t\tasset->{\n\t\t\t...\n\t\t}\n\t},\n\ttags[]->{\n\t\t...\n\t}\n\n  }\n}': PROJECTS_QUERY_RESULT;

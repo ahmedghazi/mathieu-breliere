@@ -46,7 +46,7 @@ export default defineType({
       name: 'clients',
       title: 'Clients',
       type: 'array',
-      of: [{type: 'linkExternal'}],
+      of: [{type: 'reference', to: [{type: 'client'}]}],
       // group: 'editorial',
     }),
     defineField({

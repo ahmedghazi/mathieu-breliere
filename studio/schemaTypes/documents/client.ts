@@ -43,6 +43,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
       // group: 'editorial',
     }),
+    defineField({
+      name: 'link',
+      title: 'Lien',
+      type: 'url',
+      // group: 'editorial',
+    }),
 
     // defineField({
     //   name: 'modules',

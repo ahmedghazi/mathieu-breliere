@@ -14,11 +14,13 @@ html {
 }
 body {
   // background-color: var(--color-bg);
-  // @include mixins.debugFiletX(var(--spacing-md));
+  // @include mixins.debugFiletX(33.6vw);
 
   // @include debugOutline(var(--space-md));
 }
 #page {
+  // @include mixins.debugFiletX(71.5vw);
+
   // @include mixins.debugFiletX(var(--spacing-sm));
   background-color: var(--color-bg);
   display: grid;

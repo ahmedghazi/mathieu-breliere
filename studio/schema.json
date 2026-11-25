@@ -1074,6 +1074,36 @@
     }
   },
   {
+    "type": "type",
+    "name": "client.reference",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_ref": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          }
+        },
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "reference"
+          }
+        },
+        "_weak": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        }
+      },
+      "dereferencesTo": "client"
+    }
+  },
+  {
     "name": "infos",
     "type": "document",
     "attributes": {
@@ -1146,7 +1176,7 @@
             },
             "rest": {
               "type": "inline",
-              "name": "linkExternal"
+              "name": "client.reference"
             }
           }
         },
@@ -1319,36 +1349,6 @@
         },
         "optional": true
       }
-    }
-  },
-  {
-    "type": "type",
-    "name": "client.reference",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_ref": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          }
-        },
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "reference"
-          }
-        },
-        "_weak": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "boolean"
-          },
-          "optional": true
-        }
-      },
-      "dereferencesTo": "client"
     }
   },
   {
@@ -1936,6 +1936,13 @@
         "value": {
           "type": "inline",
           "name": "slug"
+        },
+        "optional": true
+      },
+      "link": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
         },
         "optional": true
       }

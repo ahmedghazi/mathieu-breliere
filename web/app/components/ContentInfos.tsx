@@ -11,19 +11,19 @@ type Props = {
 };
 const ContentInfos = ({ input }: Props) => {
   const { isInfos } = usePageContext();
-
+  const clients = input.clients || input.clientsAll || [];
   return (
     <div className={clsx("content--infos overlay", isInfos && "is-active")}>
-      <div className='md:grid  md:grid-cols-18 gap-sm'>
+      <div className='md:grid  md:grid-cols-18 gap-0'>
         <div className='inner md:col-span-14'>
-          <div className='grid grid-cols-10 md:grid-cols-14 gap-md md:gap-sm'>
+          <div className='grid grid-cols-10 md:grid-cols-14 gap-md md:gap-0'>
             {/* <div className='sm-only col-span-4'></div> */}
-            <div className='col-span-6 col-start-5 md:col-span-4'>
+            <div className='col col-span-6 col-start-5 md:col-span-4'>
               <span className='site-name'>{website.title}</span>
               <span className='description'>{input.description}</span>
             </div>
-            <div className='col-span-6 col-start-5 md:col-span-2 hidden-sm'></div>
-            <div className='col-span-6 col-start-5 md:col-span-3'>
+            <div className='col col-span-6 col-start-5 md:col-span-2 hidden-sm'></div>
+            <div className='col col-span-6 col-start-5 md:col-span-3'>
               <h3>Representation</h3>
               <div className='text'>
                 <PortableText
@@ -32,22 +32,22 @@ const ContentInfos = ({ input }: Props) => {
                 />
               </div>
             </div>
-            <div className='col-span-6 col-start-5 md:col-span-4 clients'>
+            <div className='col col-span-6 col-start-5 md:col-span-4 clients'>
               <h3>Clients</h3>
               <ul>
-                {input.clients?.map((item, index) => (
+                {clients?.map((item, index) => (
                   <li key={index}>
                     <a
                       href={item.link}
                       target='_blank'
                       rel='noopener noreferrer'>
-                      {item.label}
+                      {item.name}
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className='col-span-6 col-start-5 md:col-span-1'>
+            <div className='col col-span-6 col-start-5 md:col-span-1'>
               <h3>Follow </h3>
               <ul>
                 {input.follow?.map((item, index) => (
