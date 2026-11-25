@@ -53,16 +53,6 @@ const ContentHome = ({ input }: Props) => {
                     </Link>
                   </li>
                 ))}
-                {input?.projects?.map((project, i) => (
-                  <li key={i} data-index={index}>
-                    <Link
-                      onMouseEnter={() => setIndex(i)}
-                      className={index === i ? "is-active" : ""}
-                      href={_linkResolver(project)}>
-                      {project.title}
-                    </Link>
-                  </li>
-                ))}
               </ul>
             </div>
           </AsciiTree>
