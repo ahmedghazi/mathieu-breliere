@@ -15,7 +15,7 @@ type Props = {
 const ContentHome = ({ input }: Props) => {
   const [index, setIndex] = useState<number>(0);
   // derived, not set in an effect: the first project is in the server HTML (LCP)
-  const current = input?.projects?.[index] ?? null;
+  // const current = input?.projects?.[index] ?? null;
   const ref = useRef<HTMLDivElement>(null);
 
   return (

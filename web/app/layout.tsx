@@ -31,7 +31,14 @@ export default async function RootLayout({
 
   return (
     <html lang='fr'>
-      <body className={"is-loading"} data-theme='theme-xyz'>
+      <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: "html:has(.splash){background:#000}",
+          }}
+        />
+      </head>
+      <body data-theme='theme-xyz'>
         <LocaleContextProvider>
           <PageContextProvider>
             <script dangerouslySetInnerHTML={{ __html: "0" }} />
@@ -48,7 +55,7 @@ export default async function RootLayout({
             </div>
             {/* <Footer settings={settings} /> */}
             {/* <DesignSystem /> */}
-            <SanityLive />
+            {/* <SanityLive /> */}
             {isEnabled && <VisualEditing zIndex={1000} />}
           </PageContextProvider>
         </LocaleContextProvider>
