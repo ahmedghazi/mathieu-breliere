@@ -7,7 +7,7 @@ import { getContentInfos, getSettings } from "./sanity-api/sanity-queries";
 import { LocaleContextProvider } from "./context/LocaleContext";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
-import { SanityLive } from "./sanity-api/sanity.live";
+// import { SanityLive } from "./sanity-api/sanity.live";
 import ContentInfos from "./components/ContentInfos";
 import { ViewTransition } from "react";
 import Splash from "./components/Splash";
