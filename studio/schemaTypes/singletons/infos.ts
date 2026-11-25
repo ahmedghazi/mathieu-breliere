@@ -61,7 +61,7 @@ export default defineType({
     prepare() {
       return {
         subtitle: '/',
-        title: 'Home',
+        title: 'Infos',
       }
     },
   },
