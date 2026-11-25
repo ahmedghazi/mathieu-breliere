@@ -15,6 +15,7 @@
     overflow-y: auto;
     max-height: var(--txt-h);
     color: var(--color-secondary);
+    padding-bottom: 0.3rem;
     a.is-active,
     a:hover {
       color: var(--color-primary);

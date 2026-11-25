@@ -1,3 +1,10 @@
+// registered so WAAPI can interpolate it (unregistered custom props just jump)
+@property --h {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
 .splash {
   position: fixed;
   inset: 0;
@@ -14,33 +21,38 @@
 
   &.is-ready {
     transition: opacity 0.3s var(--cubic);
-    .site-name,
-    .site-baseline {
-      transition-property: transform, opacity;
-      transition-duration: var(--transition-duration);
-      transition-timing-function: cubic-bezier(0.86, 0, 0.14, 1);
-      transform: translateY(0);
-      opacity: 1;
-    }
+    // .site-name,
+    // .site-baseline {
+    //   transition-property: transform, opacity;
+    //   transition-duration: var(--transition-duration);
+    //   transition-timing-function: cubic-bezier(0.86, 0, 0.14, 1);
+    //   transform: translateY(0);
+    //   opacity: 1;
+    // }
   }
   &.is-completed {
-    opacity: 0;
+    // opacity: 0;
+    // .spacer {
+    //   height: var(--h);
+    // }
   }
 
   .spacer {
-    height: var(--media-h);
+    --h: calc(50vh - calc(var(--spacing-sm) * 2));
+    height: var(--h);
     flex-shrink: 0;
+    transition: height 0.3s var(--cubic);
   }
   .inner {
     flex: 1;
   }
 
-  .site-name,
-  .site-baseline {
-    transform: translateY(calc(var(--media-h) * -1));
-    opacity: 0;
-  }
-  .site-baseline {
-    transition-delay: var(--transition-duration);
-  }
+  // .site-name,
+  // .site-baseline {
+  //   transform: translateY(calc(var(--media-h) * -1));
+  //   opacity: 0;
+  // }
+  // .site-baseline {
+  //   transition-delay: var(--transition-duration);
+  // }
 }

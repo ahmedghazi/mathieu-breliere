@@ -4,10 +4,10 @@
 - # home scroll snap desktop
 - # home scroll snap mobile
 - [x] back to index
-- [ ] home padding (projects)
-- [ ] anime splash Mathieu 1, Director 2, centré y, Mathieu descend, Director disparait, fade vers la home
 - [x] infos fade in out + fond blanc
 - [x] nav avec . active pb quand infos ouvert
 - [x] projet ajouter champs client
-- [ ] infos convoquer les clients
-- mobile
+- [x] infos convoquer les clients
+- [ ] home padding (projects)
+- [ ] anime splash Mathieu 1, Director 2, centré y, Mathieu descend, Director disparait, fade vers la home
+- [ ] mobile
