@@ -8,7 +8,7 @@ type Props = {
 };
 const ProjectPagination = ({ input }: Props) => {
   return (
-    <ul className='project-pagination'>
+    <ul className='project-pagination '>
       {input?.prev && (
         <li>
           <a href={_linkResolver(input.prev)}>

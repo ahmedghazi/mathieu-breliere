@@ -28,6 +28,10 @@
         content: "";
       }
     }
+    .text {
+      max-height: calc(var(--txt-h) - 4em);
+      overflow-y: auto;
+    }
   }
   .content__nav {
     display: flex;

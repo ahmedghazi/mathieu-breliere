@@ -55,18 +55,28 @@ header {
     pointer-events: none;
     position: fixed;
     width: 100%;
+    top: 0;
     left: 0;
-    bottom: var(--spacing-sm);
+    height: 100vh;
+    // left: 0;
+    // top: 0;
+    // right: 0;
+    // bottom: var(--spacing-sm);
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: var(--spacing-sm);
-    mix-blend-mode: difference;
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+    &.is-projects {
+      mix-blend-mode: difference;
+      a,
+      button {
+        color: white;
+      }
+    }
     a,
     button {
       pointer-events: auto;
-      color: white;
     }
     nav .nav-tags button {
       color: var(--color-secondary);
@@ -79,6 +89,7 @@ header {
     .spacer,
     .flex {
       grid-column: span 5 / span 5;
+      flex-shrink: 0;
     }
     .spacer {
       height: calc(var(--media-h) - var(--spacing-sm));
@@ -88,6 +99,7 @@ header {
     }
     .site-name {
       order: 2;
+      line-height: 0.87;
     }
   }
 }

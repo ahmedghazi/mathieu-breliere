@@ -47,14 +47,18 @@ const ContentProject = ({ input }: Props) => {
             </div>
             <details>
               <summary>Credits</summary>
-              <PortableText
-                value={input.credits}
-                components={portableTextComponents}
-              />
+              <div className='text'>
+                <PortableText
+                  value={input.credits}
+                  components={portableTextComponents}
+                />
+              </div>
             </details>
           </div>
           <div className='content__nav'>
-            <ProjectPagination input={input} />
+            <div className='hidden-sm'>
+              <ProjectPagination input={input} />
+            </div>
             <div className='media-controls hide-sb'>
               <ul>
                 {/* <li>{index}</li> */}

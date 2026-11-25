@@ -35,10 +35,10 @@ export default async function RootLayout({
         <LocaleContextProvider>
           <PageContextProvider>
             <script dangerouslySetInnerHTML={{ __html: "0" }} />
-            <Splash
+            {/* <Splash
               siteName={settings?.siteName || ""}
               baseline={settings?.baseline || ""}
-            />
+            /> */}
             <div id='page' className=''>
               {settings && <Header settings={settings} />}
               {infos && <ContentInfos input={infos} />}

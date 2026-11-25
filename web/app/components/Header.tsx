@@ -1,10 +1,9 @@
+"use client";
 import React from "react";
-import {
-  Settings,
-  SETTINGS_QUERY_RESULT,
-} from "../sanity-api/types/sanity.types";
+import { SETTINGS_QUERY_RESULT } from "../sanity-api/types/sanity.types";
 import Nav from "./Nav";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Props = {
   // settings: Settings;
@@ -12,8 +11,12 @@ type Props = {
 };
 
 const Header = ({ settings }: Props) => {
+  const pathname = usePathname();
+
+  const isProjects = pathname.includes("/projects");
+
   return (
-    <header>
+    <header className={isProjects ? "is-projects" : ""}>
       <div className='h-media-h spacer'></div>
       <div className='flex flex-col justify-between md:grid md:grid-cols-8 gap-sm'>
         <div className='site-name'>

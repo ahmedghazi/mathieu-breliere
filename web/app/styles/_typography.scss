@@ -110,9 +110,13 @@ h6 {
 .text {
   p {
     margin-bottom: 1em;
+    overflow-wrap: anywhere;
   }
   a {
     color: var(--color-secondary);
+    overflow-wrap: anywhere;
+    word-break: break-word; /* repli pour les vieux Safari */
+    hyphens: none; /* pas de tiret au milieu d'une URL */
   }
 }
 
