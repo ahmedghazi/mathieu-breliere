@@ -19,40 +19,23 @@
   z-index: 52;
   pointer-events: none;
 
-  &.is-ready {
-    transition: opacity 0.3s var(--cubic);
-    // .site-name,
-    // .site-baseline {
-    //   transition-property: transform, opacity;
-    //   transition-duration: var(--transition-duration);
-    //   transition-timing-function: cubic-bezier(0.86, 0, 0.14, 1);
-    //   transform: translateY(0);
-    //   opacity: 1;
-    // }
-  }
-  &.is-completed {
-    // opacity: 0;
-    // .spacer {
-    //   height: var(--h);
-    // }
+  .site-name,
+  .site-baseline {
+    opacity: 0;
   }
 
-  .spacer {
-    --h: calc(var(--app-h) / 2 - calc(var(--spacing-sm) * 2));
-    height: var(--h);
-    flex-shrink: 0;
-    transition: height 0.3s var(--cubic);
-  }
   .inner {
     flex: 1;
   }
 
-  // .site-name,
-  // .site-baseline {
-  //   transform: translateY(calc(var(--media-h) * -1));
-  //   opacity: 0;
-  // }
-  // .site-baseline {
-  //   transition-delay: var(--transition-duration);
-  // }
+  @media (max-width: 768px) {
+    padding: calc(var(--spacing-sm) * 1);
+
+    .site-name {
+      grid-column: span 2 / span 2;
+    }
+    .site-baseline {
+      grid-column: span 3 / span 3;
+    }
+  }
 }

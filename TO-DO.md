@@ -8,6 +8,6 @@
 - [x] nav avec . active pb quand infos ouvert
 - [x] projet ajouter champs client
 - [x] infos convoquer les clients
-- [ ] home padding (projects)
-- [ ] anime splash Mathieu 1, Director 2, centré y, Mathieu descend, Director disparait, fade vers la home
-- [ ] mobile
+- [x] home padding (projects)
+- [x] anime splash Mathieu 1, Director 2, centré y, Mathieu descend, Director disparait, fade vers la home
+- [x] mobile

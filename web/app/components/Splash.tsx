@@ -3,6 +3,7 @@ import clsx from "clsx";
 import React, { useEffect, useRef, useState } from "react";
 import { usePageContext } from "../context/PageContext";
 import { fadeDown, fadeUp, Timeline } from "../lib/waapi";
+import useDeviceDetect from "../hooks/useDeviceDetect";
 
 type Props = {
   siteName: string;
@@ -26,6 +27,7 @@ const Splash = ({ siteName, baseline }: Props) => {
   const baselineRef = useRef<HTMLDivElement>(null);
   const tl = useRef<Timeline | null>(null);
   const duration = 750;
+  const { isMobile } = useDeviceDetect();
 
   const slideIn = [
     { opacity: 0, transform: "translateY(-50vh)" },
@@ -41,12 +43,21 @@ const Splash = ({ siteName, baseline }: Props) => {
     if (
       !sitename?.current ||
       !baselineRef?.current ||
-      !wrapper?.current ||
-      !spacer?.current
+      !wrapper?.current
+      // !spacer?.current
     )
       return;
+    const headerSitenmame = document.querySelector("header .site-name");
+    if (!headerSitenmame) return;
+    const headerSitenmameBounding = headerSitenmame.getBoundingClientRect();
+    // measured before any animation is attached = resting position (translateY(0))
+    const sitenameBounding = sitename.current.getBoundingClientRect();
+    const dx = headerSitenmameBounding.left - sitenameBounding.left;
+    const dy = headerSitenmameBounding.top - sitenameBounding.top;
     tl.current = new Timeline({
-      onUpdate: (t) => console.log(t),
+      onUpdate: (t) => {
+        //console.log(t)
+      },
       onComplete: () => {
         setCompleted(true);
         // let the .is-completed fade out before unmounting
@@ -65,9 +76,13 @@ const Splash = ({ siteName, baseline }: Props) => {
       .call(() => {
         // fired when the playhead reaches step2
       }, "step2")
+
       .add(
-        spacer?.current,
-        { "--h": "var(--media-h)" },
+        sitename?.current,
+        [
+          { transform: "translate(0, 0)" },
+          { transform: `translate(${dx}px, ${dy}px)` },
+        ],
         { duration: duration },
         "step2",
       )
@@ -76,6 +91,7 @@ const Splash = ({ siteName, baseline }: Props) => {
   };
 
   useEffect(() => {
+    // return;
     _setupTimeline();
     setReady(true);
     tl.current?.play();
@@ -90,16 +106,9 @@ const Splash = ({ siteName, baseline }: Props) => {
         "splash",
         ready && "is-ready",
         completed && "is-completed",
-      )}
-      style={
-        {
-          // "--transition-duration": `${delay}ms`,
-          // "--transition-delay": `${delay / 3}ms`,
-        } as React.CSSProperties
-      }>
-      <div ref={spacer} className='spacer'></div>
-      <div className='inner flex flex-col justify-between md:grid md:grid-cols-6 items-start gap-sm'>
-        <div className='site-name' ref={sitename}>
+      )}>
+      <div className='inner grid grid-cols-5 md:grid-cols-6 items-center gap-sm'>
+        <div className='site-name ' ref={sitename}>
           {siteName}
         </div>
         <div className='site-baseline' ref={baselineRef}>
