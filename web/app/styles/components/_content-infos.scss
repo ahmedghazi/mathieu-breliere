@@ -63,7 +63,11 @@
     top: unset;
     bottom: 0;
     .inner {
-      padding: var(--spacing-xs);
+      padding: var(--spacing-sm);
+      height: auto;
+    }
+    .col {
+      padding: 0 !important;
     }
     .site-name {
       opacity: 1;

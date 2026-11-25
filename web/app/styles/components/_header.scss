@@ -53,16 +53,17 @@ header {
   @media all and (max-width: variables.$md) {
     pointer-events: none;
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
+    width: 100%;
     height: var(--app-h);
-
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    // display: grid;
+    // grid-template-columns: repeat(5, minmax(0, 1fr));
+    // padding-left: var(--spacing-sm);
+    // padding-right: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-sm);
-    padding-left: var(--spacing-sm);
-    padding-right: var(--spacing-sm);
     &.is-projects {
       mix-blend-mode: difference;
       a,
@@ -88,14 +89,18 @@ header {
       flex-shrink: 0;
     }
     .spacer {
-      height: calc(var(--media-h) - var(--spacing-sm));
+      // height: calc(var(--media-h) - var(--spacing-sm));
     }
     .flex {
       height: var(--txt-h);
     }
     .site-name {
       order: 2;
-      line-height: 0.87;
+      // line-height: 0.87;
+      // transform: translateY(0.35em);
+    }
+    nav {
+      padding-left: var(--spacing-xs);
     }
   }
 }
