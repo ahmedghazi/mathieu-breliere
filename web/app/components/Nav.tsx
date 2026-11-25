@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { SETTINGS_QUERY_RESULT } from "../sanity-api/types/sanity.types";
 import { usePageContext } from "../context/PageContext";
 import NavTags from "./NavTags";
+import clsx from "clsx";
 
 type Props = {
   navPrimary: NonNullable<SETTINGS_QUERY_RESULT>["navPrimary"];
@@ -15,11 +16,15 @@ type Props = {
 const Nav = ({ navPrimary, navTags }: Props) => {
   const { isInfos, setIsInfos } = usePageContext();
   const pathname = usePathname();
-  const isProjects = pathname.includes("/index");
-  const isProject = pathname.includes("/project");
+  const isProjects = pathname.includes("/projects");
+  // const isProject = pathname.includes("/project");
 
   return (
-    <nav>
+    <nav
+      className={clsx(
+        isProjects ? "is-projects" : "",
+        isInfos ? "is-infos" : "",
+      )}>
       <div className='b-l'>
         <ul className='menu'>
           {navPrimary?.map((item) => (

@@ -6,12 +6,12 @@
   top: calc(var(--media-h) + var(--spacing-sm));
   left: 0;
   left: var(--spacing-sm);
-  height: var(--txt-h);
   display: none;
   &.is-active {
     display: block;
   }
   .inner {
+    height: calc(var(--txt-h) + var(--spacing-xs) * 2);
     background-color: var(--color-yellow);
     padding: var(--spacing-sm);
   }

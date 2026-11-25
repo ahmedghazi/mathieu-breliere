@@ -1,7 +1,6 @@
 import "./styles/index.scss";
 import "./global.css";
 import Header from "./components/Header";
-// import Footer from "./components/Footer";
 import website from "./config/website";
 import { PageContextProvider } from "./context/PageContext";
 import { getContentInfos, getSettings } from "./sanity-api/sanity-queries";

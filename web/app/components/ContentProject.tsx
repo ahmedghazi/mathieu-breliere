@@ -46,7 +46,7 @@ const ContentProject = ({ input }: Props) => {
               <h1>{input.title}</h1>
             </div>
             <details>
-              <summary>credits</summary>
+              <summary>Credits</summary>
               <PortableText
                 value={input.credits}
                 components={portableTextComponents}
@@ -58,6 +58,32 @@ const ContentProject = ({ input }: Props) => {
             <div className='media-controls hide-sb'>
               <ul>
                 {/* <li>{index}</li> */}
+                {input.media?.map((media, i) => (
+                  <li
+                    key={media._key}
+                    className={index === i ? "is-active" : ""}
+                    onClick={() => setIndex(i)}
+                    onMouseEnter={() => setIndex(i)}
+                    aria-label={`View media ${i + 1}`}>
+                    {media._type === "mediaVideo" ? (
+                      <img
+                        src={`https://image.mux.com/${media.video?.asset?.playbackId}/thumbnail.webp?time=0&width=264`}
+                        alt={media.caption || input.title || ""}
+                        width={132}
+                      />
+                    ) : (
+                      <Figure
+                        asset={
+                          media._type === "mediaImage"
+                            ? media.image?.asset
+                            : media.asset
+                        }
+                        alt={input.title}
+                        width={132}
+                      />
+                    )}
+                  </li>
+                ))}
                 {input.media?.map((media, i) => (
                   <li
                     key={media._key}

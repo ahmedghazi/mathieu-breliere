@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@sanity/color-input':
         specifier: ^6.1.3
-        version: 6.1.10(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
+        version: 6.1.10(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       '@sanity/icons':
         specifier: ^5.2.1
         version: 5.3.0(react@19.3.1)
@@ -18,8 +18,8 @@ importers:
         specifier: ^4.0.3
         version: 4.4.12(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       '@sanity/vision':
-        specifier: ^6.24.0
-        version: 6.24.0(@babel/runtime@7.29.14)(@codemirror/theme-one-dark@6.1.3)(@shikijs/themes@4.6.0)(@types/react@19.3.0)(codemirror@6.0.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
+        specifier: ^6.25.0
+        version: 6.25.0(@babel/runtime@7.29.14)(@codemirror/theme-one-dark@6.1.3)(@shikijs/themes@4.6.0)(@types/react@19.3.0)(codemirror@6.0.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       react:
         specifier: ^19.2.4
         version: 19.3.1
@@ -30,14 +30,14 @@ importers:
         specifier: ^5.7.0
         version: 5.7.0(react@19.3.1)
       sanity:
-        specifier: ^6.24.0
-        version: 6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
+        specifier: ^6.25.0
+        version: 6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
       sanity-plugin-media:
         specifier: ^6.1.3
-        version: 6.6.3(@standard-schema/spec@1.1.0)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(valibot@1.5.0(typescript@5.9.3))
+        version: 6.6.3(@standard-schema/spec@1.1.0)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(valibot@1.5.0(typescript@5.9.3))
       sanity-plugin-mux-input:
         specifier: ^5.3.1
-        version: 5.3.1(@videojs/hlsjs-video@10.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
+        version: 5.3.1(@videojs/hlsjs-video@10.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       styled-components:
         specifier: ^6.1.18
         version: 6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -59,9 +59,6 @@ importers:
         version: 5.9.3
 
 packages:
-
-  '@acemir/cssom@0.9.33':
-    resolution: {integrity: sha512-52IMmrBsIsDZLp/KFM+KmaMLJ8GTj113K+iFGFCoOjstZSZbsAxMJE8KYtwao7bz1LsEG810ts1m5wvkVEqPlg==}
 
   '@algorithm.ts/lcs@4.0.6':
     resolution: {integrity: sha512-uu6TgA77++klfI1kM3q9LotWsTrzOzsnot8CmICzdNSG7GWxKvVb+IMMUVILrTbUKoLVfv2Js33PqfXnvkusag==}
@@ -95,9 +92,6 @@ packages:
     resolution: {integrity: sha512-KVw6qIiCTUQhByfTd78h2yD1/00waTmm9uy/R7Ck/ctUyAPj+AEDLkQIdJW0T8+qGgj3j5bpNKK7Q3G+LedJWg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
-  '@asamuzakjp/dom-selector@6.8.1':
-    resolution: {integrity: sha512-MvRz1nCqW0fsy8Qz4dnLIvhOlMzqDVBabZx6lH+YywFDdjXhMY37SmpV1XFX3JzG5GWHn63j6HX6QPr3lZXHvQ==}
-
   '@asamuzakjp/dom-selector@7.1.1':
     resolution: {integrity: sha512-67RZDnYRc8H/8MLDgQCDE//zoqVFwajkepHZgmXrbwybzXOEwOWGPYGmALYl9J2DOLfFPPs6kKCqmbzV895hTQ==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
@@ -124,6 +118,81 @@ packages:
   '@aws-lite/ssm@0.2.5':
     resolution: {integrity: sha512-1B8mZ79ySqlTEfSQ87KZ0XkmTOKQFMO3lUYUGUtwNTUncJINr6nhRWEjk128oBWwEQnpJ7NfpDPjdfg1ICe3xw==}
     engines: {node: '>=16'}
+
+  '@aws-sdk/client-lambda@3.1176.0':
+    resolution: {integrity: sha512-xlYyKP4LMGLYLx54+FszNUYDevGZyDav3M5BcS0VSk/itdF0d4GP2e1KmHtJyeEHz+xClelgohNbWyZrL0lwfA==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/core@3.981.1':
+    resolution: {integrity: sha512-sERtJaZjzvBdFMm2uei4k0WwPNUJtIrMBH9h0AEw7G0KkhIbnN3e5ZcwGjbVKClR+rrJCmyL1jhtXkseE7DU4A==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/credential-provider-env@3.972.85':
+    resolution: {integrity: sha512-IkIfFWmDbUyDEdNZpyAMmD3Givrm11I9UrqbgmLu1kUL/oh96QMqbfuHcbH08ErngZPDCQ2+7fW3U4r/W2k2Xg==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/credential-provider-http@3.972.87':
+    resolution: {integrity: sha512-NWQNmfmllENW1TOpMfhEZeRzEvbSaFsS5yrb2TZJ0wu+fVL5hyVSfGVLd8HTWb2UECD2bCw/kDXaA6dR1VJf3g==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/credential-provider-ini@3.973.31':
+    resolution: {integrity: sha512-K6jkaKaAaVn9qAl/I14lzDHnYWHiESkxYLnmPYnJg3OfTRtWz39NerpidQIzqbMpoE/pmFqhgSJ+Sx/j1++8sA==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/credential-provider-login@3.972.93':
+    resolution: {integrity: sha512-JofxFKJyNGLc9MmFMKy/vmjVwvNIWKNvHOf8rkXheH9x4+WJpIexhk1cqbmxWkodDYAodqGTiCEdBAVuiyH0iA==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/credential-provider-node@3.972.98':
+    resolution: {integrity: sha512-EpRL6YwSqvNlMjvRmwR2o3exV6DaETTdaWr1U7fZ456LQeK6ErOSluc6mWMY+OjkrBVFK4PgrU4NlERXTcgzKg==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/credential-provider-process@3.972.85':
+    resolution: {integrity: sha512-19kc3xj6woR3Nb2NWFxowRkCnuR43jMFcTLLLCqkzB/rPxxE1+NfHnAP5fpXgrI4xRRgDzvWeDREjhGrJxqfxA==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/credential-provider-sso@3.973.29':
+    resolution: {integrity: sha512-DJuKIs0bn5MZXc5uE1sf/R67YVC4ivFnL/dbKHukhdb5B6Fy80k8/BqiQykzXEqoT/qlSQaqYXU29hqVAYjcsg==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/credential-provider-web-identity@3.972.91':
+    resolution: {integrity: sha512-4k4beWSkxhwKeGMVfgppv/LwCfCd1zAycWgqop7GHkdvdNK9TTkWn299LjUQOgDMfBX2Sv08t+J1mAWKHatttw==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/nested-clients@3.998.4':
+    resolution: {integrity: sha512-8Vzg3e9ia6eHQStnoSn17asRNWHrf/ozgQslLMGOdM5JifyV+AAk1+lgVXcQMmrzgRhR9phRUEFxAOg/cBh7MQ==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/signature-v4-multi-region@3.996.52':
+    resolution: {integrity: sha512-6W6SjGc8OXUhMzNxU1X922ghD+PP1XvzmCk5Scui0jaYsLezycMYR1RaLp5xTIOUrhTXyb4DnAbPr3fBgmdnzg==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/token-providers@3.1175.0':
+    resolution: {integrity: sha512-irdg9wmKjTDumWoZeXIM3ecgfriHEEm0Q05bjiHwGNRCXXexz+5roMS28IzKWELI5QX/XZjL1vvvaIyptlCfAQ==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/types@3.975.1':
+    resolution: {integrity: sha512-7rGxUkCB2QPoQOeJmonmAICTN2zrH+fpmi1p4Iwu72lnxNaMhOgqcbpyddifnM1DBb19TWQ1u6z/XjkaFNEDWw==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws-sdk/xml-builder@3.972.43':
+    resolution: {integrity: sha512-rG8QVx4DOrJWptsogu1Aq+CDsnPKaBrAlJpKLxrJrIDXAq1ElnW0yQjjBnlWSXll0cDakCG6UDvaqwz0A9d9Og==}
+    engines: {node: '>=20.0.0'}
+
+  '@aws/durable-execution-sdk-js-testing@1.4.0':
+    resolution: {integrity: sha512-BZQl85zgDjUnUkx8gUpbKyWlZr4uKSS8b4uTH8iOEGtj0YH56vDGCPE1Ah+2zpVLZoWL/P/kaR9UYrStkA7oJg==}
+    engines: {node: '>=22'}
+    hasBin: true
+    peerDependencies:
+      '@aws/durable-execution-sdk-js': '>=1.0.1 <4.0.0'
+
+  '@aws/durable-execution-sdk-js@3.1.0':
+    resolution: {integrity: sha512-KjOvHKIee3Wnll2SZqtzLnc7CFmvNC8XWBVHFwbQh4aKDlqHx3LYUDX39gCMoO7EncyOiCXdLAZznWkuIsb2Yw==}
+    engines: {node: '>=22'}
+
+  '@aws/lambda-invoke-store@0.3.0':
+    resolution: {integrity: sha512-sl4Bm6yiMNYrZKkqqDFWN0UfnWhlS8ivKxrYl+6t0gCLrqr8y3B2IqZZbFRkfaVVp7C/baApyh71P+LeE1A2sQ==}
+    engines: {node: '>=18.0.0'}
 
   '@babel/code-frame@7.29.7':
     resolution: {integrity: sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw==}
@@ -1334,8 +1403,8 @@ packages:
   '@module-federation/third-party-dts-extractor@2.9.3':
     resolution: {integrity: sha512-jUWFWa5l7j2jb3JU9bfGHZ5luv6XAogMsvJ/yG59AZmhpliPozkyxYRjnbtik85IipZF4Cb06PW9qv5qRRf6OQ==}
 
-  '@module-federation/vite@1.23.11':
-    resolution: {integrity: sha512-OmYS7CpluphhnJLSS7y0wCa8SoBGyDmqElNVWb3LyCEpyDdp6d/Xl4an+rHfgG0B4N9Rzr/Xf7W0J/cSij39Ig==}
+  '@module-federation/vite@1.24.0':
+    resolution: {integrity: sha512-59h1pQARXDbNAHLhxLXJ6mJlRCqEIni04ZOlHJuJGlrlaMfTPt7ahwdhejXe/rb59f4nJptcJ5MK9ZakzadP1w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       vite: ^5.1.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -1406,11 +1475,136 @@ packages:
     resolution: {integrity: sha512-GbdWJOmmBO3xmrVjDXeWG7tXl4vzeGZ+af9ztCfAmhOPEkd/+eeAAadzQPeZoygedqCvsdux3QLq9/MAxusPKg==}
     engines: {node: '>=18.0.0'}
 
+  '@oxc-parser/binding-android-arm-eabi@0.157.0':
+    resolution: {integrity: sha512-zFtSEal1K/17LATxVs0VcT/Itt+fxUQ9Ni8HtG+pPcEqy/TenRO74XffkY2dBiy3Pd+w0FuebwCZ6PJx1z7scQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [android]
+
+  '@oxc-parser/binding-android-arm64@0.157.0':
+    resolution: {integrity: sha512-WSlkFUnjamuv+2+TXW5F1rp2I24KVEXj4S+H7J7Y8T/KLR2xXbHj8lgxbZZtjSKi3Z/aGGrlFEOy7EmCWpIUlg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [android]
+
+  '@oxc-parser/binding-darwin-arm64@0.157.0':
+    resolution: {integrity: sha512-Usk8UoURmtG2qBLwrO+il+kf6CahEJJriRQACuAwF2CqcWqGsvl9xj9JIMDxP9VTinOt/BZUuDZxcpn68QKsAA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@oxc-parser/binding-darwin-x64@0.157.0':
+    resolution: {integrity: sha512-yOvjPixSD2sYJxtQXOzprXdV1xbr2RZyEnbkwFnnxz332Q4+gwkQgCGXZkFlQpc95Fk4XFITACfbFzze4XXktA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [darwin]
+
+  '@oxc-parser/binding-freebsd-x64@0.157.0':
+    resolution: {integrity: sha512-BLTsP8TWvmV53jgGBynwv2DR3hKtjpdpL6fXnQs2Fg5P6HsFTShFjrgQrHMSM1cA4lGmlcj7tdTx96RoJfYuuA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@oxc-parser/binding-linux-arm-gnueabihf@0.157.0':
+    resolution: {integrity: sha512-wGMDInIrhayQpNxwpXIWqa2QiKk+/6RxOi4GxPVoqmwrCdn2xj3xXyDUm3RujxQaraZjeWfh0+h9nedoivnL1w==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+
+  '@oxc-parser/binding-linux-arm-musleabihf@0.157.0':
+    resolution: {integrity: sha512-N6OLfOnku4otlU6eF+HLU+1fH2XAaItc+c7dE+S09SzRZHvkaltU9aGTlMhmAIee95hOqkOCVFHNzQYJ1KS+gQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+
+  '@oxc-parser/binding-linux-arm64-gnu@0.157.0':
+    resolution: {integrity: sha512-YfY+qZ8d9tHJEvIq+zXyCcSve/jWgTNDiDtr1W4WVMh5+4fsOjYtH2JDIXIXUkILZzPKgJYbQ08Y/mwhr1gQLQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-parser/binding-linux-arm64-musl@0.157.0':
+    resolution: {integrity: sha512-ytZeO8BKkezwkLoWH3hK0R9Jd+S1BQhcQaWiSAWhXE7Dncq1XiJKb4w5hCe4lwl2ytgoSBgB0XEABhwD2/IhJg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxc-parser/binding-linux-ppc64-gnu@0.157.0':
+    resolution: {integrity: sha512-54w3SexApRhsw3DOAXBZ85rEMR2y29NDOUr18t69fcsnemS/N1YU+zQddHCol/HDhBPyLHg5fpxChRCSzxHwqw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ppc64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-parser/binding-linux-riscv64-gnu@0.157.0':
+    resolution: {integrity: sha512-byg0y1OHdjjhll0qWJQyowKdCxM/zCKysIIOqkWgCid/cR+RU5nTz/63OeAZvIb1z/VB1CyypDRdLn2Ov3r+HQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-parser/binding-linux-riscv64-musl@0.157.0':
+    resolution: {integrity: sha512-CiQrt8esQTeL17kscbsfpdx5cywItx3y95YejsihET68oYnxHjbEgj8JaqlIWmhpL2h98piqPBLhWmZbp67nQQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxc-parser/binding-linux-s390x-gnu@0.157.0':
+    resolution: {integrity: sha512-wSzuUshJVxcrx0c9UJYUOuUf0XHThC1+f8CEfeFbosg7FzTkjCdt89JKKU7BH8C9eTPrnJ5ir4QM0pWpVSmHnA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [s390x]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-parser/binding-linux-x64-gnu@0.157.0':
+    resolution: {integrity: sha512-C4BY4QSVzN6R03Ner3r6EtIvLNR4VW4RAb63m+L0tiF/zD7grkBHMn1svyrOBFR4i32+GWJHu05xC4gGQYBhtA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-parser/binding-linux-x64-musl@0.157.0':
+    resolution: {integrity: sha512-kN3LdZ2xp9z+TLuzYUWPR/mz/HrKd20vMCGWyby1d8T8K5t5NPemcqfSv3y0oMwXK8OF3lW7MNJnc3uWphvwvw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxc-parser/binding-openharmony-arm64@0.157.0':
+    resolution: {integrity: sha512-cQKUrgBAFUaGcqp9Umb3GToFkvow92YeJxJuzbk8YPnButv9aY5HLyKUpxxh4WqJvP6POiNR5fUDDB5wI8Wiaw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [openharmony]
+
+  '@oxc-parser/binding-win32-arm64-msvc@0.157.0':
+    resolution: {integrity: sha512-qZsymd8L67o5bpzZ7gVO7qJUIF9Uf0/mXcoG0MDchBvdL7Q2tAF4aZBZFqc/YRd0WP3jTvqjs3CxlFhHgi48dA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [win32]
+
+  '@oxc-parser/binding-win32-ia32-msvc@0.157.0':
+    resolution: {integrity: sha512-Ro9PcgwvRglGKI9fEYkbTKvIgh/hzWjv+yPyCTNuxp173i79YbTkkYeOvAEC9SFQPZXYr4+SuIrpCIaWN6sbUA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ia32]
+    os: [win32]
+
+  '@oxc-parser/binding-win32-x64-msvc@0.157.0':
+    resolution: {integrity: sha512-Ea0fqR+HLzzCt9tYhKbb6aJlM6wBXKWfuDwLhcG519B8HGtxthDzLGfbqMQdlX2Ii5gAZt/Hgxig/iApdxZSzQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [win32]
+
   '@oxc-project/types@0.156.0':
     resolution: {integrity: sha512-1Duyg48TdJNdyhEB8Xn1L36bT9Pv6GUtlKjHxOys8xkaF/rQq3XJE+bAurSK/AgIz5mGFsb77cn9Pb20+WCScw==}
 
-  '@pierre/diffs@1.6.4':
-    resolution: {integrity: sha512-RsKoruCOp50qaDM3a7BQan5K77xMkGWT1NF01fiYP1PfT3v4CvIjwytNk5WjZG0BesBkMOP2UbrBIDigB1k0ug==}
+  '@oxc-project/types@0.157.0':
+    resolution: {integrity: sha512-95iTox1qdt6WGWce3xwNOVayByOfLaYAq+qGPpub6NWbBh9sv0GG3+zyfh9ZBCO/jVu5A0EWI+qQI7g6fevjxg==}
+
+  '@pierre/diffs@1.7.1':
+    resolution: {integrity: sha512-saKteoCq9tWbRqLruIixV6sKgxIcY0OK6RkKcr8lYv7r4iJhXQJbmVPN3VBmjBHivgMIG2Att6tV/AOXXzEvvg==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -1420,11 +1614,14 @@ packages:
       react-dom:
         optional: true
 
-  '@pierre/highlights@0.4.0':
-    resolution: {integrity: sha512-2a38H7ep3KweGi1fGQpJk+Krod2OMpDIXagKPlqBd1Y9P460T7zQmc66Wm2JAH1SpIG93wCyyhZVrkc5dnAJVQ==}
+  '@pierre/highlights@0.5.2':
+    resolution: {integrity: sha512-CV+yFa8dodaU3w7U42FR+AfoavrsfcH0/n3rckDu1A/UXan1Dzo6OdM/MPOAAsGM/EbKhDxD6k+qMcNUtnLfsg==}
 
-  '@pierre/theme@2.0.0':
-    resolution: {integrity: sha512-yNDd9GYLQl1mEUJR8AneJ5e4ohLIHQd/wZLWr4fagt78vS2RwwZNW530vVgHqXFAyFVcFlRmGUD5ramXH46OXw==}
+  '@pierre/patches@0.0.1':
+    resolution: {integrity: sha512-NycJQVQNuqmBdr7u1LsUcmkiIz1fRm9xhWZyRbm21oJYd0MVVCa45t9Lsuj5IKrTMBonxOuh4LMv+R3BpL4bmQ==}
+
+  '@pierre/theme@2.1.0':
+    resolution: {integrity: sha512-GIE3AD8eqUlZN2sFrMmp9gt+rNZsT+EhrdwB0KmLcwkqunrp2jU2j14SeAb64Ol/srWo4rHyNaWf20+bPzFbvg==}
     engines: {vscode: ^1.0.0}
 
   '@pierre/theming@1.0.2':
@@ -1717,12 +1914,12 @@ packages:
   '@rolldown/pluginutils@1.1.1':
     resolution: {integrity: sha512-glFIJDvLNDtJhT9qrMFWLPbvS+skxgt4L0K8Ei2YtnhPysAJnsI7nyxSJxKj4ADeKX0OLjC4ntRkwpLOoS3rwA==}
 
-  '@sanity-labs/design-tokens@0.0.2-alpha.11':
-    resolution: {integrity: sha512-8zFgOrkpHc66ttydLVYX2gipJUZW58JOs2Ovmpx/QpBuhp758PyFPOxb2CvFkSzm1lgXO/8uvrN6HXEHCdNTcA==}
+  '@sanity-labs/design-tokens@0.0.2-alpha.12':
+    resolution: {integrity: sha512-SuaCvywAoZ0gbPFKI5B+TinSQaBiVlQlCTDvZOvCFwUioEngkfYxDhIeh1S8fV9lNQ+l3suF8xAlRPEYxyh7nA==}
     engines: {node: '>=20.19 <22 || >=22.12'}
 
-  '@sanity-labs/groq-wasm@1.2.0':
-    resolution: {integrity: sha512-Q9FnnFYjzd6zzaClY12bPbWh+XsfmmhIWY7Rkat2t2clFZD16nxBheHj6T2CsBhS4X6NiT7S/MiPSKIOlMrvKg==}
+  '@sanity-labs/groq-wasm@1.3.1':
+    resolution: {integrity: sha512-yBE7DwpsX/dFtCRU1xRbPd65miEEfODzrXoVS1QeXX3Z1k87cUDFWfKwYf6BbAeuBESOjyPcGmiAH2Ognw6ZvQ==}
     engines: {node: '>=22.3.0'}
 
   '@sanity-labs/oclif-plugin-skills-flag@0.2.1':
@@ -1731,8 +1928,8 @@ packages:
     peerDependencies:
       '@oclif/core': ^4.0.0
 
-  '@sanity/access-ui@6.24.0':
-    resolution: {integrity: sha512-CPxYVaaByeKTgqQ4iSifDxDae9lNg9t8EvZq0nyHDHAw9Hy52Nh0JEcIvV2+29ooYNOZButZNWGyRyhUyIzbGw==}
+  '@sanity/access-ui@6.25.0':
+    resolution: {integrity: sha512-Dws9fS3djRRLQO4p2WxOzQLXtmP722MM5IwtE747f/2Cn9ivBrVMn1XZzNiF8o9c008WT+/yYyMKw9yXzSpmew==}
     engines: {node: '>=22.12'}
     peerDependencies:
       react: ^19.2.2
@@ -1753,8 +1950,8 @@ packages:
     resolution: {integrity: sha512-wlfpO5gbYLPU5K6i7gaRBuZHGOnyEsuPOe8XMfEklLi1pE0PhRl9WgdLRwwt+M+aGguAuOpISjEcFSf2I5N3lA==}
     engines: {node: '>=22.12'}
 
-  '@sanity/blueprints@0.33.0':
-    resolution: {integrity: sha512-VPOW3Jk/o2wsROO3pvZWk9Ol2y/c9Nv/XFW60B1mdkKybsPkq7AUBSuRBR7GjqKS72uHzW6b3AKC/gn2I+u3sA==}
+  '@sanity/blueprints@0.34.1':
+    resolution: {integrity: sha512-WsCsOYgDFBVfejYsUsJPPbce6FqXy0lB96Qr0IprN28UL0I/8OY4ar0UjrQjnjJRoTRrE7OvixnfxsJPJB6F7A==}
     engines: {node: '>=22'}
     peerDependencies:
       '@sanity/cli-build': '>= 6'
@@ -1768,46 +1965,19 @@ packages:
       vite:
         optional: true
 
-  '@sanity/cli-build@7.2.0':
-    resolution: {integrity: sha512-uLbU68HdfEkkwI+HT56PjXnxF0nkydtckR398ydgvSfc3A994E04BI/0FdL+Ujyj1UVseOpY48BqxruOlW3gWA==}
+  '@sanity/cli-build@7.5.1':
+    resolution: {integrity: sha512-grc7SJhumnUbN0izkSoTHa00omh/fqpBl2Ya7ngKGf0roumKW8s2LY6HzNNqAJykkFdy6DQOUbVF6Yti7kAz7A==}
     engines: {node: '>=22.12'}
     peerDependencies:
       babel-plugin-react-compiler: '*'
       oxc-transform-react: '*'
-      sanity: ^6.22.0
+      sanity: ^6.24.0
     peerDependenciesMeta:
       babel-plugin-react-compiler:
         optional: true
       oxc-transform-react:
         optional: true
       sanity:
-        optional: true
-
-  '@sanity/cli-build@7.2.1':
-    resolution: {integrity: sha512-W0S6fchga1ZH2IXflYswZ1OZL8+5PxAp/SxKXptAzlfdrA4ZV/VWZM9PK2GOCtDK3t6ksYjnoxsHSN82C+T58Q==}
-    engines: {node: '>=22.12'}
-    peerDependencies:
-      babel-plugin-react-compiler: '*'
-      oxc-transform-react: '*'
-      sanity: ^6.22.0
-    peerDependenciesMeta:
-      babel-plugin-react-compiler:
-        optional: true
-      oxc-transform-react:
-        optional: true
-      sanity:
-        optional: true
-
-  '@sanity/cli-core@3.15.0':
-    resolution: {integrity: sha512-Ia5E5Jvkfbqawd1C5MqEFmAhdBDARx781DM5H7ND6HnsPdk2/YiQIwpwNqX9oqqZ5EpD5ZKpJ3UUgvQ7WHK4UA==}
-    engines: {node: '>=22.12'}
-    peerDependencies:
-      babel-plugin-react-compiler: '*'
-      oxc-transform-react: '*'
-    peerDependenciesMeta:
-      babel-plugin-react-compiler:
-        optional: true
-      oxc-transform-react:
         optional: true
 
   '@sanity/cli-core@3.15.1':
@@ -1822,8 +1992,20 @@ packages:
       oxc-transform-react:
         optional: true
 
-  '@sanity/cli@8.30.0':
-    resolution: {integrity: sha512-LZJopg8Q7Qf3TdxyCtukxRKvlsBSdqd8nTi8gTJfLo7EiTZtLw/GRpDVb8ulKe/FXWmlvbpj4ilxLvYcfROXLw==}
+  '@sanity/cli-core@3.16.0':
+    resolution: {integrity: sha512-ZpWdR+6C4JwJsQTe+CEXJvYCXZJ9cGdYaMw5GeE8nL/Cxf7Pjslg9RLSpp7/xe2BC+BUenVU/3eDT6QwCLchnA==}
+    engines: {node: '>=22.12'}
+    peerDependencies:
+      babel-plugin-react-compiler: '*'
+      oxc-transform-react: '*'
+    peerDependenciesMeta:
+      babel-plugin-react-compiler:
+        optional: true
+      oxc-transform-react:
+        optional: true
+
+  '@sanity/cli@8.34.0':
+    resolution: {integrity: sha512-4U7TmPx6747kHPSkg9wQ8GnLRp8cj8uimMnzuIf+Xhw6oMNYQqoNwuDxxt+kKFHGm9lSWhqjpeqkrvFrGUAGXA==}
     engines: {node: '>=22.12'}
     hasBin: true
     peerDependencies:
@@ -1843,8 +2025,12 @@ packages:
     resolution: {integrity: sha512-x6VKopU1Rt2mp3YBQRBIyWE2ebzqc4sMwUbQJJzIzNS0TMnNURvHe/z1qo/bDIph37B5vYvfWIT7Js6SPAQkUQ==}
     engines: {node: '>=22.12.0'}
 
-  '@sanity/codegen@8.3.1':
-    resolution: {integrity: sha512-Rg01PjOGhwnjA0eQsclfWdfp7rnnrapTDnIKQCTY+0s7rKphy97l/OXUVoHQZp7pWJBF/tj4v/iS+CKpFmSp3Q==}
+  '@sanity/client@8.17.0':
+    resolution: {integrity: sha512-X7qnv2HdKPZUKlrLBRsjw+8yKqjCJd2i2V3cV1CRY5zq9k0wB1mhWpiwXiJhcRTBza8wdQtNSCdQCh8hBoZ71g==}
+    engines: {node: '>=22.12.0'}
+
+  '@sanity/codegen@8.3.4':
+    resolution: {integrity: sha512-5ejP7pf+av7Nv+BE3qGYvii6bs21YA42rTyoj7z2z/folzgWvtEOMUludpl12zaiWvmblg5+8xrV4tj2Her7ag==}
     engines: {node: '>=22.12'}
     peerDependencies:
       oxfmt: '*'
@@ -1879,8 +2065,8 @@ packages:
     resolution: {integrity: sha512-e/xGFPWtDN5ZafxtG/DcP4URBk3EPblR+Ett1pT3AmiViNLPkHfwnG/Jj4+DlHkvcKTSw6jebuGVEFkumAxHQg==}
     engines: {node: '>=22.12.0'}
 
-  '@sanity/diff@6.24.0':
-    resolution: {integrity: sha512-o3DBJC/M9IzA7oTk/0R0NdWyVY6AUkW1fyPHRm/xfMO23sHZcqyzpk6oBAQXcVbeDwcGRpy/HYAYeXWUBVJrzw==}
+  '@sanity/diff@6.25.0':
+    resolution: {integrity: sha512-bxnqN8vvB7aKIbB2ouTVFnNtIOlUASbi69IxQaidU66eB9hocGCTLnqUcYHMUMfAGcjFGzbtdTYwycTkjyRSpA==}
     engines: {node: '>=22.12'}
 
   '@sanity/eslint-config-studio@6.0.0':
@@ -1899,10 +2085,6 @@ packages:
 
   '@sanity/generate-help-url@4.0.0':
     resolution: {integrity: sha512-Ooa4xkLT3TLaX+mw/13fq3IeGdnAkx4rbpVASvRVixzBBvvcL6jPqj50fjlCd+EhgB5GRXBCNNAy/hWXwjZEUA==}
-
-  '@sanity/groq-condition-describe@0.5.2':
-    resolution: {integrity: sha512-HbP+UytB9gbScX5JuCM5mJNIZ093p3eeuDojqbf5KIunBaAqi0AuamsU5bjfNa/roE92xAJ9HDLbS5Vc93aPWA==}
-    engines: {node: '>=20'}
 
   '@sanity/icons@5.3.0':
     resolution: {integrity: sha512-8zPOrlK1TgCEj4c60jJ/Lljlro6S8DRfotiPaW1uTXwOjLWk2TSyqBdUaWCVDgWuHgw4jhijg2pBf7o23KFNMA==}
@@ -1964,12 +2146,20 @@ packages:
       xstate:
         optional: true
 
-  '@sanity/mutator@6.23.0':
-    resolution: {integrity: sha512-w+Ii+naOqr8q12VH7009hyba6OzTnCIM13IAPtK/VYuzjQG5RRBiNglcxFWV0QzLsO6GNi0hA/fs2t3Gwt5gaw==}
-    engines: {node: '>=22.12'}
+  '@sanity/mutate@0.18.4':
+    resolution: {integrity: sha512-qgCdYf8BQz8DyRnotsDX9tgV9R14w+CqS5U7wpzb0Oc21/9QKgwRmrzYLWf9pHNvlnR+lq2Vulq+Aa/xc1ABtA==}
+    peerDependencies:
+      xstate: ^5.33.4
+    peerDependenciesMeta:
+      xstate:
+        optional: true
 
   '@sanity/mutator@6.24.0':
     resolution: {integrity: sha512-qC5LwhkQcTI25fZjDOlS0nQZbGfCSY+fbewp+TOawz0hfmIzSUWPc9B2/wN9nDrlcCSth6WOYBA1RDbpBi4USQ==}
+    engines: {node: '>=22.12'}
+
+  '@sanity/mutator@6.25.0':
+    resolution: {integrity: sha512-k64JpvYWVYUR2ptSzh2Nhx/rqPICcogNAWYkXuGA3WiR8JmKVaez/8jht0Z2qOioB5SYgr241oDrtMQNyLp1Gg==}
     engines: {node: '>=22.12'}
 
   '@sanity/presentation-comlink@2.2.3':
@@ -1990,8 +2180,8 @@ packages:
       prismjs:
         optional: true
 
-  '@sanity/runtime-cli@17.21.3':
-    resolution: {integrity: sha512-12e5OkzdW47MC3oXaLpytqpcctNxcBx2V8yphlxJ7Hw9i2TL1CoEATq3uP+3Mk2b7oUI4fsv3lUCpov92XlYvg==}
+  '@sanity/runtime-cli@17.21.6':
+    resolution: {integrity: sha512-WaCaEjkvgPZSPvrzPh/2pF8kuqpbHT/tRpeXTzUhB/bGCoXETS/MhXBoqs2XO+bbDrtpr8mJxLXnJH05MV6sMg==}
     engines: {node: '>=22.12'}
     hasBin: true
 
@@ -1999,25 +2189,22 @@ packages:
     resolution: {integrity: sha512-HsBEj/eS4pvr0pVGIijVKXPUDqBw9vZsDiA5qTm1/UkdkQGayWe0WX63I9AftWZpITTVWrhqvuBQ6eApIYjSBw==}
     engines: {node: '>=22'}
 
-  '@sanity/schema@6.23.0':
-    resolution: {integrity: sha512-UwiaQhPjNWaS8J30vfXQPVKMjueugc0Ec0zmnmHQSzb/yJoB89MfZBeRUkjqz6NMRjT07V+V9uaw+d+T6YOF2A==}
-    engines: {node: '>=22.12'}
-
   '@sanity/schema@6.24.0':
     resolution: {integrity: sha512-D/9psm8OvFwXZdetx9Zk17v3M7oc6X1ugoNrTtS/zRcoV9V6rSnO8JoKXusDjqOigpYrTNxDvcpKoZ7JImfhTA==}
     engines: {node: '>=22.12'}
 
-  '@sanity/sdk-react@3.14.0':
-    resolution: {integrity: sha512-xM4mE90txlMADVR7fhF/G6QkPvb/B39RHRfTdW95ugKQpJi8hDfTxrkVw11nNb5qbv02Z77hz9dDDQQ+JRntAQ==}
+  '@sanity/schema@6.25.0':
+    resolution: {integrity: sha512-3QdUZHcrGqASbf0Ng2Hrlt56hSUqG33aupF68dkW0lmyy/7ZZArUxkTnKtSOSHVda9B1R0sLlRwWpGxZhMYYSA==}
+    engines: {node: '>=22.12'}
+
+  '@sanity/sdk-react@3.15.0':
+    resolution: {integrity: sha512-IUKRKUbSMJySqtx/8wt0Ns2QWoKOjpfQ8gc66aIIXwQbIh6cnfdGhoRrX5sEBgwlTA/SEaS3WhOMK1iPJrvgdQ==}
     peerDependencies:
       react: ^19.2.0
       react-dom: ^19.2.0
 
-  '@sanity/sdk@3.12.0':
-    resolution: {integrity: sha512-txL9iO4ob0CnW7ljiZ930+pEiAj9C3M/v3lJvGNhp+q8mHytGTfUNoZf9EaMB8KwfEx9lbMTl+ZUwl/8kjvhIw==}
-
-  '@sanity/sdk@3.14.0':
-    resolution: {integrity: sha512-v+kVY1ab/qHEyjFue8NDait40qVqOb9Hq3CLdDMbdKnFQ4aCz252ofblUeyPVHJLWL6yrX8RjaxhEGucO0neoQ==}
+  '@sanity/sdk@3.15.0':
+    resolution: {integrity: sha512-90IQHAFbz3qYMomsL0Iyy/vTr+de/KatJtgGa9DcIx35PP0+kYSThII20B3Ql0zwWTeScSaoUwU5NL7NmAYafw==}
 
   '@sanity/signed-urls@2.0.6':
     resolution: {integrity: sha512-I8AeFzFHUjA6RTftKT2M2D8z/ygK7sm7FWYLZAmwOX7M7AGB2N1HfPA0mP4+mD5LOQB15wC0ihkbLznH4sihFg==}
@@ -2036,19 +2223,14 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@sanity/types@5.31.2':
-    resolution: {integrity: sha512-UM8GfNgsrFaGt3TQzG5tKFyXvNMEQD+e8AJq44DiL7t/UYJaMScofCSWzFGg+4c7A3A2lhooC8zO9gJi8Vj7aw==}
-    peerDependencies:
-      '@types/react': ^19.2
-
-  '@sanity/types@6.23.0':
-    resolution: {integrity: sha512-DAadIB4nlQ6zCnuuEpVi3mwKi49NhqlUgAInraYahKUE6evLnH7zlqIMNQJTvosL82cllsxlxokG1KwgylLP1Q==}
+  '@sanity/types@6.24.0':
+    resolution: {integrity: sha512-NUupLHhhcBGYxP2HXmEkYl4ZqjUmyOoOSVzofDF93GAedYt6lNhdgq8WFKufo3PKo2WGgxkJKfb3u9wDsdmgfA==}
     engines: {node: '>=22.12'}
     peerDependencies:
       '@types/react': '*'
 
-  '@sanity/types@6.24.0':
-    resolution: {integrity: sha512-NUupLHhhcBGYxP2HXmEkYl4ZqjUmyOoOSVzofDF93GAedYt6lNhdgq8WFKufo3PKo2WGgxkJKfb3u9wDsdmgfA==}
+  '@sanity/types@6.25.0':
+    resolution: {integrity: sha512-bNX9uCYR6VHKr0r02q3tjM3Jk9XUwiSLD03qKrg1V5QTU473eCz1N8/IYDB1RInwqi48/JxwPdS0q3Z51JWcng==}
     engines: {node: '>=22.12'}
     peerDependencies:
       '@types/react': '*'
@@ -2061,39 +2243,39 @@ packages:
       react-dom: ^19.2
       styled-components: ^6.1 || ^7.0.0-0
 
-  '@sanity/ui@5.0.0-alpha.24':
-    resolution: {integrity: sha512-1p/oIGzUOCF1VN2UOMqhmG02a+fAT+hpall6g3gq0qi71RkpDa6aSkxqjJotLhEoFVR9nXXshx61tDxewyI+Fg==}
+  '@sanity/ui@5.0.0-alpha.27':
+    resolution: {integrity: sha512-xVSrt3rOx/WRCeARkzzYGeK5CFyzoNKzkgkXI/UbI81RSvJ64vQj+yRxdUHLMaNuw4Cc2yZWAHXUXFJpOdc/yQ==}
     engines: {node: '>=20.19 <22 || >=22.12'}
     hasBin: true
     peerDependencies:
       react: ^19.2
       react-dom: ^19.2
 
-  '@sanity/util@6.23.0':
-    resolution: {integrity: sha512-+EkDtfq9k9KiiuH2Dbif9u2lRgypn4Ii4BohldipbyIiR+qNGuxnetKd23/KYvfKLlQgjrB3w3pXWtldQeZFQw==}
-    engines: {node: '>=22.12'}
-
   '@sanity/util@6.24.0':
     resolution: {integrity: sha512-QyqA/lSLT7i+hZ4Ny0pzjsfl+4M3HwutDHTMwpS4aUh1R1eDV11k8WBAh8fcF+XpwuHedCWlkwpS3X4UKRgS4Q==}
+    engines: {node: '>=22.12'}
+
+  '@sanity/util@6.25.0':
+    resolution: {integrity: sha512-BDY7Wwrd1EmVBYy6wdw3Rjh+40sTp+zl8VFO2651ssSMqtOLEg6z1cn/OaknaTuOA2mvjBijLV0llRRNKsRykQ==}
     engines: {node: '>=22.12'}
 
   '@sanity/uuid@3.0.3':
     resolution: {integrity: sha512-aJvKuFwzcZKRwuIjrRPfXfXKpSdnLF4CnedV5WcX1n5SzhufvRNHIot5lkx1+Y1DwiMVQOZ5gDSPJH+P6Ao70A==}
 
-  '@sanity/validation@6.23.0':
-    resolution: {integrity: sha512-T6mfiIzEJgzbDRq2SfdtlXkdiN2O+q3wogvN1WXWoYuPCMft4ZYovYi9pqXCuvaD3nNQ2LeipMbNgyyTC8irpg==}
-    engines: {node: '>=22.12'}
-
   '@sanity/validation@6.24.0':
     resolution: {integrity: sha512-yn3FezWxx+Eju+CHU+3R0n2AN60qHaMlsnTlGtnhyd+1RpCo9scJyy3hw3GqMRXlcpXyJxpC70l0D6cEKLWVSA==}
     engines: {node: '>=22.12'}
 
-  '@sanity/vision@6.24.0':
-    resolution: {integrity: sha512-6cr8vBspRta6bLNYT7fTzctDac1om8OONTzIqdN8tDjfEviwxGRacKbqcInl2VINk9/CNVtQVee5qEKgSqsZ8A==}
+  '@sanity/validation@6.25.0':
+    resolution: {integrity: sha512-5W5adkEO2h3WOFE3wClxFl3N5xF0rK2a5zuti39JuYdaACoeDemPiRu8NJDymtJxhFyTP4/AUPGS+UkYfQMWzA==}
+    engines: {node: '>=22.12'}
+
+  '@sanity/vision@6.25.0':
+    resolution: {integrity: sha512-jXpZv9BNRi6IoO9FinYHeVqgtDUgY+YqplQH9IsDZmGijF34Uk3viHbPrLomZ1j8qc+wZZdUEmDsblySzIo+0Q==}
     engines: {node: '>=22.12'}
     peerDependencies:
       react: ^19.2.2
-      sanity: ^6.24.0
+      sanity: ^6.25.0
 
   '@sanity/visual-editing-types@2.1.1':
     resolution: {integrity: sha512-t/Aa2HclwUHzNY/CGeQMEVDb4Dc5izI7SwdqwTeSSMc+f0hRgAa2PG3PuBOmpyCta0GGMm7febk4FMWqF+iwaA==}
@@ -2105,35 +2287,24 @@ packages:
       '@sanity/types':
         optional: true
 
-  '@sanity/workbench-cli@2.16.0':
-    resolution: {integrity: sha512-aTAxTLtTU07NEYU/Rz6whvmoaoR1HjTg4qzsbFXObpmre1loO7GeZJW/0xPq4jTxeaPayhDcNUrCkMDTK+Kdzw==}
-    engines: {node: '>=22.12'}
-
-  '@sanity/workbench-cli@2.16.1':
-    resolution: {integrity: sha512-tEmMGSxyltFLRNIGzbi4i4i/xxDq2fqnuDg+8olqCjrG55Jj8+h90HCNRdbJiBJDRmD8MtQQAZYluBqOk0RQDw==}
+  '@sanity/workbench-cli@2.19.1':
+    resolution: {integrity: sha512-vMPu7BRVaBVeLBAMz9a0JnmRpB6CBp65Q8V7ZlfVya0CUOblJAkvjdsdj3HC3GhI+OeXpoO95SIM+eTi9sUMlw==}
     engines: {node: '>=22.12'}
 
   '@sanity/worker-channels@2.0.0':
     resolution: {integrity: sha512-mC+8yPQuw2rHXdHigFPU9thNa6vTaPmh7jFR6RvloE8s+6dmnk9bHdPXRbrrUqafxzK3L9aH2E170ubXyxcAIA==}
     engines: {node: '>=20.19.1 <22 || >=22.12'}
 
-  '@sanity/workflow-blueprint@0.37.0':
-    resolution: {integrity: sha512-+XFTUOu57nobzV3OGC67CWag2TPssyPclvewe5lqFbyo4DQj4uVxTcByw70FOWnJ1+fHDDla1DKCcx723BI4oA==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      '@sanity/workflow-engine': 0.37.0
-
-  '@sanity/workflow-cli@0.37.0':
-    resolution: {integrity: sha512-ADLqwhw8Mo+97F7buivp4P5Wd2yxK3+DBbQ69HYEfqc/pyVZuZvBZjD8yFQMUjvR1S2ShxskR1ikqq7yyDhDSA==}
+  '@sanity/workflows-cli@0.39.0':
+    resolution: {integrity: sha512-Re4rMHgdWvwNFHz19qN7i3tJ5IVKJkfL+1odS/793nFf4l9I6X18yC6glv2/ZdNHJcrRmxBvGRc3t7S/V+zamw==}
     engines: {node: '>=20.12'}
     hasBin: true
     peerDependencies:
       '@sanity/cli-core': ^3.6.0
-      '@sanity/workflow-blueprint': 0.37.0
-      '@sanity/workflow-engine': 0.37.0
+      '@sanity/workflows': 0.39.0
 
-  '@sanity/workflow-engine@0.37.0':
-    resolution: {integrity: sha512-LYEK5LutgtI/NAGjz2FcyRJCFxET3VynDite954ISgdhgMVYx+kcUJXSd3o0VTP2xA6FFGK3P6vTWJ2q9wT9NA==}
+  '@sanity/workflows@0.39.0':
+    resolution: {integrity: sha512-vL2zg00yhVVIxCdAAOj0xAgX0XExDnIvfWmb80xxxwTOhi8VmZluJQK6pSwdz18H0yHFDFFbCCZt98axHednoQ==}
     engines: {node: '>=20'}
 
   '@sec-ant/readable-stream@0.4.1':
@@ -2143,24 +2314,44 @@ packages:
     resolution: {integrity: sha512-OttAHqf557R1gfLQRqb/dpGUK1UQd21qkeeN0KA/ThuymYXTNY+qTpJIOqmzgpk6fOmE922mTT6xmnMEiGYZBQ==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
+  '@sentry/browser-utils@11.17.0':
+    resolution: {integrity: sha512-+0JIKG68z7ziTiCbtgX0H6jsUNvEruyforiQ3rOebW9k52j6RK2X6vlcDByPMzQW/w/AI2WryswnYU4sCL+xBA==}
+    engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
+
   '@sentry/browser@11.12.0':
     resolution: {integrity: sha512-oiSs0ZZQGVLVLASxTk/Z+MW4cGOHhC65IKc3B//M54eaZEa4p6JqP2DM++ta4IqDQx8+lSD6+TglAIsHBdSyVQ==}
+    engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
+
+  '@sentry/browser@11.17.0':
+    resolution: {integrity: sha512-6zxDfbpb2qgsgiAIkgRx+QuF3EFowEHEwf1tcx2WSrbn8VJ2ViUN4OUOFpB525vJaiOou2MwOxbw80FBQpOkvA==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
   '@sentry/conventions@0.32.0':
     resolution: {integrity: sha512-WkSQcDhUUsz1SwxR23LpmyPKba+dgxxiH0DWV4VSM9yaAvhhl87ppW2Ts3g4piIKCVflc31aJeWy+biUbYfsMQ==}
     engines: {node: '>=14'}
 
+  '@sentry/conventions@0.35.0':
+    resolution: {integrity: sha512-bq2ecu6zaBni0gG5bHN9cY7fmUsOW49ntjGZ6VA69PVAa1Uk1NvgF1SdTGoVC0zkqQKziTnxzOs9KuuVlpb26w==}
+    engines: {node: '>=14'}
+
   '@sentry/core@11.12.0':
     resolution: {integrity: sha512-HKER7EcRpPPgC8mLRe5BzP6njfRYFZ53BFLZxVp1whWbY6lp/b2mvTBk4q6+rKsUFhLhRDsd6jL8y/8ddEWv6A==}
+    engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
+
+  '@sentry/core@11.17.0':
+    resolution: {integrity: sha512-Tf9XOBEMeGdZZNaCBzFTk1lN/q9gzSnWtnNRZW9IYtokM99VVfx4wTWVeg6qZ++c6mNybmhUbltnN7b87RqOwQ==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
   '@sentry/feedback@11.12.0':
     resolution: {integrity: sha512-vYOIeby3tVoKZ/q70D1NJ48D4APMVcojyvCjlaZkFOQR6DIEsOjF/uC9MkhnCP3cpa4oADdMatsIpkhlPM+qng==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
-  '@sentry/react@11.12.0':
-    resolution: {integrity: sha512-tNr2yyfj//7Wrn0scoauR8D9FG93PWSRPQakWuvlVXGIXEAx/pwVkOjWYKUD1Xhyo8Hbvu5f6ddQ0+StsL3zyw==}
+  '@sentry/feedback@11.17.0':
+    resolution: {integrity: sha512-hLAZZYzWOs8Bc44QyxNzqd5o3/9bM0oV8n9G66qtqOGyxFLgeuwb6LLUeqmnY5tom6unkjSnKtKRIthk+M3KkQ==}
+    engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
+
+  '@sentry/react@11.17.0':
+    resolution: {integrity: sha512-pXVZTM5nbwKEpdbQRwQvcxFoxGgiKmxI9h3TvnsV0xReE7A0J0ebGfBQvd1JO10mDVx2+rp8mxg0VAJbBPhx2g==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
     peerDependencies:
       react: 17.x || 18.x || 19.x
@@ -2173,8 +2364,16 @@ packages:
     resolution: {integrity: sha512-kx9Q3TY8pMp0b12fpcR0tziGoEW7Z8PpFKncmzD9XYWE3YzMt//B+cjkR+vmmZSUVxOuQATYDFp9c1jRTnbrug==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
+  '@sentry/replay-canvas@11.17.0':
+    resolution: {integrity: sha512-pyYzfa+OogDMlh5QWWkaNGXzdbuPXsFhRtiJrcry/9xFsZXESS9FgoaJQgmxjD0TRQKgsRA3oTso4hmnw7rf2g==}
+    engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
+
   '@sentry/replay@11.12.0':
     resolution: {integrity: sha512-SF1064TKmOvIQTKo8WelVB34IZWtYtrflInsydPeB9jMTpy2iE3LqKRizDJr3YivjMUPDgIGn67b+0kaxiwQ4g==}
+    engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
+
+  '@sentry/replay@11.17.0':
+    resolution: {integrity: sha512-TUunibV0YUkcoVNRBPbY171n4yDn6OqZjzmDqWyZfl7vBchnglslwj4CkBaHyQfZJMfytx5Uput6vlqnfkLJCw==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
   '@shikijs/core@4.6.0':
@@ -2212,6 +2411,36 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
+  '@sinonjs/commons@3.0.1':
+    resolution: {integrity: sha512-K3mCHKQ9sVh8o1C9cxkwxaOmXoAMlDxC1mYyHrjqOWEcBjYr76t96zL2zlj5dUGZ3HSw240X1qgH3Mjf1yJWpQ==}
+
+  '@sinonjs/fake-timers@15.5.0':
+    resolution: {integrity: sha512-i7HpIYIsUmdSTQbtBjs2b3VqMgDsVDWfzVPV3MuUrXVqJNZmzFB8YJeM9SPms2bGg5zg7HvKH31sPS1WoLLRFg==}
+
+  '@smithy/core@3.41.1':
+    resolution: {integrity: sha512-24LyiHSY0R/MLcbTylurWXU6Uy4lzI6KJgsdzxkNnjT9/OLWc2zGPb/3k5AM1f0vcgCGrExanUG339t+TBiIrA==}
+    engines: {node: '>=18.0.0'}
+
+  '@smithy/credential-provider-imds@4.5.2':
+    resolution: {integrity: sha512-A9uSdn72ozbRUSit0eib0TW7nXuNPlaeM0zcGkJ+nE6tFcSDbnmtwoxbTCFBukVQcszDAyvsd7+rTduPTXpygg==}
+    engines: {node: '>=18.0.0'}
+
+  '@smithy/fetch-http-handler@5.8.1':
+    resolution: {integrity: sha512-h8BdMUrUBhMhMaeK7QqAdINRZezCGuYOCpcOZZ1ewxbHST9rdTd09xwNpvLTYfzDRehxQiReK4SKbdYZxBA+ew==}
+    engines: {node: '>=18.0.0'}
+
+  '@smithy/node-http-handler@4.14.2':
+    resolution: {integrity: sha512-i1uORV1v3qBqP43ayRKzIdm1q5x14tf8N4Dd06/QUX1Szm6VxHMrTsu20X5E63UFsaNZCRjI4SXG0jDmqYa+3w==}
+    engines: {node: '>=18.0.0'}
+
+  '@smithy/signature-v4@5.7.5':
+    resolution: {integrity: sha512-WPjdr5oWOk1LArpI4pavu+fSo+/evi0Re1olxGvqwuZopd4gYR1UGCi+Soyn/IjmafqbWs+ZC+3AKxJS3ZpwUg==}
+    engines: {node: '>=18.0.0'}
+
+  '@smithy/types@4.20.0':
+    resolution: {integrity: sha512-lCA6QG22dPk9ecHbv91jDQZsmtPUjdS1aE2Il6NNPqe7DrYc0dZQi6DhcESk2KYXH2sp5xbAcGdYMZDFnuzA2A==}
+    engines: {node: '>=18.0.0'}
+
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
@@ -2234,17 +2463,20 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@tanstack/react-virtual@3.14.26':
-    resolution: {integrity: sha512-HUDlfsrYH6ko5xH56L62Mcl/uzT+AGVNMHFuDNqDJMdZWc1AQa2oeVKNUvZ/RWBZQ4TYtyQerFrNvLnp39h65A==}
+  '@tanstack/react-virtual@3.14.28':
+    resolution: {integrity: sha512-zoM4eddIVUsOsunOe26ur+h6YJQbvdzU10a2tKzIovThu5P4SvEyQ+cRx0mbeKfgnR0Mz7KR/NwrZ3GzVnUF/g==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@tanstack/virtual-core@3.19.11':
-    resolution: {integrity: sha512-/5iHb0RHBvj8Di59FDs4ESNm45jls33aZAi4zccVXZjc/6ZvwQP6nzEYeT6weXjTf9E6/vrp2JhYWRyO+ZP13A==}
+  '@tanstack/virtual-core@3.19.13':
+    resolution: {integrity: sha512-CyCvMm7m5JuvPW6eMPZkZBZk6diySrlUQNNRpQPiEnh2vakyghx82Hw3wW2THFUsl6xJ6uM4lSUaiA2T0oYW8w==}
 
   '@tybys/wasm-util@0.10.5':
     resolution: {integrity: sha512-dOGOPxlaNV+G046mZzN+9C0dAcQZeSKcXiVaM0TYy/LM4ttTmgSBDxYfovcYI8Em3+eAbiAYpvWLOv8+ZVRJKA==}
+
+  '@types/aws-lambda@8.10.164':
+    resolution: {integrity: sha512-XOnrazWcOd6yWPnR7DxqCBPPYciDjHq+NN8LPwwqBCJNXLyPJgKo47fZpJ113+oyAn9Zti0Cf6H4k6yPcE3WFg==}
 
   '@types/estree@1.0.10':
     resolution: {integrity: sha512-lTyOMnOcmRBzdCv6/4zUZCrEhV0xrqQiUZBZtVcbmLHBXKLnN8q89v/wKRF/Q0HbwVsqbIG3o5HDoFl9sduM+g==}
@@ -2540,10 +2772,6 @@ packages:
     resolution: {integrity: sha512-Xwrja8nx9e5o2N1my4DsKCeKpdrnACyr1wtbPxBDgGzKzKyE9kRtBFA8mWldI+RVlD7CBZNWY/wQ2+ydwOR6kQ==}
     engines: {node: '>=14.0'}
 
-  agent-base@7.1.4:
-    resolution: {integrity: sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ==}
-    engines: {node: '>= 14'}
-
   ajv@6.15.0:
     resolution: {integrity: sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw==}
 
@@ -2747,6 +2975,12 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
+  bcp-47-match@2.0.3:
+    resolution: {integrity: sha512-JtTezzbAibu8G0R9op9zb3vcWZd9JF6M0xOYGPn0fNCd7wOpRB1mU2mH9T8gaBGbAAyIIVgB2G7xG0GP98zMAQ==}
+
+  bcp-47@2.1.2:
+    resolution: {integrity: sha512-wsv86UuNFuPnVieKLyECTT+CP1WSAHeoIg5P3xu2kA9Z+7fVPoKt7dxzSeEhtJel0AI+NW3fIW3KtTKQKUCngg==}
+
   bidi-js@1.1.0:
     resolution: {integrity: sha512-fX1Onk0tdVPC7obPWB5EbJ1z7NVhLq4m2xZLq2YXBkxzMXIGRpNMU88n0EPgWseKl12J7zXs7qrDxPK4sRs2fg==}
 
@@ -2756,6 +2990,9 @@ packages:
 
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
+
+  bowser@2.15.1:
+    resolution: {integrity: sha512-ma47ABeUiTsmG4McKDtGCgQSiTCatM97Mlbn13K42N1kPSFE14oN3WFMjtyL4KubhGvQTqYheKl4Qx2bJtMXLQ==}
 
   boxen@8.0.1:
     resolution: {integrity: sha512-F3PH5k5juxom4xktynS7MoFY+NUWH5LC4CnH11YB8NPew+HLpmBLCybSAEyb2F+4pRXhuhWqFesoQd6DAyc2hw==}
@@ -2911,8 +3148,8 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
-  color2k@2.0.4:
-    resolution: {integrity: sha512-OXAPGFRNeLFnUfqDtloYdxkwsJoIdXe28+bjbpJiPqyei2HPa3VHmMCWa0Qe62+U4Ftf9Hj7hRssOkxz7WiWbg==}
+  color2k@2.2.0:
+    resolution: {integrity: sha512-n+jb2Ss/1jXE9u4YDfR2Tk8SqVr9FcA14qpVw8oBBxZqnUzsN3yvGmyvHaw5z5VRvLpL5Ab8+CNjJjIStth3KQ==}
 
   colord@2.13.0:
     resolution: {integrity: sha512-2g8RPH6UvoD1ZXYmccAuo0zfMw4mxqzXbeToeVoMSm6na0QEDXggahcZdlTFnFdahlV3I158ipRb2AIvCcwiAQ==}
@@ -2923,6 +3160,10 @@ packages:
 
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
+
+  commander@14.0.3:
+    resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
+    engines: {node: '>=20'}
 
   comment-json@5.0.0:
     resolution: {integrity: sha512-uiqLcOiVDJtBP8WGkZHEP+FZIhTzP1dxvn59EfoYUi9gqupjrBWVQkO2atDrbnKPwLeotFYDsuNb26uBMqB+hw==}
@@ -2988,10 +3229,6 @@ packages:
     resolution: {integrity: sha512-u/O3vwbptzhMs3L1fQE82ZSLHQQfto5gyZzwteVIEyeaY5Fc7R4dapF/BvRoSYFeqfBk4m0V1Vafq5Pjv25wvA==}
     engines: {node: '>= 6'}
 
-  cssstyle@6.2.0:
-    resolution: {integrity: sha512-Fm5NvhYathRnXNVndkUsCCuR63DCLVVwGOOwQw782coXFi5HhkXdu289l59HlXZBawsyNccXfWRYvLzcDCdDig==}
-    engines: {node: '>=20'}
-
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
@@ -3004,6 +3241,10 @@ packages:
   data-urls@7.0.0:
     resolution: {integrity: sha512-23XHcCF+coGYevirZceTVD7NdJOqVn+49IHyxgszm+JIiHLoB2TkmPtsYkNWT1pvRSGkc35L6NHs0yHkN2SumA==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+
+  data-urls@8.0.0:
+    resolution: {integrity: sha512-JQUCCK+/CAGbGGx618PlFZMXH81Jtj7t73CHv9dd/zVWvxgGT2zLFRjnKb+Ng46GIwcy+f7f88qd4duqllK+WQ==}
+    engines: {node: ^22.14.0 || >=24.0.0}
 
   data-view-buffer@1.0.2:
     resolution: {integrity: sha512-EmKO5V3OLXh1rtK2wgXRansaK1/mtVdTUEiEI0W8RkvgT05kfxaH29PliLnpLP73yYO6142Q72QNa8Wx/A5CqQ==}
@@ -3548,8 +3789,16 @@ packages:
     resolution: {integrity: sha512-v4GZDlS8T2hNQqnBRisdpMI8GnN7HMQ6bxfpEdz11rNbBUzyhM3aT8fwKbvl1gYVm+Lb1RN0phYdHh1liUzdGA==}
     engines: {node: '>=22.12'}
 
+  groq-js@2.0.3:
+    resolution: {integrity: sha512-6c85Hp8YC5YqqJAewe6y/yjZcWyyk5/LK+z5MAJwNqiHvfNuONqqOheAuyGSQvfFzPrZox22kEhITS0l+ZSINw==}
+    engines: {node: '>=22.12'}
+
   groq@6.23.0:
     resolution: {integrity: sha512-+c6jmcfauaBagcSjqSq0Gx5ohyJNfrD9YJJTFH7jrwKsr2ZC2AhvrUfI/u8gmUVi6q6mANb41DgC8Q4ySYbnSw==}
+    engines: {node: '>=22.12'}
+
+  groq@6.24.0:
+    resolution: {integrity: sha512-HzSEcR/exLPAyvOdpzkn+UXYIrp5aYNFzVnAv2IB+XTRXQlkbczhmItJ5xXewbpxqDxJkjowaYT7ovbV0Z+sTg==}
     engines: {node: '>=22.12'}
 
   gunzip-maybe@1.4.2:
@@ -3627,19 +3876,15 @@ packages:
     resolution: {integrity: sha512-CV9TW3Y3f8/wT0BRFc1/KAVQ3TUHiXmaAb6VW9vtiMFf7SLoMd1PdAc4W3KFOFETBJUb90KatHqlsZMWV+R9Gg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
+  html-encoding-sniffer@7.0.0:
+    resolution: {integrity: sha512-UikN5yr7xsCDAq87Or5or0PAlD3HJJOKVzM05az588WnpDJ4Ux7a2A53Qi6gofGg2/EtvF/H4hCi/TXfCW4Y6w==}
+    engines: {node: ^22.13.0 || >=24.0.0}
+
   html-parse-stringify@4.0.1:
     resolution: {integrity: sha512-0zHsZJrK7S3K2aucXWL6ycoYJ/iNtIcFHC/nYQgFklPtrv5LpJctIiSCroWZWeuoXvuyFdzp6KzjJQ+OT5MfFw==}
 
   html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
-
-  http-proxy-agent@7.0.2:
-    resolution: {integrity: sha512-T1gkAiYYDWYx3V5Bmyu7HcfcvL7mUrTWiM6yOfa3PIphViJ/gFPbvidQ+veqSOHci/PxBcDabeUNCzpOODJZig==}
-    engines: {node: '>= 14'}
-
-  https-proxy-agent@7.0.6:
-    resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
-    engines: {node: '>= 14'}
 
   human-signals@8.0.1:
     resolution: {integrity: sha512-eKCa6bwnJhvxj14kZk5NCPc6Hb6BdsU9DZcOnmQKSnO1VKrfV0zCvtttPZUsBvjmNDn8rpcJfpwSYnHBjc95MQ==}
@@ -3925,9 +4170,9 @@ packages:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
 
-  isomorphic-dompurify@2.36.0:
-    resolution: {integrity: sha512-E8YkGyPY3a/U5s0WOoc8Ok+3SWL/33yn2IHCoxCFLBUUPVy9WGa++akJZFxQCcJIhI+UvYhbrbnTIFQkHKZbgA==}
-    engines: {node: '>=20.19.5'}
+  isomorphic-dompurify@4.8.0:
+    resolution: {integrity: sha512-NeJbMkmJQ72DudwaDP5OvMTmRTv0Rgp8oRIEpbGtxzIgKoALAE0D7lpvRRiX4fpnGrlIIGjrh92bl3XdsqYDQw==}
+    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
 
   isomorphic-ws@5.0.0:
     resolution: {integrity: sha512-muId7Zzn9ywDsyXgTIafTry2sV3nySZeUDe6YedVd1Hvuuep5AsIlqK+XefWpYTyJG5e503F2xIuT2lcU6rCSw==}
@@ -3953,15 +4198,6 @@ packages:
     resolution: {integrity: sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA==}
     hasBin: true
 
-  jsdom@28.1.0:
-    resolution: {integrity: sha512-0+MoQNYyr2rBHqO1xilltfDjV9G7ymYGlAUazgcDLQaUf8JDHbuGwsxN6U9qWaElZ4w1B2r7yEGIL3GdeW3Rug==}
-    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
-    peerDependencies:
-      canvas: ^3.0.0
-    peerDependenciesMeta:
-      canvas:
-        optional: true
-
   jsdom@29.1.1:
     resolution: {integrity: sha512-ECi4Fi2f7BdJtUKTflYRTiaMxIB0O6zfR1fX0GXpUrf6flp8QIYn1UT20YQqdSOfk2dfkCwS8LAFoJDEppNK5Q==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
@@ -3969,6 +4205,15 @@ packages:
       canvas: ^3.0.0
     peerDependenciesMeta:
       canvas:
+        optional: true
+
+  jsdom@31.0.1:
+    resolution: {integrity: sha512-CbhJL8ZQg3eKswxSZth4QO9tW0jPIhmR0vtSXQSbKSfWbwIT6hoRc17wdHIVTQ43KI0mdV5iTJr3281IDgVZ5g==}
+    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
+    peerDependencies:
+      '@napi-rs/canvas': ^1.0.13
+    peerDependenciesMeta:
+      '@napi-rs/canvas':
         optional: true
 
   jsesc@3.1.0:
@@ -4198,6 +4443,10 @@ packages:
   mendoza@3.0.8:
     resolution: {integrity: sha512-iwxgEpSOx9BDLJMD0JAzNicqo9xdrvzt6w/aVwBKMndlA6z/DH41+o60H2uHB0vCR1Xr37UOgu9xFWJHvYsuKw==}
     engines: {node: '>=14.18'}
+
+  mendoza@6.0.0:
+    resolution: {integrity: sha512-hgHqpcF6iAB7M49nCrfmWZJMYssEXBgXTgIB9VIp3UxE9HCnAjziu3fHhQesaqvgzOwpddeNMqat/JzNiZjJPQ==}
+    engines: {node: '>=22.12.0'}
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -4430,6 +4679,10 @@ packages:
     resolution: {integrity: sha512-19YVAg7T+WTrxggPukVq7DjTv6+PJ867TmhCvBsYwmbFCsZd344rq2Ld1p0wo8f8Qrrhgp82c6FJRqdXWtSEhg==}
     engines: {node: '>= 0.4'}
 
+  oxc-parser@0.157.0:
+    resolution: {integrity: sha512-2MJ9tZGXUbEIhQT/O2OPLlYCgur75ES26t2Pb1sYrvDQcRjrE7GmubkALgPEB6LzOY6sM81AAHKfl5M/FgnjJg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+
   p-limit@2.3.0:
     resolution: {integrity: sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==}
     engines: {node: '>=6'}
@@ -4485,6 +4738,9 @@ packages:
   parse-ms@4.0.0:
     resolution: {integrity: sha512-TXfryirbmq34y8QBwgqCVLi+8oA3oWx2eAnSn62ITyEhEYaWRlVZ2DvMM9eZbMs/RfxPu/PK/aBLyGj4IrqMHw==}
     engines: {node: '>=18'}
+
+  parse5-parser-stream@8.1.1:
+    resolution: {integrity: sha512-hMcVbbUJcQmP8rURWUdYrT1flRiBiBVjq/RYGguJpDUgIXSqdYKlE0CxthmdMWoSlBAuL5bUBa73g0pttSy7Hw==}
 
   parse5@8.1.1:
     resolution: {integrity: sha512-EcR/6WDcU7b2N3vQSxKALCk9lXGtUMQxXio008OEMBE0kavu/7JLfBEeFPzi43nMqVDSbEn3QCK+BMCc9zO//w==}
@@ -4624,9 +4880,9 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  quick-lru@7.3.0:
-    resolution: {integrity: sha512-k9lSsjl36EJdK7I06v7APZCbyGT2vMTsYSRX1Q2nbYmnkBqgUhRkAuzH08Ciotteu/PLJmIF2+tti7o3C/ts2g==}
-    engines: {node: '>=18'}
+  quick-lru@8.0.0:
+    resolution: {integrity: sha512-wuV1TowawrTfnwGvYbjYE1vwKAO0yO0rcEgHz0y9/Lz+v79WqQtRLLpLYYCZJY/tacCb9zVDMDJCJ04DKVZgfg==}
+    engines: {node: '>=22'}
 
   raf@3.4.1:
     resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
@@ -4661,8 +4917,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-fast-compare@3.2.3:
-    resolution: {integrity: sha512-WY9YHI1jjYC5a2lNRfHbeaNVQqiY+mMKWBSw1mPU0FgevlxI6V7izhNYz7Vp5ieFxetuRb6RmihPQxXEzg7oWQ==}
+  react-fast-compare@3.2.4:
+    resolution: {integrity: sha512-YbkgZfjvuokdt6zR8Oki8Bt4QXAZim/9HKSUr5J23GVyX2o8sYD/JlKSFrJvEFIPjotWvkGY7DgUS+udyr8cEw==}
 
   react-file-icon@1.6.0:
     resolution: {integrity: sha512-Ba4Qa2ya/kvhcCd4LJja77sV7JD7u1ZXcI1DUz+TII3nGmglG6QY+NZeHizThokgct3qI0glwb9eV8NqRGs5lw==}
@@ -4937,8 +5193,8 @@ packages:
       sanity: ^5 || ^6.0.0-0
       styled-components: ^6.1
 
-  sanity@6.24.0:
-    resolution: {integrity: sha512-NDO553VhXwr9GsmjkXnw0EqIEYSuOV2+oFxDIzVv5XTtihKLlFvHRrLzumLJVkoZAH6eriF0PtDQXY0msIIpwQ==}
+  sanity@6.25.0:
+    resolution: {integrity: sha512-gCWhcG15uCI6T5BBYX2oswrsDrMiXaNHpCfi2vjcUObfC0vcmIArhDc7gq7GqvPAwF7IgNrEwbuA/znksjFp0A==}
     engines: {node: '>=22.12'}
     hasBin: true
     peerDependencies:
@@ -5251,6 +5507,10 @@ packages:
     resolution: {integrity: sha512-bLVMLPtstlZ4iMQHpFHTR7GAGj2jxi8Dg0s2h2MafAE4uSWF98FC/3MomU51iQAMf8/qDUbKWf5GxuvvVcXEhw==}
     engines: {node: '>=20'}
 
+  tr46@7.0.0:
+    resolution: {integrity: sha512-BcDSDW+SIGWVOns1Zm6Yg91q9AEj7eaID0QDY9oIqJD1A8dscNwMcl9Sms2DeuWCNov1X0/oXanHGYQBSLwZsg==}
+    engines: {node: ^22.14.0 || >=24.0.0}
+
   trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
 
@@ -5276,6 +5536,10 @@ packages:
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
+
+  type-detect@4.0.8:
+    resolution: {integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==}
+    engines: {node: '>=4'}
 
   type-fest@0.21.3:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
@@ -5327,6 +5591,10 @@ packages:
   undici@7.30.2:
     resolution: {integrity: sha512-mLyPQnHwUxaM/rideoK/+KL8DaAJLRl4aBCfmX444aCSLnIaomqPLtNRe2jdCYcsk5wZzXrDIQC8ZeYNRAYyIA==}
     engines: {node: '>=20.18.1'}
+
+  undici@8.13.1:
+    resolution: {integrity: sha512-Kt7EaPjh0s93lJH/PmW3d5rhkcpUa6fS3jqZ7+YGxNd9L7Xy/i827xe4C2uhhq+pJebM4tQOl5AgHmW11G5Skg==}
+    engines: {node: '>=22.19.0'}
 
   unicode-canonical-property-names-ecmascript@2.0.1:
     resolution: {integrity: sha512-dA8WbNeb2a6oQzAQ55YlT5vQAWGV9WXOsi3SskE3bcCdM0P4SDd+24zS/OCacdRq5BkdsRj9q3Pg6YyQoxIGqg==}
@@ -5518,6 +5786,10 @@ packages:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
     engines: {node: '>=18'}
 
+  w3c-xmlserializer@6.0.0:
+    resolution: {integrity: sha512-4Nsy8K5Tr6SPDH9jhKJOHf7ChDrc1zufZTVSF7x72hwuEXBqxqk9G6cK+K2NRUtB3iELRJqjXb4JPDMBjMTl2Q==}
+    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
+
   web-vitals@6.2.3:
     resolution: {integrity: sha512-Dmy+vdO1UPMqXiAtZSNayhl4f794Bxfd94W4HIj2HlYtczEQfEOon969memlcpcHrTuOKLa5baFjX7WbgmOq+A==}
 
@@ -5532,6 +5804,10 @@ packages:
   whatwg-url@16.0.1:
     resolution: {integrity: sha512-1to4zXBxmXHV3IiSSEInrreIlu02vUOvrhxJJH5vcxYTBDAx51cqZiKdyTxlecdKNSjj8EcxGBxNf6Vg+945gw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+
+  whatwg-url@17.3.0:
+    resolution: {integrity: sha512-KwOAJrpf+GTgBvcBQJcP38sMF0DsQKdwtG+TxM2pW44P6E5k0hDbWrDmyuJDIF0Uef0aQq0ZoJs+5oI+k8ddhg==}
+    engines: {node: ^22.14.0 || >=24.0.0}
 
   which-boxed-primitive@1.1.1:
     resolution: {integrity: sha512-TbX3mj8n0odCBFVlY8AxkqcHASw3L60jIuF8jFP78az3C2YhmGvqbHBpAjTRH2/xqYunrJ9g1jSyjCjpoWzIAA==}
@@ -5711,8 +5987,6 @@ packages:
 
 snapshots:
 
-  '@acemir/cssom@0.9.33': {}
-
   '@algorithm.ts/lcs@4.0.6': {}
 
   '@architect/asap@7.0.10':
@@ -5758,14 +6032,6 @@ snapshots:
       '@csstools/css-parser-algorithms': 4.0.2(@csstools/css-tokenizer@4.0.2)
       '@csstools/css-tokenizer': 4.0.2
 
-  '@asamuzakjp/dom-selector@6.8.1':
-    dependencies:
-      '@asamuzakjp/nwsapi': 2.3.9
-      bidi-js: 1.1.0
-      css-tree: 3.2.1
-      is-potential-custom-element-name: 1.0.1
-      lru-cache: 11.5.3
-
   '@asamuzakjp/dom-selector@7.1.1':
     dependencies:
       '@asamuzakjp/generational-cache': 1.0.1
@@ -5789,6 +6055,163 @@ snapshots:
   '@aws-lite/s3@0.1.22': {}
 
   '@aws-lite/ssm@0.2.5': {}
+
+  '@aws-sdk/client-lambda@3.1176.0':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/credential-provider-node': 3.972.98
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/fetch-http-handler': 5.8.1
+      '@smithy/node-http-handler': 4.14.2
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/core@3.981.1':
+    dependencies:
+      '@aws-sdk/types': 3.975.1
+      '@aws-sdk/xml-builder': 3.972.43
+      '@aws/lambda-invoke-store': 0.3.0
+      '@smithy/core': 3.41.1
+      '@smithy/signature-v4': 5.7.5
+      '@smithy/types': 4.20.0
+      bowser: 2.15.1
+      tslib: 2.9.1
+
+  '@aws-sdk/credential-provider-env@3.972.85':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/credential-provider-http@3.972.87':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/fetch-http-handler': 5.8.1
+      '@smithy/node-http-handler': 4.14.2
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/credential-provider-ini@3.973.31':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/credential-provider-env': 3.972.85
+      '@aws-sdk/credential-provider-http': 3.972.87
+      '@aws-sdk/credential-provider-login': 3.972.93
+      '@aws-sdk/credential-provider-process': 3.972.85
+      '@aws-sdk/credential-provider-sso': 3.973.29
+      '@aws-sdk/credential-provider-web-identity': 3.972.91
+      '@aws-sdk/nested-clients': 3.998.4
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/credential-provider-imds': 4.5.2
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/credential-provider-login@3.972.93':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/nested-clients': 3.998.4
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/credential-provider-node@3.972.98':
+    dependencies:
+      '@aws-sdk/credential-provider-env': 3.972.85
+      '@aws-sdk/credential-provider-http': 3.972.87
+      '@aws-sdk/credential-provider-ini': 3.973.31
+      '@aws-sdk/credential-provider-process': 3.972.85
+      '@aws-sdk/credential-provider-sso': 3.973.29
+      '@aws-sdk/credential-provider-web-identity': 3.972.91
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/credential-provider-imds': 4.5.2
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/credential-provider-process@3.972.85':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/credential-provider-sso@3.973.29':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/nested-clients': 3.998.4
+      '@aws-sdk/token-providers': 3.1175.0
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/credential-provider-web-identity@3.972.91':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/nested-clients': 3.998.4
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/nested-clients@3.998.4':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/signature-v4-multi-region': 3.996.52
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/fetch-http-handler': 5.8.1
+      '@smithy/node-http-handler': 4.14.2
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/signature-v4-multi-region@3.996.52':
+    dependencies:
+      '@aws-sdk/types': 3.975.1
+      '@smithy/signature-v4': 5.7.5
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/token-providers@3.1175.0':
+    dependencies:
+      '@aws-sdk/core': 3.981.1
+      '@aws-sdk/nested-clients': 3.998.4
+      '@aws-sdk/types': 3.975.1
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/types@3.975.1':
+    dependencies:
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws-sdk/xml-builder@3.972.43':
+    dependencies:
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@aws/durable-execution-sdk-js-testing@1.4.0(@aws/durable-execution-sdk-js@3.1.0)':
+    dependencies:
+      '@aws-sdk/client-lambda': 3.1176.0
+      '@aws/durable-execution-sdk-js': 3.1.0
+      '@sinonjs/fake-timers': 15.5.0
+      commander: 14.0.3
+
+  '@aws/durable-execution-sdk-js@3.1.0':
+    dependencies:
+      '@aws-sdk/client-lambda': 3.1176.0
+      '@types/aws-lambda': 8.10.164
+
+  '@aws/lambda-invoke-store@0.3.0': {}
 
   '@babel/code-frame@7.29.7':
     dependencies:
@@ -7109,7 +7532,7 @@ snapshots:
 
   '@module-federation/third-party-dts-extractor@2.9.3': {}
 
-  '@module-federation/vite@1.23.11(typescript@5.9.3)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))':
+  '@module-federation/vite@1.24.0(typescript@5.9.3)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@module-federation/dts-plugin': 2.9.3(typescript@5.9.3)
       '@module-federation/runtime': 2.9.3
@@ -7220,13 +7643,73 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
+  '@oxc-parser/binding-android-arm-eabi@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-android-arm64@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-darwin-arm64@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-darwin-x64@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-freebsd-x64@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-arm-gnueabihf@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-arm-musleabihf@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-arm64-gnu@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-arm64-musl@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-ppc64-gnu@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-riscv64-gnu@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-riscv64-musl@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-s390x-gnu@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-x64-gnu@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-linux-x64-musl@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-openharmony-arm64@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-win32-arm64-msvc@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-win32-ia32-msvc@0.157.0':
+    optional: true
+
+  '@oxc-parser/binding-win32-x64-msvc@0.157.0':
+    optional: true
+
   '@oxc-project/types@0.156.0': {}
 
-  '@pierre/diffs@1.6.4(@shikijs/themes@4.6.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@oxc-project/types@0.157.0': {}
+
+  '@pierre/diffs@1.7.1(@shikijs/themes@4.6.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
-      '@pierre/highlights': 0.4.0
-      '@pierre/theme': 2.0.0
-      '@pierre/theming': 1.0.2(@pierre/theme@2.0.0)(@shikijs/themes@4.6.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(shiki@4.6.0)
+      '@pierre/highlights': 0.5.2
+      '@pierre/patches': 0.0.1
+      '@pierre/theme': 2.1.0
+      '@pierre/theming': 1.0.2(@pierre/theme@2.1.0)(@shikijs/themes@4.6.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(shiki@4.6.0)
       diff: 9.0.0
       hast-util-to-html: 9.0.5
       lru_map: 0.4.1
@@ -7237,13 +7720,15 @@ snapshots:
     transitivePeerDependencies:
       - '@shikijs/themes'
 
-  '@pierre/highlights@0.4.0': {}
+  '@pierre/highlights@0.5.2': {}
 
-  '@pierre/theme@2.0.0': {}
+  '@pierre/patches@0.0.1': {}
 
-  '@pierre/theming@1.0.2(@pierre/theme@2.0.0)(@shikijs/themes@4.6.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(shiki@4.6.0)':
+  '@pierre/theme@2.1.0': {}
+
+  '@pierre/theming@1.0.2(@pierre/theme@2.1.0)(@shikijs/themes@4.6.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(shiki@4.6.0)':
     optionalDependencies:
-      '@pierre/theme': 2.0.0
+      '@pierre/theme': 2.1.0
       '@shikijs/themes': 4.6.0
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
@@ -7365,7 +7850,7 @@ snapshots:
   '@portabletext/sanity-bridge@5.0.1(@types/react@19.3.0)':
     dependencies:
       '@portabletext/schema': 3.1.1
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
+      '@sanity/types': 6.24.0(@types/react@19.3.0)
     transitivePeerDependencies:
       - '@types/react'
       - vitest
@@ -7471,23 +7956,23 @@ snapshots:
 
   '@rolldown/pluginutils@1.1.1': {}
 
-  '@sanity-labs/design-tokens@0.0.2-alpha.11': {}
+  '@sanity-labs/design-tokens@0.0.2-alpha.12': {}
 
-  '@sanity-labs/groq-wasm@1.2.0': {}
+  '@sanity-labs/groq-wasm@1.3.1': {}
 
   '@sanity-labs/oclif-plugin-skills-flag@0.2.1(@oclif/core@4.14.0)':
     dependencies:
       '@oclif/core': 4.14.0
 
-  '@sanity/access-ui@6.24.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
+  '@sanity/access-ui@6.25.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
     dependencies:
-      '@sanity/client': 8.16.0
+      '@sanity/client': 8.17.0
       '@sanity/icons': 5.4.0(react@19.3.1)
       '@sanity/ui': 4.4.12(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       react: 19.3.1
       react-rx: 7.1.0(react@19.3.1)(rxjs@7.8.2)
       rxjs: 7.8.2
-      ui5: '@sanity/ui@5.0.0-alpha.24(react-dom@19.3.1(react@19.3.1))(react@19.3.1)'
+      ui5: '@sanity/ui@5.0.0-alpha.27(react-dom@19.3.1(react@19.3.1))(react@19.3.1)'
     transitivePeerDependencies:
       - react-dom
       - remix
@@ -7508,32 +7993,24 @@ snapshots:
 
   '@sanity/blueprints-parser@0.5.0': {}
 
-  '@sanity/blueprints@0.33.0(@sanity/cli-build@7.2.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))':
+  '@sanity/blueprints@0.34.1(@sanity/cli-build@7.5.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       parse-duration: 2.1.11
     optionalDependencies:
-      '@sanity/cli-build': 7.2.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
+      '@sanity/cli-build': 7.5.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
       jiti: 2.7.0
       vite: 8.3.8(jiti@2.7.0)(yaml@2.9.1)
 
-  '@sanity/blueprints@0.33.0(@sanity/cli-build@7.2.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))':
-    dependencies:
-      parse-duration: 2.1.11
-    optionalDependencies:
-      '@sanity/cli-build': 7.2.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
-      jiti: 2.7.0
-      vite: 8.3.8(jiti@2.7.0)(yaml@2.9.1)
-
-  '@sanity/cli-build@7.2.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)':
+  '@sanity/cli-build@7.5.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)':
     dependencies:
       '@oclif/core': 4.14.0
       '@rolldown/plugin-babel': 0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
-      '@sanity/cli-core': 3.15.0(@noble/hashes@2.4.0)(yaml@2.9.1)
+      '@sanity/cli-core': 3.16.0(@noble/hashes@2.4.0)(yaml@2.9.1)
       '@sanity/generate-help-url': 4.0.0
-      '@sanity/schema': 6.23.0(@types/react@19.3.0)
+      '@sanity/schema': 6.24.0(@types/react@19.3.0)
       '@sanity/telemetry': 1.1.0(react@19.3.1)
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-      '@sanity/workbench-cli': 2.16.0(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
+      '@sanity/types': 6.24.0(@types/react@19.3.0)
+      '@sanity/workbench-cli': 2.19.1(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
       '@vitejs/plugin-react': 6.3.0(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
       chokidar: 5.0.0
       cjs-module-lexer: 2.3.0
@@ -7551,7 +8028,7 @@ snapshots:
       vite: 8.3.8(jiti@2.7.0)(yaml@2.9.1)
       zod: 4.6.7
     optionalDependencies:
-      sanity: 6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
+      sanity: 6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/plugin-transform-runtime'
@@ -7579,100 +8056,6 @@ snapshots:
       - vitest
       - vue-tsc
       - xstate
-      - yaml
-
-  '@sanity/cli-build@7.2.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)':
-    dependencies:
-      '@oclif/core': 4.14.0
-      '@rolldown/plugin-babel': 0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
-      '@sanity/cli-core': 3.15.1(@noble/hashes@2.4.0)(yaml@2.9.1)
-      '@sanity/generate-help-url': 4.0.0
-      '@sanity/schema': 6.23.0(@types/react@19.3.0)
-      '@sanity/telemetry': 1.1.0(react@19.3.1)
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-      '@sanity/workbench-cli': 2.16.1(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
-      '@vitejs/plugin-react': 6.3.0(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
-      chokidar: 5.0.0
-      cjs-module-lexer: 2.3.0
-      dompurify: 3.4.18
-      empathic: 2.1.0
-      jsdom: 29.1.1(@noble/hashes@2.4.0)
-      lightningcss: 1.33.0
-      lodash-es: 4.18.1
-      node-html-parser: 7.1.0
-      oneline: 2.0.0
-      picomatch: 4.0.7
-      react: 19.3.1
-      react-is: 19.3.1
-      semver: 7.8.6
-      vite: 8.3.8(jiti@2.7.0)(yaml@2.9.1)
-      zod: 4.6.7
-    optionalDependencies:
-      sanity: 6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/plugin-transform-runtime'
-      - '@babel/runtime'
-      - '@noble/hashes'
-      - '@types/node'
-      - '@types/react'
-      - '@vitejs/devtools'
-      - bufferutil
-      - canvas
-      - esbuild
-      - immer
-      - jiti
-      - less
-      - rolldown
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - typescript
-      - use-sync-external-store
-      - utf-8-validate
-      - vitest
-      - vue-tsc
-      - xstate
-      - yaml
-
-  '@sanity/cli-core@3.15.0(@noble/hashes@2.4.0)(yaml@2.9.1)':
-    dependencies:
-      '@inquirer/core': 12.1.0
-      '@inquirer/prompts': 8.8.0
-      '@oclif/core': 4.14.0
-      '@sanity/client': 8.16.0
-      boxen: 8.0.1
-      empathic: 2.1.0
-      get-it: 9.7.0
-      get-tsconfig: 4.14.3
-      import-meta-resolve: 4.2.0
-      jiti: 2.7.0
-      jsdom: 29.1.1(@noble/hashes@2.4.0)
-      json-lexer: 1.2.0
-      log-symbols: 7.0.1
-      obug: 3.0.0
-      ora: 9.4.1
-      rxjs: 7.8.2
-      vite: 8.3.8(jiti@2.7.0)(yaml@2.9.1)
-      wrap-ansi: 9.0.2
-      zod: 4.6.7
-    transitivePeerDependencies:
-      - '@noble/hashes'
-      - '@types/node'
-      - '@vitejs/devtools'
-      - canvas
-      - esbuild
-      - less
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - vitest
       - yaml
 
   '@sanity/cli-core@3.15.1(@noble/hashes@2.4.0)(yaml@2.9.1)':
@@ -7712,34 +8095,71 @@ snapshots:
       - vitest
       - yaml
 
-  '@sanity/cli@8.30.0(7fb29f85b1df395fcbc7104b7e0a7e7a)':
+  '@sanity/cli-core@3.16.0(@noble/hashes@2.4.0)(yaml@2.9.1)':
+    dependencies:
+      '@inquirer/core': 12.1.0
+      '@inquirer/prompts': 8.8.0
+      '@oclif/core': 4.14.0
+      '@sanity/client': 8.17.0
+      boxen: 8.0.1
+      empathic: 2.1.0
+      get-it: 9.7.0
+      get-tsconfig: 4.14.3
+      import-meta-resolve: 4.2.0
+      jiti: 2.7.0
+      jsdom: 29.1.1(@noble/hashes@2.4.0)
+      json-lexer: 1.2.0
+      log-symbols: 7.0.1
+      obug: 3.0.0
+      ora: 9.4.1
+      rxjs: 7.8.2
+      vite: 8.3.8(jiti@2.7.0)(yaml@2.9.1)
+      wrap-ansi: 9.0.2
+      zod: 4.6.7
+    transitivePeerDependencies:
+      - '@noble/hashes'
+      - '@types/node'
+      - '@vitejs/devtools'
+      - canvas
+      - esbuild
+      - less
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - terser
+      - tsx
+      - vitest
+      - yaml
+
+  '@sanity/cli@8.34.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(supports-color@8.1.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)':
     dependencies:
       '@oclif/core': 4.14.0
       '@oclif/plugin-help': 6.3.0
       '@oclif/plugin-not-found': 3.3.0
-      '@sanity/blueprints': 0.33.0(@sanity/cli-build@7.2.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
-      '@sanity/cli-build': 7.2.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
-      '@sanity/cli-core': 3.15.1(@noble/hashes@2.4.0)(yaml@2.9.1)
-      '@sanity/client': 8.16.0
-      '@sanity/codegen': 8.3.1(react@19.3.1)(supports-color@8.1.1)(typescript@5.9.3)
+      '@sanity/blueprints': 0.34.1(@sanity/cli-build@7.5.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
+      '@sanity/cli-build': 7.5.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
+      '@sanity/cli-core': 3.16.0(@noble/hashes@2.4.0)(yaml@2.9.1)
+      '@sanity/client': 8.17.0
+      '@sanity/codegen': 8.3.4(react@19.3.1)(supports-color@8.1.1)(typescript@5.9.3)
       '@sanity/descriptors': 1.3.0
       '@sanity/export': 7.1.1
       '@sanity/generate-help-url': 4.0.0
       '@sanity/id-utils': 1.1.0
-      '@sanity/import': 7.1.1(@sanity/client@8.16.0)(@types/react@19.3.0)
+      '@sanity/import': 7.1.1(@sanity/client@8.17.0)(@types/react@19.3.0)
       '@sanity/migrate': 8.0.5(@types/react@19.3.0)(xstate@5.33.4)
-      '@sanity/runtime-cli': 17.21.3(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
-      '@sanity/schema': 6.23.0(@types/react@19.3.0)
+      '@sanity/runtime-cli': 17.21.6(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
+      '@sanity/schema': 6.24.0(@types/react@19.3.0)
       '@sanity/schema-descriptor-utils': 1.4.0
       '@sanity/telemetry': 1.1.0(react@19.3.1)
       '@sanity/template-validator': 3.1.1
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-      '@sanity/util': 6.23.0(@types/react@19.3.0)
-      '@sanity/validation': 6.23.0(@types/react@19.3.0)(typescript@5.9.3)
-      '@sanity/workbench-cli': 2.16.1(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
+      '@sanity/types': 6.24.0(@types/react@19.3.0)
+      '@sanity/util': 6.24.0(@types/react@19.3.0)
+      '@sanity/validation': 6.24.0(@types/react@19.3.0)(typescript@5.9.3)
+      '@sanity/workbench-cli': 2.19.1(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
       '@sanity/worker-channels': 2.0.0
-      '@sanity/workflow-cli': 0.37.0(@sanity/cli-core@3.15.1(@noble/hashes@2.4.0)(yaml@2.9.1))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3))(react@19.3.1)
-      '@sanity/workflow-engine': 0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)
+      '@sanity/workflows': 0.39.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)(typescript@5.9.3)
+      '@sanity/workflows-cli': 0.39.0(@sanity/cli-core@3.16.0(@noble/hashes@2.4.0)(yaml@2.9.1))(@sanity/workflows@0.39.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)(typescript@5.9.3))(react@19.3.1)
       '@vercel/frameworks': 3.29.0
       chokidar: 5.0.0
       console-table-printer: 2.16.1
@@ -7747,7 +8167,7 @@ snapshots:
       execa: 10.2.1
       form-data: 4.0.6
       get-latest-version: 6.0.1
-      groq-js: 2.0.1
+      groq-js: 2.0.3
       gunzip-maybe: 1.4.2
       import-meta-resolve: 4.2.0
       is-installed-globally: 1.0.1
@@ -7784,7 +8204,6 @@ snapshots:
       - '@babel/runtime'
       - '@noble/hashes'
       - '@rolldown/plugin-babel'
-      - '@sanity/workflow-blueprint'
       - '@types/node'
       - '@types/react'
       - '@vitejs/devtools'
@@ -7831,7 +8250,16 @@ snapshots:
     transitivePeerDependencies:
       - vitest
 
-  '@sanity/codegen@8.3.1(react@19.3.1)(supports-color@8.1.1)(typescript@5.9.3)':
+  '@sanity/client@8.17.0':
+    dependencies:
+      eventsource: 5.1.5
+      get-it: 9.7.0
+      obug: 3.0.0
+      rxjs: 7.8.2
+    transitivePeerDependencies:
+      - vitest
+
+  '@sanity/codegen@8.3.4(react@19.3.1)(supports-color@8.1.1)(typescript@5.9.3)':
     dependencies:
       '@babel/core': 7.29.13(supports-color@8.1.1)
       '@babel/generator': 7.29.14
@@ -7845,8 +8273,8 @@ snapshots:
       '@sanity/worker-channels': 2.0.0
       chokidar: 3.6.0
       globby: 11.1.0
-      groq: 6.23.0
-      groq-js: 2.0.1
+      groq: 6.24.0
+      groq-js: 2.0.3
       json5: 2.2.3
       lodash-es: 4.18.1
       obug: 3.0.0
@@ -7859,14 +8287,14 @@ snapshots:
       - supports-color
       - typescript
 
-  '@sanity/color-input@6.1.10(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
+  '@sanity/color-input@6.1.10(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
     dependencies:
       '@sanity/icons': 5.3.0(react@19.3.1)
       '@sanity/ui': 4.4.12(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       '@vanilla-extract/dynamic': 2.1.5
       lodash-es: 4.18.1
       react: 19.3.1
-      sanity: 6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
+      sanity: 6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
       tinycolor2: 1.6.0
     transitivePeerDependencies:
       - react-dom
@@ -7891,7 +8319,7 @@ snapshots:
     dependencies:
       '@sanity/diff-match-patch': 3.2.1
 
-  '@sanity/diff@6.24.0':
+  '@sanity/diff@6.25.0':
     dependencies:
       '@sanity/diff-match-patch': 3.2.1
 
@@ -7924,12 +8352,6 @@ snapshots:
 
   '@sanity/generate-help-url@4.0.0': {}
 
-  '@sanity/groq-condition-describe@0.5.2(supports-color@8.1.1)':
-    dependencies:
-      groq-js: 1.30.3(supports-color@8.1.1)
-    transitivePeerDependencies:
-      - supports-color
-
   '@sanity/icons@5.3.0(react@19.3.1)':
     dependencies:
       react: 19.3.1
@@ -7947,12 +8369,12 @@ snapshots:
     dependencies:
       '@sanity/signed-urls': 2.0.6
 
-  '@sanity/import@7.1.1(@sanity/client@8.16.0)(@types/react@19.3.0)':
+  '@sanity/import@7.1.1(@sanity/client@8.17.0)(@types/react@19.3.0)':
     dependencies:
       '@sanity/asset-utils': 2.3.0
-      '@sanity/client': 8.16.0
+      '@sanity/client': 8.17.0
       '@sanity/generate-help-url': 4.0.0
-      '@sanity/mutator': 6.23.0(@types/react@19.3.0)
+      '@sanity/mutator': 6.24.0(@types/react@19.3.0)
       get-it: 9.7.0
       modern-tar: 0.8.6
       obug: 3.0.0
@@ -7975,17 +8397,13 @@ snapshots:
       '@sanity/color': 3.0.9
       react: 19.3.1
 
-  '@sanity/media-library-types@1.8.0(@sanity/types@5.31.2(@types/react@19.3.0))':
-    dependencies:
-      '@sanity/types': 5.31.2(@types/react@19.3.0)
-
-  '@sanity/media-library-types@1.8.0(@sanity/types@6.23.0(@types/react@19.3.0))':
-    dependencies:
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-
   '@sanity/media-library-types@1.8.0(@sanity/types@6.24.0(@types/react@19.3.0))':
     dependencies:
       '@sanity/types': 6.24.0(@types/react@19.3.0)
+
+  '@sanity/media-library-types@1.8.0(@sanity/types@6.25.0(@types/react@19.3.0))':
+    dependencies:
+      '@sanity/types': 6.25.0(@types/react@19.3.0)
 
   '@sanity/message-protocol@0.24.0':
     dependencies:
@@ -7995,8 +8413,8 @@ snapshots:
     dependencies:
       '@sanity/client': 8.16.0
       '@sanity/mutate': 0.18.2(xstate@5.33.4)
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-      '@sanity/util': 6.23.0(@types/react@19.3.0)
+      '@sanity/types': 6.24.0(@types/react@19.3.0)
+      '@sanity/util': 6.24.0(@types/react@19.3.0)
       arrify: 3.0.0
       get-it: 9.7.0
       groq-js: 2.0.1
@@ -8024,15 +8442,19 @@ snapshots:
     transitivePeerDependencies:
       - vitest
 
-  '@sanity/mutator@6.23.0(@types/react@19.3.0)':
+  '@sanity/mutate@0.18.4(xstate@5.33.4)':
     dependencies:
+      '@isaacs/ttlcache': 2.1.5
+      '@sanity/client': 8.17.0
       '@sanity/diff-match-patch': 3.2.1
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
       '@sanity/uuid': 3.0.3
-      dequal: 2.0.3
-      obug: 3.0.0
+      hotscript: 1.0.13
+      mendoza: 6.0.0
+      nanoid: 6.0.2
+      rxjs: 7.8.2
+    optionalDependencies:
+      xstate: 5.33.4
     transitivePeerDependencies:
-      - '@types/react'
       - vitest
 
   '@sanity/mutator@6.24.0(@types/react@19.3.0)':
@@ -8046,34 +8468,47 @@ snapshots:
       - '@types/react'
       - vitest
 
-  '@sanity/presentation-comlink@2.2.3(@sanity/types@6.24.0(@types/react@19.3.0))':
+  '@sanity/mutator@6.25.0(@types/react@19.3.0)':
+    dependencies:
+      '@sanity/diff-match-patch': 3.2.1
+      '@sanity/types': 6.25.0(@types/react@19.3.0)
+      '@sanity/uuid': 3.0.3
+      dequal: 2.0.3
+      obug: 3.0.0
+    transitivePeerDependencies:
+      - '@types/react'
+      - vitest
+
+  '@sanity/presentation-comlink@2.2.3(@sanity/types@6.25.0(@types/react@19.3.0))':
     dependencies:
       '@sanity/client': 7.28.0
       '@sanity/comlink': 4.0.3
-      '@sanity/visual-editing-types': 2.1.1(@sanity/client@7.28.0)(@sanity/types@6.24.0(@types/react@19.3.0))
+      '@sanity/visual-editing-types': 2.1.1(@sanity/client@7.28.0)(@sanity/types@6.25.0(@types/react@19.3.0))
       xstate: 5.33.4
     transitivePeerDependencies:
       - '@sanity/types'
 
-  '@sanity/preview-url-secret@4.1.5(@sanity/client@8.16.0)':
+  '@sanity/preview-url-secret@4.1.5(@sanity/client@8.17.0)':
     dependencies:
-      '@sanity/client': 8.16.0
+      '@sanity/client': 8.17.0
       '@sanity/uuid': 3.0.3
 
   '@sanity/prism-groq@1.1.2': {}
 
-  '@sanity/runtime-cli@17.21.3(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)':
+  '@sanity/runtime-cli@17.21.6(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)':
     dependencies:
       '@architect/hydrate': 6.0.2
       '@architect/inventory': 6.1.0
+      '@aws/durable-execution-sdk-js': 3.1.0
+      '@aws/durable-execution-sdk-js-testing': 1.4.0(@aws/durable-execution-sdk-js@3.1.0)
       '@inquirer/prompts': 8.8.0
       '@oclif/core': 4.14.0
       '@oclif/plugin-help': 6.3.0
       '@sanity-labs/oclif-plugin-skills-flag': 0.2.1(@oclif/core@4.14.0)
-      '@sanity/blueprints': 0.33.0(@sanity/cli-build@7.2.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
+      '@sanity/blueprints': 0.34.1(@sanity/cli-build@7.5.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1))(jiti@2.7.0)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
       '@sanity/blueprints-parser': 0.5.0
-      '@sanity/cli-build': 7.2.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
-      '@sanity/cli-core': 3.15.0(@noble/hashes@2.4.0)(yaml@2.9.1)
+      '@sanity/cli-build': 7.5.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)
+      '@sanity/cli-core': 3.15.1(@noble/hashes@2.4.0)(yaml@2.9.1)
       '@sanity/client': 8.16.0
       adm-zip: 0.6.1
       array-treeify: 0.2.0
@@ -8129,22 +8564,6 @@ snapshots:
     dependencies:
       '@sanity/descriptors': 1.3.0
 
-  '@sanity/schema@6.23.0(@types/react@19.3.0)':
-    dependencies:
-      '@sanity/descriptors': 1.3.0
-      '@sanity/generate-help-url': 4.0.0
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-      arrify: 3.0.0
-      dequal: 2.0.3
-      get-it: 9.7.0
-      groq-js: 2.0.1
-      humanize-list: 1.0.1
-      leven: 4.1.0
-      lodash-es: 4.18.1
-    transitivePeerDependencies:
-      - '@types/react'
-      - vitest
-
   '@sanity/schema@6.24.0(@types/react@19.3.0)':
     dependencies:
       '@sanity/descriptors': 1.3.0
@@ -8161,13 +8580,29 @@ snapshots:
       - '@types/react'
       - vitest
 
-  '@sanity/sdk-react@3.14.0(@types/react@19.3.0)(immer@11.2.10)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)':
+  '@sanity/schema@6.25.0(@types/react@19.3.0)':
+    dependencies:
+      '@sanity/descriptors': 1.3.0
+      '@sanity/generate-help-url': 4.0.0
+      '@sanity/types': 6.25.0(@types/react@19.3.0)
+      arrify: 3.0.0
+      dequal: 2.0.3
+      get-it: 9.7.0
+      groq-js: 2.0.3
+      humanize-list: 1.0.1
+      leven: 4.1.0
+      lodash-es: 4.18.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - vitest
+
+  '@sanity/sdk-react@3.15.0(@types/react@19.3.0)(immer@11.2.10)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)':
     dependencies:
       '@module-federation/runtime': 2.9.3
       '@sanity/client': 8.16.0
       '@sanity/message-protocol': 0.24.0
-      '@sanity/sdk': 3.14.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
+      '@sanity/sdk': 3.15.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
+      '@sanity/types': 6.24.0(@types/react@19.3.0)
       react: 19.3.1
       react-compiler-runtime: 1.0.0(react@19.3.1)
       react-dom: 19.3.1(react@19.3.1)
@@ -8180,7 +8615,7 @@ snapshots:
       - vitest
       - xstate
 
-  '@sanity/sdk@3.12.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)':
+  '@sanity/sdk@3.15.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)':
     dependencies:
       '@sanity/bifur-client': 2.0.2
       '@sanity/client': 8.16.0
@@ -8193,37 +8628,10 @@ snapshots:
       '@sanity/message-protocol': 0.24.0
       '@sanity/mutate': 0.18.2(xstate@5.33.4)
       '@sanity/telemetry': 1.1.0(react@19.3.1)
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-      groq: 6.23.0
-      groq-js: 2.0.1
-      reselect: 5.3.0
-      rxjs: 7.8.2
-      zustand: 5.1.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))
-    transitivePeerDependencies:
-      - '@types/react'
-      - immer
-      - react
-      - use-sync-external-store
-      - vitest
-      - xstate
-
-  '@sanity/sdk@3.14.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)':
-    dependencies:
-      '@sanity/bifur-client': 2.0.2
-      '@sanity/client': 8.16.0
-      '@sanity/comlink': 4.0.3
-      '@sanity/diff-match-patch': 3.2.1
-      '@sanity/diff-patch': 7.0.0
-      '@sanity/id-utils': 1.1.0
-      '@sanity/image-url': 2.2.0
-      '@sanity/json-match': 1.0.5
-      '@sanity/message-protocol': 0.24.0
-      '@sanity/mutate': 0.18.2(xstate@5.33.4)
-      '@sanity/telemetry': 1.1.0(react@19.3.1)
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
+      '@sanity/types': 6.24.0(@types/react@19.3.0)
       '@sentry/browser': 11.12.0
-      groq: 6.23.0
-      groq-js: 2.0.1
+      groq: 6.24.0
+      groq-js: 2.0.3
       reselect: 5.3.0
       rxjs: 7.8.2
       zustand: 5.1.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))
@@ -8251,24 +8659,18 @@ snapshots:
     dependencies:
       yaml: 2.9.1
 
-  '@sanity/types@5.31.2(@types/react@19.3.0)':
-    dependencies:
-      '@sanity/client': 7.28.0
-      '@sanity/media-library-types': 1.8.0(@sanity/types@5.31.2(@types/react@19.3.0))
-      '@types/react': 19.3.0
-
-  '@sanity/types@6.23.0(@types/react@19.3.0)':
-    dependencies:
-      '@sanity/client': 8.16.0
-      '@sanity/media-library-types': 1.8.0(@sanity/types@6.23.0(@types/react@19.3.0))
-      '@types/react': 19.3.0
-    transitivePeerDependencies:
-      - vitest
-
   '@sanity/types@6.24.0(@types/react@19.3.0)':
     dependencies:
       '@sanity/client': 8.16.0
       '@sanity/media-library-types': 1.8.0(@sanity/types@6.24.0(@types/react@19.3.0))
+      '@types/react': 19.3.0
+    transitivePeerDependencies:
+      - vitest
+
+  '@sanity/types@6.25.0(@types/react@19.3.0)':
+    dependencies:
+      '@sanity/client': 8.17.0
+      '@sanity/media-library-types': 1.8.0(@sanity/types@6.25.0(@types/react@19.3.0))
       '@types/react': 19.3.0
     transitivePeerDependencies:
       - vitest
@@ -8290,9 +8692,9 @@ snapshots:
     transitivePeerDependencies:
       - remix
 
-  '@sanity/ui@5.0.0-alpha.24(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@sanity/ui@5.0.0-alpha.27(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
-      '@sanity-labs/design-tokens': 0.0.2-alpha.11
+      '@sanity-labs/design-tokens': 0.0.2-alpha.12
       '@sanity/icons': 5.3.0(react@19.3.1)
       clsx: 2.1.1
       comment-json: 5.0.0
@@ -8301,19 +8703,6 @@ snapshots:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
       react-refractor: 4.0.0(react@19.3.1)
-
-  '@sanity/util@6.23.0(@types/react@19.3.0)':
-    dependencies:
-      '@date-fns/tz': 1.5.0
-      '@date-fns/utc': 2.1.1
-      '@sanity/client': 8.16.0
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-      date-fns: 4.4.0
-      get-it: 9.7.0
-      rxjs: 7.8.2
-    transitivePeerDependencies:
-      - '@types/react'
-      - vitest
 
   '@sanity/util@6.24.0(@types/react@19.3.0)':
     dependencies:
@@ -8328,25 +8717,22 @@ snapshots:
       - '@types/react'
       - vitest
 
-  '@sanity/uuid@3.0.3':
+  '@sanity/util@6.25.0(@types/react@19.3.0)':
     dependencies:
-      uuid: 11.1.1
-
-  '@sanity/validation@6.23.0(@types/react@19.3.0)(typescript@5.9.3)':
-    dependencies:
-      '@sanity/client': 8.16.0
-      '@sanity/id-utils': 1.1.0
-      '@sanity/schema': 6.23.0(@types/react@19.3.0)
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-      '@sanity/util': 6.23.0(@types/react@19.3.0)
-      dequal: 2.0.3
-      i18next: 26.7.2(typescript@5.9.3)
-      lodash-es: 4.18.1
+      '@date-fns/tz': 1.5.0
+      '@date-fns/utc': 2.1.1
+      '@sanity/client': 8.17.0
+      '@sanity/types': 6.25.0(@types/react@19.3.0)
+      date-fns: 4.4.0
+      get-it: 9.7.0
       rxjs: 7.8.2
     transitivePeerDependencies:
       - '@types/react'
-      - typescript
       - vitest
+
+  '@sanity/uuid@3.0.3':
+    dependencies:
+      uuid: 11.1.1
 
   '@sanity/validation@6.24.0(@types/react@19.3.0)(typescript@5.9.3)':
     dependencies:
@@ -8364,7 +8750,23 @@ snapshots:
       - typescript
       - vitest
 
-  '@sanity/vision@6.24.0(@babel/runtime@7.29.14)(@codemirror/theme-one-dark@6.1.3)(@shikijs/themes@4.6.0)(@types/react@19.3.0)(codemirror@6.0.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
+  '@sanity/validation@6.25.0(@types/react@19.3.0)(typescript@5.9.3)':
+    dependencies:
+      '@sanity/client': 8.17.0
+      '@sanity/id-utils': 1.1.0
+      '@sanity/schema': 6.25.0(@types/react@19.3.0)
+      '@sanity/types': 6.25.0(@types/react@19.3.0)
+      '@sanity/util': 6.25.0(@types/react@19.3.0)
+      dequal: 2.0.3
+      i18next: 26.7.2(typescript@5.9.3)
+      lodash-es: 4.18.1
+      rxjs: 7.8.2
+    transitivePeerDependencies:
+      - '@types/react'
+      - typescript
+      - vitest
+
+  '@sanity/vision@6.25.0(@babel/runtime@7.29.14)(@codemirror/theme-one-dark@6.1.3)(@shikijs/themes@4.6.0)(@types/react@19.3.0)(codemirror@6.0.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
     dependencies:
       '@codemirror/autocomplete': 6.20.4
       '@codemirror/commands': 6.11.1
@@ -8375,15 +8777,15 @@ snapshots:
       '@codemirror/state': 6.7.6
       '@codemirror/view': 6.43.15
       '@lezer/highlight': 1.2.5
-      '@pierre/diffs': 1.6.4(@shikijs/themes@4.6.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@pierre/diffs': 1.7.1(@shikijs/themes@4.6.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@rexxars/react-json-inspector': 9.0.1(react@19.3.1)
       '@rexxars/react-split-pane': 1.0.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@sanity-labs/groq-wasm': 1.2.0
-      '@sanity/client': 8.16.0
+      '@sanity-labs/groq-wasm': 1.3.1
+      '@sanity/client': 8.17.0
       '@sanity/color': 3.0.9
       '@sanity/icons': 5.4.0(react@19.3.1)
       '@sanity/lezer-groq': 1.0.4
-      '@sanity/schema': 6.24.0(@types/react@19.3.0)
+      '@sanity/schema': 6.25.0(@types/react@19.3.0)
       '@sanity/telemetry': 1.1.0(react@19.3.1)
       '@sanity/ui': 4.4.12(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       '@sanity/uuid': 3.0.3
@@ -8391,19 +8793,19 @@ snapshots:
       '@xstate/react': 6.1.0(@types/react@19.3.0)(react@19.3.1)(xstate@5.33.4)
       cobe: 2.0.1
       dequal: 2.0.3
-      groq-js: 2.0.1
+      groq-js: 2.0.3
       is-hotkey-esm: 1.0.0
       json-2-csv: 5.6.0
       json5: 2.2.3
       lodash-es: 4.18.1
       motion: 14.14.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      quick-lru: 7.3.0
+      quick-lru: 8.0.0
       react: 19.3.1
       react-focus-lock: 2.13.7(@types/react@19.3.0)(react@19.3.1)
       react-rx: 7.1.0(react@19.3.1)(rxjs@7.8.2)
       rxjs: 7.8.2
-      sanity: 6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
-      ui5: '@sanity/ui@5.0.0-alpha.24(react-dom@19.3.1(react@19.3.1))(react@19.3.1)'
+      sanity: 6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
+      ui5: '@sanity/ui@5.0.0-alpha.27(react-dom@19.3.1(react@19.3.1))(react@19.3.1)'
       use-effect-event: 2.0.4(react@19.3.1)
       xstate: 5.33.4
     transitivePeerDependencies:
@@ -8417,64 +8819,22 @@ snapshots:
       - styled-components
       - vitest
 
-  '@sanity/visual-editing-types@2.1.1(@sanity/client@7.28.0)(@sanity/types@6.24.0(@types/react@19.3.0))':
+  '@sanity/visual-editing-types@2.1.1(@sanity/client@7.28.0)(@sanity/types@6.25.0(@types/react@19.3.0))':
     dependencies:
       '@sanity/client': 7.28.0
     optionalDependencies:
+      '@sanity/types': 6.25.0(@types/react@19.3.0)
+
+  '@sanity/workbench-cli@2.19.1(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)':
+    dependencies:
+      '@module-federation/runtime': 2.9.3
+      '@module-federation/vite': 1.24.0(typescript@5.9.3)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
+      '@sanity/cli-core': 3.16.0(@noble/hashes@2.4.0)(yaml@2.9.1)
+      '@sanity/sdk': 3.15.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
       '@sanity/types': 6.24.0(@types/react@19.3.0)
-
-  '@sanity/workbench-cli@2.16.0(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)':
-    dependencies:
-      '@module-federation/runtime': 2.9.3
-      '@module-federation/vite': 1.23.11(typescript@5.9.3)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
-      '@sanity/cli-core': 3.15.0(@noble/hashes@2.4.0)(yaml@2.9.1)
-      '@sanity/sdk': 3.12.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
       '@vitejs/plugin-react': 6.3.0(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
       form-data: 4.0.6
-      rxjs: 7.8.2
-      semver: 7.8.6
-      tar: 7.5.23
-      vite: 8.3.8(jiti@2.7.0)(yaml@2.9.1)
-      zod: 4.6.7
-    transitivePeerDependencies:
-      - '@noble/hashes'
-      - '@rolldown/plugin-babel'
-      - '@types/node'
-      - '@types/react'
-      - '@vitejs/devtools'
-      - babel-plugin-react-compiler
-      - bufferutil
-      - canvas
-      - esbuild
-      - immer
-      - jiti
-      - less
-      - oxc-transform-react
-      - react
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - typescript
-      - use-sync-external-store
-      - utf-8-validate
-      - vitest
-      - vue-tsc
-      - xstate
-      - yaml
-
-  '@sanity/workbench-cli@2.16.1(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)(yaml@2.9.1)':
-    dependencies:
-      '@module-federation/runtime': 2.9.3
-      '@module-federation/vite': 1.23.11(typescript@5.9.3)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
-      '@sanity/cli-core': 3.15.1(@noble/hashes@2.4.0)(yaml@2.9.1)
-      '@sanity/sdk': 3.12.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
-      '@sanity/types': 6.23.0(@types/react@19.3.0)
-      '@vitejs/plugin-react': 6.3.0(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
-      form-data: 4.0.6
+      open: 11.0.4
       rxjs: 7.8.2
       semver: 7.8.6
       tar: 7.5.23
@@ -8511,41 +8871,40 @@ snapshots:
 
   '@sanity/worker-channels@2.0.0': {}
 
-  '@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3))':
-    dependencies:
-      '@sanity/client': 7.28.0
-      '@sanity/workflow-engine': 0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)
-
-  '@sanity/workflow-cli@0.37.0(@sanity/cli-core@3.15.1(@noble/hashes@2.4.0)(yaml@2.9.1))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3))(react@19.3.1)':
+  '@sanity/workflows-cli@0.39.0(@sanity/cli-core@3.16.0(@noble/hashes@2.4.0)(yaml@2.9.1))(@sanity/workflows@0.39.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)(typescript@5.9.3))(react@19.3.1)':
     dependencies:
       '@oclif/core': 4.14.0
       '@oclif/plugin-help': 6.3.0
-      '@sanity/cli-core': 3.15.1(@noble/hashes@2.4.0)(yaml@2.9.1)
-      '@sanity/client': 7.28.0
+      '@sanity/cli-core': 3.16.0(@noble/hashes@2.4.0)(yaml@2.9.1)
+      '@sanity/client': 8.16.0
       '@sanity/telemetry': 1.1.0(react@19.3.1)
-      '@sanity/workflow-blueprint': 0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3))
-      '@sanity/workflow-engine': 0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)
+      '@sanity/workflows': 0.39.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)(typescript@5.9.3)
       boxen: 8.0.1
       diff: 9.0.0
       empathic: 2.1.0
       jiti: 2.7.0
       log-symbols: 7.0.1
       ora: 9.4.1
+      oxc-parser: 0.157.0
       wrap-ansi: 10.0.2
     transitivePeerDependencies:
       - react
+      - vitest
 
-  '@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)':
+  '@sanity/workflows@0.39.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)(typescript@5.9.3)':
     dependencies:
-      '@sanity/groq-condition-describe': 0.5.2(supports-color@8.1.1)
+      '@sanity/client': 8.16.0
       '@sanity/id-utils': 1.1.0
-      '@sanity/types': 5.31.2(@types/react@19.3.0)
+      '@sanity/telemetry': 1.1.0(react@19.3.1)
+      '@sanity/types': 6.24.0(@types/react@19.3.0)
       groq-js: 1.30.3(supports-color@8.1.1)
       valibot: 1.5.0(typescript@5.9.3)
     transitivePeerDependencies:
       - '@types/react'
+      - react
       - supports-color
       - typescript
+      - vitest
 
   '@sec-ant/readable-stream@0.4.1': {}
 
@@ -8553,6 +8912,12 @@ snapshots:
     dependencies:
       '@sentry/conventions': 0.32.0
       '@sentry/core': 11.12.0
+      web-vitals: 6.2.3
+
+  '@sentry/browser-utils@11.17.0':
+    dependencies:
+      '@sentry/conventions': 0.35.0
+      '@sentry/core': 11.17.0
       web-vitals: 6.2.3
 
   '@sentry/browser@11.12.0':
@@ -8564,21 +8929,40 @@ snapshots:
       '@sentry/replay': 11.12.0
       '@sentry/replay-canvas': 11.12.0
 
+  '@sentry/browser@11.17.0':
+    dependencies:
+      '@sentry/browser-utils': 11.17.0
+      '@sentry/conventions': 0.35.0
+      '@sentry/core': 11.17.0
+      '@sentry/feedback': 11.17.0
+      '@sentry/replay': 11.17.0
+      '@sentry/replay-canvas': 11.17.0
+
   '@sentry/conventions@0.32.0': {}
+
+  '@sentry/conventions@0.35.0': {}
 
   '@sentry/core@11.12.0':
     dependencies:
       '@sentry/conventions': 0.32.0
 
+  '@sentry/core@11.17.0':
+    dependencies:
+      '@sentry/conventions': 0.35.0
+
   '@sentry/feedback@11.12.0':
     dependencies:
       '@sentry/core': 11.12.0
 
-  '@sentry/react@11.12.0(react@19.3.1)':
+  '@sentry/feedback@11.17.0':
     dependencies:
-      '@sentry/browser': 11.12.0
-      '@sentry/conventions': 0.32.0
-      '@sentry/core': 11.12.0
+      '@sentry/core': 11.17.0
+
+  '@sentry/react@11.17.0(react@19.3.1)':
+    dependencies:
+      '@sentry/browser': 11.17.0
+      '@sentry/conventions': 0.35.0
+      '@sentry/core': 11.17.0
       react: 19.3.1
 
   '@sentry/replay-canvas@11.12.0':
@@ -8586,10 +8970,20 @@ snapshots:
       '@sentry/core': 11.12.0
       '@sentry/replay': 11.12.0
 
+  '@sentry/replay-canvas@11.17.0':
+    dependencies:
+      '@sentry/core': 11.17.0
+      '@sentry/replay': 11.17.0
+
   '@sentry/replay@11.12.0':
     dependencies:
       '@sentry/browser-utils': 11.12.0
       '@sentry/core': 11.12.0
+
+  '@sentry/replay@11.17.0':
+    dependencies:
+      '@sentry/browser-utils': 11.17.0
+      '@sentry/core': 11.17.0
 
   '@shikijs/core@4.6.0':
     dependencies:
@@ -8633,6 +9027,47 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
+  '@sinonjs/commons@3.0.1':
+    dependencies:
+      type-detect: 4.0.8
+
+  '@sinonjs/fake-timers@15.5.0':
+    dependencies:
+      '@sinonjs/commons': 3.0.1
+
+  '@smithy/core@3.41.1':
+    dependencies:
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@smithy/credential-provider-imds@4.5.2':
+    dependencies:
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@smithy/fetch-http-handler@5.8.1':
+    dependencies:
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@smithy/node-http-handler@4.14.2':
+    dependencies:
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@smithy/signature-v4@5.7.5':
+    dependencies:
+      '@smithy/core': 3.41.1
+      '@smithy/types': 4.20.0
+      tslib: 2.9.1
+
+  '@smithy/types@4.20.0':
+    dependencies:
+      tslib: 2.9.1
+
   '@standard-schema/spec@1.1.0': {}
 
   '@standard-schema/utils@0.3.0': {}
@@ -8650,18 +9085,20 @@ snapshots:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
 
-  '@tanstack/react-virtual@3.14.26(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@tanstack/react-virtual@3.14.28(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
-      '@tanstack/virtual-core': 3.19.11
+      '@tanstack/virtual-core': 3.19.13
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
 
-  '@tanstack/virtual-core@3.19.11': {}
+  '@tanstack/virtual-core@3.19.13': {}
 
   '@tybys/wasm-util@0.10.5':
     dependencies:
       tslib: 2.9.1
     optional: true
+
+  '@types/aws-lambda@8.10.164': {}
 
   '@types/estree@1.0.10': {}
 
@@ -8956,8 +9393,6 @@ snapshots:
 
   adm-zip@0.6.1: {}
 
-  agent-base@7.1.4: {}
-
   ajv@6.15.0:
     dependencies:
       fast-deep-equal: 3.1.3
@@ -9158,6 +9593,14 @@ snapshots:
 
   baseline-browser-mapping@2.11.37: {}
 
+  bcp-47-match@2.0.3: {}
+
+  bcp-47@2.1.2:
+    dependencies:
+      is-alphabetical: 2.0.1
+      is-alphanumerical: 2.0.1
+      is-decimal: 2.0.1
+
   bidi-js@1.1.0:
     dependencies:
       require-from-string: 2.0.2
@@ -9165,6 +9608,8 @@ snapshots:
   binary-extensions@2.3.0: {}
 
   boolbase@1.0.0: {}
+
+  bowser@2.15.1: {}
 
   boxen@8.0.1:
     dependencies:
@@ -9327,7 +9772,7 @@ snapshots:
 
   color-name@1.1.4: {}
 
-  color2k@2.0.4: {}
+  color2k@2.2.0: {}
 
   colord@2.13.0: {}
 
@@ -9336,6 +9781,8 @@ snapshots:
       delayed-stream: 1.0.0
 
   comma-separated-tokens@2.0.3: {}
+
+  commander@14.0.3: {}
 
   comment-json@5.0.0:
     dependencies:
@@ -9410,13 +9857,6 @@ snapshots:
 
   css-what@6.2.2: {}
 
-  cssstyle@6.2.0:
-    dependencies:
-      '@asamuzakjp/css-color': 5.1.11
-      '@csstools/css-syntax-patches-for-csstree': 1.1.16(css-tree@3.2.1)
-      css-tree: 3.2.1
-      lru-cache: 11.5.3
-
   csstype@3.2.3: {}
 
   custom-media-element@1.4.7: {}
@@ -9427,6 +9867,13 @@ snapshots:
     dependencies:
       whatwg-mimetype: 5.0.0
       whatwg-url: 16.0.1(@noble/hashes@2.4.0)
+    transitivePeerDependencies:
+      - '@noble/hashes'
+
+  data-urls@8.0.0(@noble/hashes@2.4.0):
+    dependencies:
+      whatwg-mimetype: 5.0.0
+      whatwg-url: 17.3.0(@noble/hashes@2.4.0)
     transitivePeerDependencies:
       - '@noble/hashes'
 
@@ -10101,7 +10548,13 @@ snapshots:
     dependencies:
       obug: 2.2.1
 
+  groq-js@2.0.3:
+    dependencies:
+      obug: 2.2.1
+
   groq@6.23.0: {}
+
+  groq@6.24.0: {}
 
   gunzip-maybe@1.4.2:
     dependencies:
@@ -10206,23 +10659,15 @@ snapshots:
     transitivePeerDependencies:
       - '@noble/hashes'
 
+  html-encoding-sniffer@7.0.0(@noble/hashes@2.4.0):
+    dependencies:
+      '@exodus/bytes': 1.16.0(@noble/hashes@2.4.0)
+    transitivePeerDependencies:
+      - '@noble/hashes'
+
   html-parse-stringify@4.0.1: {}
 
   html-void-elements@3.0.0: {}
-
-  http-proxy-agent@7.0.2(supports-color@8.1.1):
-    dependencies:
-      agent-base: 7.1.4
-      debug: 4.4.3(supports-color@8.1.1)
-    transitivePeerDependencies:
-      - supports-color
-
-  https-proxy-agent@7.0.6(supports-color@8.1.1):
-    dependencies:
-      agent-base: 7.1.4
-      debug: 4.4.3(supports-color@8.1.1)
-    transitivePeerDependencies:
-      - supports-color
 
   human-signals@8.0.1: {}
 
@@ -10457,14 +10902,13 @@ snapshots:
 
   isobject@3.0.1: {}
 
-  isomorphic-dompurify@2.36.0(@noble/hashes@2.4.0)(supports-color@8.1.1):
+  isomorphic-dompurify@4.8.0(@noble/hashes@2.4.0):
     dependencies:
       dompurify: 3.4.18
-      jsdom: 28.1.0(@noble/hashes@2.4.0)(supports-color@8.1.1)
+      jsdom: 31.0.1(@noble/hashes@2.4.0)
     transitivePeerDependencies:
+      - '@napi-rs/canvas'
       - '@noble/hashes'
-      - canvas
-      - supports-color
 
   isomorphic-ws@5.0.0(ws@8.21.3):
     dependencies:
@@ -10492,33 +10936,6 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@28.1.0(@noble/hashes@2.4.0)(supports-color@8.1.1):
-    dependencies:
-      '@acemir/cssom': 0.9.33
-      '@asamuzakjp/dom-selector': 6.8.1
-      '@bramus/specificity': 2.4.3
-      '@exodus/bytes': 1.16.0(@noble/hashes@2.4.0)
-      cssstyle: 6.2.0
-      data-urls: 7.0.0(@noble/hashes@2.4.0)
-      decimal.js: 10.6.0
-      html-encoding-sniffer: 6.0.0(@noble/hashes@2.4.0)
-      http-proxy-agent: 7.0.2(supports-color@8.1.1)
-      https-proxy-agent: 7.0.6(supports-color@8.1.1)
-      is-potential-custom-element-name: 1.0.1
-      parse5: 8.1.1
-      saxes: 6.0.0
-      symbol-tree: 3.2.4
-      tough-cookie: 6.1.0
-      undici: 7.30.2
-      w3c-xmlserializer: 5.0.0
-      webidl-conversions: 8.0.1
-      whatwg-mimetype: 5.0.0
-      whatwg-url: 16.0.1(@noble/hashes@2.4.0)
-      xml-name-validator: 5.0.0
-    transitivePeerDependencies:
-      - '@noble/hashes'
-      - supports-color
-
   jsdom@29.1.1(@noble/hashes@2.4.0):
     dependencies:
       '@asamuzakjp/css-color': 5.1.11
@@ -10541,6 +10958,29 @@ snapshots:
       webidl-conversions: 8.0.1
       whatwg-mimetype: 5.0.0
       whatwg-url: 16.0.1(@noble/hashes@2.4.0)
+      xml-name-validator: 5.0.0
+    transitivePeerDependencies:
+      - '@noble/hashes'
+
+  jsdom@31.0.1(@noble/hashes@2.4.0):
+    dependencies:
+      '@exodus/bytes': 1.16.0(@noble/hashes@2.4.0)
+      bcp-47: 2.1.2
+      bcp-47-match: 2.0.3
+      data-urls: 8.0.0(@noble/hashes@2.4.0)
+      decimal.js: 10.6.0
+      html-encoding-sniffer: 7.0.0(@noble/hashes@2.4.0)
+      is-potential-custom-element-name: 1.0.1
+      lru-cache: 11.5.3
+      parse5: 8.1.1
+      parse5-parser-stream: 8.1.1
+      saxes: 6.0.0
+      tough-cookie: 6.1.0
+      undici: 8.13.1
+      w3c-xmlserializer: 6.0.0
+      webidl-conversions: 8.0.1
+      whatwg-mimetype: 5.0.0
+      whatwg-url: 17.3.0(@noble/hashes@2.4.0)
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - '@noble/hashes'
@@ -10731,6 +11171,8 @@ snapshots:
   memoize-one@6.0.0: {}
 
   mendoza@3.0.8: {}
+
+  mendoza@6.0.0: {}
 
   merge2@1.4.1: {}
 
@@ -10953,6 +11395,30 @@ snapshots:
       object-keys: 1.1.1
       safe-push-apply: 1.0.0
 
+  oxc-parser@0.157.0:
+    dependencies:
+      '@oxc-project/types': 0.157.0
+    optionalDependencies:
+      '@oxc-parser/binding-android-arm-eabi': 0.157.0
+      '@oxc-parser/binding-android-arm64': 0.157.0
+      '@oxc-parser/binding-darwin-arm64': 0.157.0
+      '@oxc-parser/binding-darwin-x64': 0.157.0
+      '@oxc-parser/binding-freebsd-x64': 0.157.0
+      '@oxc-parser/binding-linux-arm-gnueabihf': 0.157.0
+      '@oxc-parser/binding-linux-arm-musleabihf': 0.157.0
+      '@oxc-parser/binding-linux-arm64-gnu': 0.157.0
+      '@oxc-parser/binding-linux-arm64-musl': 0.157.0
+      '@oxc-parser/binding-linux-ppc64-gnu': 0.157.0
+      '@oxc-parser/binding-linux-riscv64-gnu': 0.157.0
+      '@oxc-parser/binding-linux-riscv64-musl': 0.157.0
+      '@oxc-parser/binding-linux-s390x-gnu': 0.157.0
+      '@oxc-parser/binding-linux-x64-gnu': 0.157.0
+      '@oxc-parser/binding-linux-x64-musl': 0.157.0
+      '@oxc-parser/binding-openharmony-arm64': 0.157.0
+      '@oxc-parser/binding-win32-arm64-msvc': 0.157.0
+      '@oxc-parser/binding-win32-ia32-msvc': 0.157.0
+      '@oxc-parser/binding-win32-x64-msvc': 0.157.0
+
   p-limit@2.3.0:
     dependencies:
       p-try: 2.2.0
@@ -11008,6 +11474,10 @@ snapshots:
       lines-and-columns: 1.2.4
 
   parse-ms@4.0.0: {}
+
+  parse5-parser-stream@8.1.1:
+    dependencies:
+      parse5: 8.1.1
 
   parse5@8.1.1:
     dependencies:
@@ -11121,7 +11591,7 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  quick-lru@7.3.0: {}
+  quick-lru@8.0.0: {}
 
   raf@3.4.1:
     dependencies:
@@ -11154,7 +11624,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.3.0
 
-  react-fast-compare@3.2.3: {}
+  react-fast-compare@3.2.4: {}
 
   react-file-icon@1.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
@@ -11454,7 +11924,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sanity-plugin-media@6.6.3(@standard-schema/spec@1.1.0)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(valibot@1.5.0(typescript@5.9.3)):
+  sanity-plugin-media@6.6.3(@standard-schema/spec@1.1.0)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(valibot@1.5.0(typescript@5.9.3)):
     dependencies:
       '@hookform/resolvers': 6.0.2(@standard-schema/spec@1.1.0)(react-hook-form@7.92.0(@types/react@19.3.0)(react@19.3.1))(valibot@1.5.0(typescript@5.9.3))(zod@4.6.7)
       '@reduxjs/toolkit': 2.14.0(@types/react@19.3.0)(react-redux@9.3.1(@types/react@19.3.0)(react@19.3.1)(redux@5.0.1))(react@19.3.1)
@@ -11482,7 +11952,7 @@ snapshots:
       redux: 5.0.1
       redux-observable: 3.0.0-rc.2(redux@5.0.1)(rxjs@7.8.2)
       rxjs: 7.8.2
-      sanity: 6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
+      sanity: 6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
       styled-components: 6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       zod: 4.6.7
     transitivePeerDependencies:
@@ -11513,7 +11983,7 @@ snapshots:
       - vitest
       - yup
 
-  sanity-plugin-mux-input@5.3.1(@videojs/hlsjs-video@10.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)):
+  sanity-plugin-mux-input@5.3.1(@videojs/hlsjs-video@10.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)):
     dependencies:
       '@mux/upchunk': 3.5.0
       '@sanity/icons': 5.3.0(react@19.3.1)
@@ -11530,7 +12000,7 @@ snapshots:
       react-is: 19.3.1
       react-rx: 7.1.0(react@19.3.1)(rxjs@7.8.2)
       rxjs: 7.8.2
-      sanity: 6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
+      sanity: 6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3)
       scroll-into-view-if-needed: 3.2.1
       styled-components: 6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       suspend-react: 0.1.3(react@19.3.1)
@@ -11559,7 +12029,7 @@ snapshots:
       - react-dom
       - remix
 
-  sanity@6.24.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@sanity/workflow-blueprint@0.37.0(@sanity/workflow-engine@0.37.0(@types/react@19.3.0)(supports-color@8.1.1)(typescript@5.9.3)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3):
+  sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3):
     dependencies:
       '@algorithm.ts/lcs': 4.0.6
       '@date-fns/tz': 1.5.0
@@ -11584,14 +12054,14 @@ snapshots:
       '@portabletext/to-html': 6.0.0
       '@portabletext/toolkit': 6.0.0
       '@rexxars/react-json-inspector': 9.0.1(react@19.3.1)
-      '@sanity/access-ui': 6.24.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
+      '@sanity/access-ui': 6.25.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       '@sanity/asset-utils': 2.3.0
       '@sanity/bifur-client': 3.0.1
-      '@sanity/cli': 8.30.0(7fb29f85b1df395fcbc7104b7e0a7e7a)
-      '@sanity/client': 8.16.0
+      '@sanity/cli': 8.34.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react@19.3.1)(rolldown@1.2.19)(sanity@6.25.0(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.3.1(@babel/core@7.29.13(supports-color@8.1.1))(@babel/runtime@7.29.14)(rolldown@1.2.19)(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1)))(@types/react@19.3.0)(bare-buffer@3.7.2)(immer@11.2.10)(jiti@2.7.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.19)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(supports-color@8.1.1)(typescript@5.9.3))(supports-color@8.1.1)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
+      '@sanity/client': 8.17.0
       '@sanity/color': 3.0.9
       '@sanity/comlink': 4.0.3
-      '@sanity/diff': 6.24.0
+      '@sanity/diff': 6.25.0
       '@sanity/diff-match-patch': 3.2.1
       '@sanity/diff-patch': 7.0.0
       '@sanity/eventsource': 5.0.4
@@ -11600,42 +12070,42 @@ snapshots:
       '@sanity/id-utils': 1.1.0
       '@sanity/image-url': 2.2.0
       '@sanity/logos': 2.2.6(react@19.3.1)
-      '@sanity/media-library-types': 1.8.0(@sanity/types@6.24.0(@types/react@19.3.0))
+      '@sanity/media-library-types': 1.8.0(@sanity/types@6.25.0(@types/react@19.3.0))
       '@sanity/message-protocol': 0.24.0
       '@sanity/migrate': 8.0.5(@types/react@19.3.0)(xstate@5.33.4)
-      '@sanity/mutate': 0.18.2(xstate@5.33.4)
-      '@sanity/mutator': 6.24.0(@types/react@19.3.0)
-      '@sanity/presentation-comlink': 2.2.3(@sanity/types@6.24.0(@types/react@19.3.0))
-      '@sanity/preview-url-secret': 4.1.5(@sanity/client@8.16.0)
+      '@sanity/mutate': 0.18.4(xstate@5.33.4)
+      '@sanity/mutator': 6.25.0(@types/react@19.3.0)
+      '@sanity/presentation-comlink': 2.2.3(@sanity/types@6.25.0(@types/react@19.3.0))
+      '@sanity/preview-url-secret': 4.1.5(@sanity/client@8.17.0)
       '@sanity/prism-groq': 1.1.2
-      '@sanity/schema': 6.24.0(@types/react@19.3.0)
-      '@sanity/sdk': 3.14.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
-      '@sanity/sdk-react': 3.14.0(@types/react@19.3.0)(immer@11.2.10)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
+      '@sanity/schema': 6.25.0(@types/react@19.3.0)
+      '@sanity/sdk': 3.15.0(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
+      '@sanity/sdk-react': 3.15.0(@types/react@19.3.0)(immer@11.2.10)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(use-sync-external-store@1.7.0(react@19.3.1))(xstate@5.33.4)
       '@sanity/telemetry': 1.1.0(react@19.3.1)
-      '@sanity/types': 6.24.0(@types/react@19.3.0)
+      '@sanity/types': 6.25.0(@types/react@19.3.0)
       '@sanity/ui': 4.4.12(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
-      '@sanity/util': 6.24.0(@types/react@19.3.0)
+      '@sanity/util': 6.25.0(@types/react@19.3.0)
       '@sanity/uuid': 3.0.3
-      '@sanity/validation': 6.24.0(@types/react@19.3.0)(typescript@5.9.3)
-      '@sentry/react': 11.12.0(react@19.3.1)
-      '@tanstack/react-virtual': 3.14.26(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@sanity/validation': 6.25.0(@types/react@19.3.0)(typescript@5.9.3)
+      '@sentry/react': 11.17.0(react@19.3.1)
+      '@tanstack/react-virtual': 3.14.28(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@xstate/react': 6.1.0(@types/react@19.3.0)(react@19.3.1)(xstate@5.33.4)
       clsx: 2.1.1
-      color2k: 2.0.4
+      color2k: 2.2.0
       dataloader: 2.2.3
       date-fns: 4.4.0
       dequal: 2.0.3
       exif-component: 1.0.1
-      groq-js: 2.0.1
+      groq-js: 2.0.3
       history: 5.3.0
       i18next: 26.7.2(typescript@5.9.3)
       is-hotkey-esm: 1.0.0
       is-network-error: 1.3.2
-      isomorphic-dompurify: 2.36.0(@noble/hashes@2.4.0)(supports-color@8.1.1)
+      isomorphic-dompurify: 4.8.0(@noble/hashes@2.4.0)
       json-reduce: 3.0.0
       json-stable-stringify: 1.3.0
       lodash-es: 4.18.1
-      mendoza: 3.0.8
+      mendoza: 6.0.0
       motion: 14.14.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       nano-pubsub: 3.0.0
       nanoid: 6.0.2
@@ -11643,11 +12113,11 @@ snapshots:
       obug: 3.0.0
       player.style: 0.3.5(react@19.3.1)
       polished: 4.3.1
-      quick-lru: 7.3.0
+      quick-lru: 8.0.0
       raf: 3.4.1
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
-      react-fast-compare: 3.2.3
+      react-fast-compare: 3.2.4
       react-focus-lock: 2.13.7(@types/react@19.3.0)(react@19.3.1)
       react-i18next: 17.1.13(i18next@26.7.2(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3)
       react-is: 19.3.1
@@ -11663,7 +12133,7 @@ snapshots:
       speakingurl: 14.0.1
       styled-components: 6.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       swr: 2.5.1(react@19.3.1)
-      ui5: '@sanity/ui@5.0.0-alpha.24(react-dom@19.3.1(react@19.3.1))(react@19.3.1)'
+      ui5: '@sanity/ui@5.0.0-alpha.27(react-dom@19.3.1(react@19.3.1))(react@19.3.1)'
       urlpattern-polyfill: 10.1.0
       use-device-pixel-ratio: 1.1.2(react@19.3.1)
       use-effect-event: 2.0.4(react@19.3.1)
@@ -11676,9 +12146,9 @@ snapshots:
       - '@babel/core'
       - '@babel/plugin-transform-runtime'
       - '@babel/runtime'
+      - '@napi-rs/canvas'
       - '@noble/hashes'
       - '@rolldown/plugin-babel'
-      - '@sanity/workflow-blueprint'
       - '@types/node'
       - '@types/react'
       - '@types/react-dom'
@@ -12072,6 +12542,10 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
+  tr46@7.0.0:
+    dependencies:
+      punycode: 2.3.1
+
   trim-lines@3.0.1: {}
 
   ts-api-utils@2.5.0(typescript@5.9.3):
@@ -12095,6 +12569,8 @@ snapshots:
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
+
+  type-detect@4.0.8: {}
 
   type-fest@0.21.3: {}
 
@@ -12159,6 +12635,8 @@ snapshots:
   undici@7.30.1: {}
 
   undici@7.30.2: {}
+
+  undici@8.13.1: {}
 
   unicode-canonical-property-names-ecmascript@2.0.1: {}
 
@@ -12299,6 +12777,10 @@ snapshots:
     dependencies:
       xml-name-validator: 5.0.0
 
+  w3c-xmlserializer@6.0.0:
+    dependencies:
+      xml-name-validator: 5.0.0
+
   web-vitals@6.2.3: {}
 
   webidl-conversions@8.0.1: {}
@@ -12309,6 +12791,14 @@ snapshots:
     dependencies:
       '@exodus/bytes': 1.16.0(@noble/hashes@2.4.0)
       tr46: 6.0.0
+      webidl-conversions: 8.0.1
+    transitivePeerDependencies:
+      - '@noble/hashes'
+
+  whatwg-url@17.3.0(@noble/hashes@2.4.0):
+    dependencies:
+      '@exodus/bytes': 1.16.0(@noble/hashes@2.4.0)
+      tr46: 7.0.0
       webidl-conversions: 8.0.1
     transitivePeerDependencies:
       - '@noble/hashes'

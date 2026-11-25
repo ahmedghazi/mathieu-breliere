@@ -40,7 +40,8 @@ export const SETTINGS_QUERY = defineQuery(`*[_type == "settings"][0]{
   },
   message404[]{
     ${blockContent}
-  }
+  },
+
 }`);
 
 export async function getSettings(): Promise<SETTINGS_QUERY_RESULT> {
@@ -54,7 +55,9 @@ export async function getSettings(): Promise<SETTINGS_QUERY_RESULT> {
  */
 export const CONTENT_INFOS_QUERY = defineQuery(`*[_type == "infos"][0]{
   ...,
-
+  "clients": *[_type == "client"]{
+    ${reference}
+  }
 }`);
 
 export async function getContentInfos(): Promise<CONTENT_INFOS_QUERY_RESULT> {

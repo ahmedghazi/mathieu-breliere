@@ -24,13 +24,18 @@ header {
       button {
         cursor: pointer;
       }
-      a,
-      button {
-        &.is-active {
-          &::before {
-            content: ".";
-          }
+    }
+    a,
+    button {
+      &.is-active {
+        &::before {
+          content: ". ";
         }
+      }
+    }
+    &.is-infos a.is-active {
+      &::before {
+        content: "";
       }
     }
     .nav-tags {

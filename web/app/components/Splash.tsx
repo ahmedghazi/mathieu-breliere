@@ -21,7 +21,7 @@ const Splash = ({ siteName, baseline }: Props) => {
       setTimeout(() => {
         setSplashed(true);
       }, delay);
-    }, delay * 2);
+    }, delay * 4);
   }, []);
 
   console.log({ splashed });
@@ -32,7 +32,12 @@ const Splash = ({ siteName, baseline }: Props) => {
         ready && "is-ready",
         completed && "is-completed",
       )}
-      style={{ "--transition-duration": `${1000}ms` } as React.CSSProperties}>
+      style={
+        {
+          "--transition-duration": `${delay}ms`,
+          "--transition-delay": `${delay / 3}ms`,
+        } as React.CSSProperties
+      }>
       <div className='spacer'></div>
       <div className='inner flex flex-col justify-between md:grid md:grid-cols-6 items-start gap-sm'>
         <div className='site-name'>{siteName}</div>

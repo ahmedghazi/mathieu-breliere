@@ -13,6 +13,7 @@ import linkOverlay from './objects/linkOverlay'
 import mediaImage from './objects/mediaImage'
 import mediaVideo from './objects/mediaVideo'
 import {seoSchema} from './features/seo'
+import client from './documents/client'
 
 /** opt-in localization (see schemaTypes/locale) — not used by any field below by default */
 // import localeString from './locale/localeString'
@@ -26,6 +27,7 @@ export const schemaTypes = [
   home,
   infos,
   tag,
+  client,
 
   seoSchema,
   blockContent,

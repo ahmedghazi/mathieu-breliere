@@ -11,7 +11,7 @@ export const reference = `
 	_id,
 	_type,
 	slug,
-	title
+	"title": coalesce(title, name)
 `;
 
 export const image = `

@@ -47,7 +47,13 @@ export default defineType({
     }),
 
     slug,
-
+    defineField({
+      name: 'client',
+      title: 'Client',
+      type: 'reference',
+      to: [{type: 'client'}],
+      group: 'editorial',
+    }),
     defineField({
       name: 'tags',
       title: 'Tags',
