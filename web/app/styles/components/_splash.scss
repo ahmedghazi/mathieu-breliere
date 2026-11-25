@@ -38,7 +38,7 @@
   }
 
   .spacer {
-    --h: calc(50vh - calc(var(--spacing-sm) * 2));
+    --h: calc(var(--app-h) / 2 - calc(var(--spacing-sm) * 2));
     height: var(--h);
     flex-shrink: 0;
     transition: height 0.3s var(--cubic);

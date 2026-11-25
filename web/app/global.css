@@ -46,13 +46,17 @@
   --screen-md: 1080px;
   --screen-lg: 1441px;
 
+  /* visible viewport height: --vh is set from window.innerHeight in PageContext
+     (dvh is wrong in iOS Safari when the page doesn't scroll); svh before hydration */
+  --app-h: calc(var(--vh, 1svh) * 100);
+
   /* --media-h: calc(calc(100dvh - 2 * var(--spacing-md)) / 2.3); */
-  --media-h: 66dvh;
-  --txt-h: calc(100dvh - var(--media-h) - calc(3 * var(--spacing-sm)));
+  --media-h: calc(var(--app-h) * 0.66);
+  --txt-h: calc(var(--app-h) - var(--media-h) - calc(3 * var(--spacing-sm)));
 
   @media all and (max-width: 768px) {
-    --media-h: 54dvh;
-    --txt-h: calc(100dvh - var(--media-h) - calc(2 * var(--spacing-sm)));
+    --media-h: calc(var(--app-h) * 0.54);
+    --txt-h: calc(var(--app-h) - var(--media-h) - calc(2 * var(--spacing-sm)));
 
     /* --txt-h: 46dvh; */
   }

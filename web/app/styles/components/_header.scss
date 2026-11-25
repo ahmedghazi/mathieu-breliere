@@ -51,17 +51,13 @@ header {
     }
   }
   @media all and (max-width: variables.$md) {
-    // height: var(--txt-h);
     pointer-events: none;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    height: 100vh;
-    // left: 0;
-    // top: 0;
-    // right: 0;
-    // bottom: var(--spacing-sm);
+    height: var(--app-h);
+
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: var(--spacing-sm);
